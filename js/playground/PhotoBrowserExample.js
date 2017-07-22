@@ -51,16 +51,16 @@ const EXAMPLES = [
 ];
 
 // fill 'Library photos' example with local media
-// CameraRoll.getPhotos({
-//     first: 30,
-//     assetType: 'Photos',
-// }).then((data) => {
-//     const media = [];
-//     data.edges.forEach(d => media.push({
-//         photo: d.node.image.uri,
-//     }));
-//     EXAMPLES[2].media = media;
-// }).catch(error => alert(error));
+CameraRoll.getPhotos({
+    first: 30,
+    assetType: 'Photos',
+}).then((data) => {
+    const media = [];
+    data.edges.forEach(d => media.push({
+        photo: d.node.image.uri,
+    }));
+    EXAMPLES[2].media = media;
+}).catch(error => alert(error));
 
 class PhotoBrowserExample extends Component {
 

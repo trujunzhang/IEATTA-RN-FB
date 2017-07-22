@@ -46,6 +46,8 @@
 		4E9C0D9B31C642A19EFC4C90 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A41B97ADB3B2403497FE19EC /* Octicons.ttf */; };
 		5E3A13901F1988E500930A7C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E3A138E1F1988E500930A7C /* Default-568h@2x.png */; };
 		5E3A13911F1988E500930A7C /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E3A138F1F1988E500930A7C /* Splash@2x.png */; };
+		5E6BBCFA1F2391250033FF5A /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6BBCD41F2391190033FF5A /* libART.a */; };
+		5E6BBD011F2391390033FF5A /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6BBD001F2391310033FF5A /* libRCTCameraRoll.a */; };
 		5E8CA96C1F235F9100C4AB26 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA350531F1848D400B7C327 /* libRCTFBSDK.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		5EA3224C1F136C05009D8633 /* F8Scrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3224B1F136C05009D8633 /* F8Scrolling.m */; };
@@ -236,6 +238,20 @@
 			remoteGlobalIDString = 0CF68AC11AF0540F00FF9E5C;
 			remoteInfo = RNSVG;
 		};
+		5E6BBCD31F2391190033FF5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E6BBCCE1F2391190033FF5A /* ART.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CF68AC11AF0540F00FF9E5C;
+			remoteInfo = ART;
+		};
+		5E6BBCFF1F2391310033FF5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E6BBCFB1F2391310033FF5A /* RCTCameraRoll.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58B5115D1A9E6B3D00147676;
+			remoteInfo = RCTCameraRoll;
+		};
 		5E75729C1F10A28900437335 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E20D3592361A4042BE2F479F /* AirMaps.xcodeproj */;
@@ -386,6 +402,8 @@
 		520C9091B4274BBC9A56A737 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		5E3A138E1F1988E500930A7C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5E3A138F1F1988E500930A7C /* Splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash@2x.png"; sourceTree = "<group>"; };
+		5E6BBCCE1F2391190033FF5A /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
+		5E6BBCFB1F2391310033FF5A /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5EA3224A1F136C05009D8633 /* F8Scrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F8Scrolling.h; path = ieatta/F8Scrolling.h; sourceTree = "<group>"; };
 		5EA3224B1F136C05009D8633 /* F8Scrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F8Scrolling.m; path = ieatta/F8Scrolling.m; sourceTree = "<group>"; };
@@ -430,6 +448,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6BBD011F2391390033FF5A /* libRCTCameraRoll.a in Frameworks */,
+				5E6BBCFA1F2391250033FF5A /* libART.a in Frameworks */,
 				5E8CA96C1F235F9100C4AB26 /* libRCTFBSDK.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -624,6 +644,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5E6BBCCF1F2391190033FF5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E6BBCD41F2391190033FF5A /* libART.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E6BBCFC1F2391310033FF5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E6BBD001F2391310033FF5A /* libRCTCameraRoll.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E7572901F10A28800437335 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +756,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5E6BBCFB1F2391310033FF5A /* RCTCameraRoll.xcodeproj */,
+				5E6BBCCE1F2391190033FF5A /* ART.xcodeproj */,
 				5EA350491F1848D300B7C327 /* RCTFBSDK.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -915,6 +953,10 @@
 					ProjectRef = E20D3592361A4042BE2F479F /* AirMaps.xcodeproj */;
 				},
 				{
+					ProductGroup = 5E6BBCCF1F2391190033FF5A /* Products */;
+					ProjectRef = 5E6BBCCE1F2391190033FF5A /* ART.xcodeproj */;
+				},
+				{
 					ProductGroup = 5E7572951F10A28900437335 /* Products */;
 					ProjectRef = 37F9CADACFB44E8BA2928B68 /* BVLinearGradient.xcodeproj */;
 				},
@@ -925,6 +967,10 @@
 				{
 					ProductGroup = 5E91572E1DD0AC6500FF2AA8 /* Products */;
 					ProjectRef = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E6BBCFC1F2391310033FF5A /* Products */;
+					ProjectRef = 5E6BBCFB1F2391310033FF5A /* RCTCameraRoll.xcodeproj */;
 				},
 				{
 					ProductGroup = 5EA3504A1F1848D300B7C327 /* Products */;
@@ -1158,6 +1204,20 @@
 			fileType = archive.ar;
 			path = libRNSVG.a;
 			remoteRef = 5E6AE81C1F0FADC700BDCF46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E6BBCD41F2391190033FF5A /* libART.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libART.a;
+			remoteRef = 5E6BBCD31F2391190033FF5A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E6BBD001F2391310033FF5A /* libRCTCameraRoll.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTCameraRoll.a;
+			remoteRef = 5E6BBCFF1F2391310033FF5A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E75729D1F10A28900437335 /* libAirMaps.a */ = {
