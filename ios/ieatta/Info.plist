@@ -95,5 +95,7 @@
       <string>Octicons.ttf</string>
       <string>Zocial.ttf</string>
     </array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We want to access your camera roll.</string>
   </dict>
 </plist>
