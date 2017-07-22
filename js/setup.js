@@ -23,6 +23,7 @@
  */
 
 'use strict';
+const React = require('React')
 
 /**
  * ### Translations
@@ -36,18 +37,13 @@ import Translations from './lib/Translations'
 I18n.translations = Translations
 
 const F8App = require('F8App')
-// const FacebookSDK = require('./FacebookSDK')
+const FacebookSDK = require('FacebookSDK')
 const Parse = require('parse/react-native')
-const React = require('React')
-const Relay = require('react-relay')
 
 const {Provider} = require('react-redux')
 const configureStore = require('./store/configureStore')
 
 const {updateLastLocation} = require('./actions')
-
-const {serverURL} = require('./env')
-
 const {configureImageFolder} = require('./parse/fsApi')
 
 function setup(): ReactClass<{}> {
@@ -58,14 +54,8 @@ function setup(): ReactClass<{}> {
 
     configureImageFolder()
 
-    // FacebookSDK.init();
-    // Parse.FacebookUtils.init();
-    Relay.injectNetworkLayer(
-        new Relay.DefaultNetworkLayer(`${serverURL}/graphql`, {
-            fetchTimeout: 30000,
-            retryDelays: [5000, 10000],
-        })
-    );
+    FacebookSDK.init();
+    Parse.FacebookUtils.init();
 
     class Root extends React.Component {
         state: {
@@ -91,7 +81,7 @@ function setup(): ReactClass<{}> {
                     this.setState({initialPosition})
                 },
                 (error) => {
-                     alert(error.message)
+                    alert(error.message)
                 },
                 {enableHighAccuracy: true, timeout: 40 * 1000, maximumAge: 1 * 1000}
             )
