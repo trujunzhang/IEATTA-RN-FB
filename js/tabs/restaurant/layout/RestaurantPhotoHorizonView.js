@@ -57,6 +57,8 @@ type Props = {
     renderEmptyList?: (day: number) => ReactElement;
 };
 
+const PHOTO_ITEM_WIDTH = 100;
+
 type State = {
     photos: Array;
 };
@@ -94,16 +96,6 @@ class RestaurantPhotoHorizonView extends React.Component {
     render() {
         const {photos} = this.state;
 
-        const photosxxx = [
-            {'title': 'section1', id: '1'},
-            {'title': 'section2', id: '2'},
-            {'title': 'section3', id: '3'},
-            {'title': 'section4', id: '4'},
-            {'title': 'section5', id: '5'},
-            {'title': 'section6', id: '6'},
-            {'title': 'section7', id: '7'},
-            {'title': 'section8', id: '8'}
-        ]
 
         return (
             <PhotoGrid
@@ -123,15 +115,26 @@ class RestaurantPhotoHorizonView extends React.Component {
         const localImagePath = getLocalImagePath(photo.objectId, PARSE_THUMBNAIL_IMAGES)
         // debugger
         return (
-            <Image
+            <TouchableOpacity
                 key={photo.objectId}
                 style={{
-                    width: 100,
-                    height: 100,
-                    borderRadius: 4,
+                    width: PHOTO_ITEM_WIDTH,
+                    height: PHOTO_ITEM_WIDTH,
                     marginRight: 6
                 }}
-                source={{uri: `file://${localImagePath}`}}/>
+                onPress={ () => {
+                    debugger
+                    // Do Something
+                }}>
+                <Image
+                    key={photo.objectId}
+                    style={{
+                        width: PHOTO_ITEM_WIDTH,
+                        height: PHOTO_ITEM_WIDTH,
+                        borderRadius: 4
+                    }}
+                    source={{uri: `file://${localImagePath}`}}/>
+            </TouchableOpacity>
         )
     }
 
