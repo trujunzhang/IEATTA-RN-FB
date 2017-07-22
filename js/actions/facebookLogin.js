@@ -28,14 +28,13 @@
 // For Web Apps
 // ========================
 const Parse = require('parse/react-native')
-// const FacebookSDK = require('FacebookSDK')
+const FacebookSDK = require('FacebookSDK')
 
 /**
  * The states were interested in
  */
 const {
     LOGGED_IN,
-    LOGGED_OUT,
 } = require('../lib/constants').default
 
 let slugify = require('slugify')
@@ -44,37 +43,35 @@ const {updateInstallation} = require('./installation')
 const {fromParseUser} = require('../parse/parseModels')
 
 import type {Action, ThunkAction} from './types'
+async function ParseFacebookLogin(scope): Promise {
+    return new Promise((resolve, reject) => {
+        Parse.FacebookUtils.logIn(scope, {
+            success: resolve,
+            error: (user, error) => reject(error && error.error || error),
+        });
+    });
+}
 
-//
-// async function ParseFacebookLogin(scope): Promise {
-//     return new Promise((resolve, reject) => {
-//         Parse.FacebookUtils.logIn(scope, {
-//             success: resolve,
-//             error: (user, error) => {
-//                 debugger
-//                 reject(error && error.error || error)
-//             }
-//         });
-//     });
-// }
-//
-// async function queryFacebookAPI(path, ...args): Promise {
-//     return new Promise((resolve, reject) => {
-//         FacebookSDK.api(path, ...args, (response) => {
-//             if (response && !response.error) {
-//                 resolve(response);
-//             } else {
-//                 reject(response && response.error);
-//             }
-//         });
-//     });
-// }
+async function queryFacebookAPI(path, ...args): Promise {
+    return new Promise((resolve, reject) => {
+        FacebookSDK.api(path, ...args, (response) => {
+            if (response && !response.error) {
+                resolve(response);
+            } else {
+                reject(response && response.error);
+            }
+        });
+    });
+}
+
 
 async function _logInWithFacebook(source: ? object): Promise<Array<Action>> {
-    // await ParseFacebookLogin('public_profile,email')
-    // const profile = await queryFacebookAPI('/me', {fields: 'name,email'});
-    // let user = facebookUser
-    //
+    await ParseFacebookLogin('public_profile,email,user_friends');
+    const profile = await queryFacebookAPI('/me', {fields: 'name,email'});
+    let user = profile
+
+    debugger
+
     // user.set('username', profile.name)
     // user.set('slug', slugify(profile.name, '_'))
     // user.set('email', profile.email)
