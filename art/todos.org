@@ -7,3 +7,4 @@
   2. Add new Restaurant
 
 
+RNSVGPathParser

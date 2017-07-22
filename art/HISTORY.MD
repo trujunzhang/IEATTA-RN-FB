@@ -1,0 +1,6 @@
+
+
+
+
+
+  RNSVGPathParser.m initWithPathString.

@@ -44,3 +44,24 @@ My Image element looks like:
           source={{uri: 'file://' + RNFS.DocumentDirectoryPath + '/myAwesomeSubDir/my.png', scale:1}}
         />
 My problem was that I did not set width and height first, which is not needed for urls or paths to assets. When using a base64 uri the width and heigth are also mandatory (that actually led me to the solution!).
+
+
+
+- (instancetype) initWithPathString:(NSString *)d
+{
+    if (self = [super init]) {
+       BOOL isString =  [d isKindOfClass:[NSString class]];
+
+        if(isString){
+            
+            NSRegularExpression* decimalRegularExpression = [[NSRegularExpression alloc] initWithPattern:@"(\\.\\d+)(?=\\-?\\.)" options:0 error:nil];
+            _originD = d;
+            _d = [decimalRegularExpression stringByReplacingMatchesInString:d options:0 range:NSMakeRange(0, [d length]) withTemplate:@"$1\,"];
+            _pathRegularExpression = [[NSRegularExpression alloc] initWithPattern:@"[a-df-z]|[\\-+]?(?:[\\d.]e[\\-+]?|[^\\s\\-+,a-z])+" options:NSRegularExpressionCaseInsensitive error:nil];
+        }
+        
+    }
+    return self;
+}
+
+
