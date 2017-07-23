@@ -231,6 +231,9 @@ class LoginScreen extends React.Component {
                     type="secondary"
                     caption="Not Now"
                     source="Modal"
+                    captionStyle={{
+                        color: '#41c532'
+                    }}
                     onPress={() => {
                         this.props.notNowPress()
                     }}
