@@ -48,6 +48,8 @@ const RLRestaurantListViewHeaderView = require('./RLRestaurantListViewHeaderView
 
 const {queryEventsForRestaurant} = require('../../../actions')
 
+const Photos = require('../../../lib/photos').default
+
 type Props = {
     events: Array;
     navigator: Navigator;
@@ -145,11 +147,11 @@ class DetailedRestaurantListView extends React.Component {
     }
 
     onShowAllPhotosPress() {
-        const photos = nextProps.appModel.restaurantPhoto.results || []
-
+        const photos = this.props.appModel.restaurantPhoto.results || [];
+        const media = Photos.getMedia(photos)
         this.props.navigator.push({
             photosBrowser: {
-                media: [],
+                media: media,
                 initialIndex: 0
             }
         });
