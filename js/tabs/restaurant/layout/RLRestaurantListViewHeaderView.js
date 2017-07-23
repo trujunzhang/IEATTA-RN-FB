@@ -167,8 +167,7 @@ class RLRestaurantListViewHeaderView extends Component {
                     fontWeight: 'bold'
                 }}
                 onPress={() => {
-                    debugger
-                    this.props.dispatch(openPhotosBrowser())
+                    this.props.dispatch(openPhotosBrowser(this.props.appModel.photos))
                 }}
             />
         )
@@ -214,8 +213,15 @@ class RLRestaurantListViewHeaderView extends Component {
 
 }
 
-
 const {connect} = require('react-redux')
 
-module.exports = connect()(RLRestaurantListViewHeaderView)
+
+function select(store) {
+    return {
+        appModel: store.appModel
+    };
+}
+
+module.exports = connect(select)(RLRestaurantListViewHeaderView)
+
 

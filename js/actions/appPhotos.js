@@ -35,14 +35,21 @@ const {
     PHOTO_BROWSER_CLOSE
 } = require('../lib/constants').default
 
-
-function closePhotosBrowser(media: Array, initialIndex: Int): ThunkAction {
+function closePhotosBrowser(): ThunkAction {
     return {
         type: PHOTO_BROWSER_CLOSE,
     };
 }
-function openPhotosBrowser(media: Array, initialIndex: Int): ThunkAction {
-    debugger
+function openPhotosBrowser(photos: Array, initialIndex: Int = 0): ThunkAction {
+    let media = photos.results.map((item, index) => {
+        // debugger
+        return {
+            photo: 'http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg',
+            selected: true,
+            caption: 'Grotto of the Madonna',
+        }
+    })
+
     return {
         type: PHOTO_BROWSER_OPEN,
         payload: {

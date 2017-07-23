@@ -144,8 +144,9 @@ class F8App extends Component {
         }
 
         if (this.props.appModel.isPhotoBrowser) {
-            // debugger
-            return (<IEAPhotoBrowserView media={[]} initialIndex=""/>)
+            return (<IEAPhotoBrowserView
+                media={this.props.appModel.photosBrowser.media}
+                initialIndex={this.props.appModel.photosBrowser.initialIndex}/>)
         }
 
         return (
