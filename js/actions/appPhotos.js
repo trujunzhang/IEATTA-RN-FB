@@ -45,7 +45,6 @@ function openPhotosBrowser(photos: Array, initialIndex: Int = 0): ThunkAction {
         // debugger
         return {
             photo: 'http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg',
-            selected: true,
             caption: 'Grotto of the Madonna',
         }
     })
