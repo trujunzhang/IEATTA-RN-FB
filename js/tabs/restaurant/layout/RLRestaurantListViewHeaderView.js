@@ -156,7 +156,8 @@ class RLRestaurantListViewHeaderView extends Component {
                 style={{
                     marginTop: 10,
                     height: 43,
-                    backgroundColor: '#41c532'
+                    backgroundColor: '#41c532',
+                    borderRadius: 4
                 }}
                 caption="See all photos"
                 captionStyle={{
