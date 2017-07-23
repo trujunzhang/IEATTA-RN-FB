@@ -141,11 +141,6 @@ class F8App extends Component {
             //return <LoginModal/>
         }
 
-        // if (this.props.appModel.isPhotoBrowser) {
-        //     return (<IEAPhotoBrowserView
-        //         media={this.props.appModel.photosBrowser.media}
-        //         initialIndex={this.props.appModel.photosBrowser.initialIndex}/>)
-        // }
 
         return (
             <View style={{flex: 1,}}>
@@ -168,5 +163,4 @@ function select(store) {
     };
 }
 
-export default connect(select)(F8App);
-module.exports = connect(select)(F8App);
+module.exports = connect(select)(F8App)
