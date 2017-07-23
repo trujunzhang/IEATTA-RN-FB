@@ -14,8 +14,6 @@ import {
     Platform,
 } from 'react-native'
 
-const {closePhotosBrowser} = require('../../../actions')
-
 import PhotoBrowser from 'react-native-photo-browser';
 
 class IEAPhotoBrowserView extends Component {
@@ -45,7 +43,7 @@ class IEAPhotoBrowserView extends Component {
     }
 
     onBackPress() {
-        this.props.dispatch(closePhotosBrowser())
+        this.props.navigator.pop()
     }
 
     render() {
@@ -98,7 +96,5 @@ const styles = StyleSheet.create({
 });
 
 
-const {connect} = require('react-redux')
-
-module.exports = connect()(IEAPhotoBrowserView)
+module.exports = IEAPhotoBrowserView;
 

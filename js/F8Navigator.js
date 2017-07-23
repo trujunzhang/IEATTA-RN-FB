@@ -147,8 +147,8 @@ let F8Navigator = React.createClass({
         }
 
         if (route.photosBrowser) {
-            debugger
             return (<IEAPhotoBrowserView
+                navigator={navigator}
                 media={route.photosBrowser.media}
                 initialIndex={route.photosBrowser.initialIndex}/>)
         }
