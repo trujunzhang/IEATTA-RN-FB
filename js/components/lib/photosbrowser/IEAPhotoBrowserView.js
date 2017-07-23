@@ -58,9 +58,9 @@ class IEAPhotoBrowserView extends Component {
                 mediaList={media}
                 initialIndex={initialIndex}
                 displayNavArrows={true}
-                displaySelectionButtons={true}
+                displaySelectionButtons={false}
                 displayActionButton={true}
-                startOnGrid={true}
+                startOnGrid={false}
                 enableGrid={true}
                 useCircleProgress
                 onSelectionChanged={this._onSelectionChanged}
