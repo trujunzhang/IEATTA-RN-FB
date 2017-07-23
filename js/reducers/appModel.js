@@ -44,7 +44,7 @@ const initialState = {
     isPhotoBrowser: true,
     restaurants: [],
     events: [],
-    photos: [],
+    restaurantPhoto: {},
     photosBrowser: {}
 }
 
@@ -63,7 +63,7 @@ function appModel(state: State = initialState, action: Action): State {
     }
     if (action.type === QUERY_PHOTOS_FOR_RESTAURANT) {
         const nextState = Object.assign({}, state, {
-            photos: action.payload
+            restaurantPhoto: action.payload
         })
         return nextState
     }

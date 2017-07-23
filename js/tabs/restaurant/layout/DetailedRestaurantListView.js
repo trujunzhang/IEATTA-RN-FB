@@ -126,7 +126,10 @@ class DetailedRestaurantListView extends React.Component {
         return (
             <StaticContainer>
                 <View style={{flex: 1, marginTop: 200}}>
-                    <RLRestaurantListViewHeaderView item={this.props.item}/>
+                    <RLRestaurantListViewHeaderView
+                        item={this.props.item}
+                        onShowAllPhotosPress={this.onShowAllPhotosPress.bind(this)}
+                    />
                 </View>
             </StaticContainer>
         )
@@ -139,6 +142,17 @@ class DetailedRestaurantListView extends React.Component {
                 text="Chick the add icon to add an event."
             />
         );
+    }
+
+    onShowAllPhotosPress() {
+        const photos = nextProps.appModel.restaurantPhoto.results || []
+
+        this.props.navigator.push({
+            photosBrowser: {
+                media: [],
+                initialIndex: 0
+            }
+        });
     }
 
     openSession(session: any, day: number) {

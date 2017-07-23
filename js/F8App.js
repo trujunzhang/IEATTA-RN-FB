@@ -56,8 +56,6 @@ const {updateInstallation} = require('./actions/installation')
 const {connect} = require('react-redux')
 
 
-const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
-
 const LoginScreen = require('./components/lib/login/LoginScreen')
 const LoginModal = require('./components/lib/login/LoginModal')
 
@@ -143,11 +141,11 @@ class F8App extends Component {
             //return <LoginModal/>
         }
 
-        if (this.props.appModel.isPhotoBrowser) {
-            return (<IEAPhotoBrowserView
-                media={this.props.appModel.photosBrowser.media}
-                initialIndex={this.props.appModel.photosBrowser.initialIndex}/>)
-        }
+        // if (this.props.appModel.isPhotoBrowser) {
+        //     return (<IEAPhotoBrowserView
+        //         media={this.props.appModel.photosBrowser.media}
+        //         initialIndex={this.props.appModel.photosBrowser.initialIndex}/>)
+        // }
 
         return (
             <View style={{flex: 1,}}>
@@ -166,8 +164,7 @@ function select(store) {
     // console.log("F8 app's select keys: " + JSON.stringify(store.user));
     return {
         isLoggedIn: store.user.isLoggedIn || store.user.hasSkippedLogin,
-        user: store.user,
-        appModel: store.appModel
+        user: store.user
     };
 }
 

@@ -55,7 +55,7 @@ const {switchTab} = require('./actions');
 const IEANearRestaurantScene = require('./tabs/home/IEANearRestaurantScene')
 const IEADetailedRestaurant = require('./tabs/restaurant/IEADetailedRestaurant')
 const IEADetailedEvent = require('./tabs/event/IEADetailedEvent')
-
+const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
 
 let F8Navigator = React.createClass({
     _handlers: ([]: Array<() => boolean>),
@@ -146,6 +146,13 @@ let F8Navigator = React.createClass({
             return <IEADetailedRestaurant navigator={navigator} item={route.restaurant}/>
         }
 
+        if (route.photosBrowser) {
+            debugger
+            return (<IEAPhotoBrowserView
+                media={route.photosBrowser.media}
+                initialIndex={route.photosBrowser.initialIndex}/>)
+        }
+
         return <F8TabsView navigator={navigator}/>;
     },
 });
@@ -166,11 +173,7 @@ let styles = StyleSheet.create({
 
 function select(store) {
     return {
-        tab: store.navigation.tab,
-        isLoggedIn: store.user.isLoggedIn || store.user.hasSkippedLogin,
-        userId: store.user.id,
-        userName: store.user.name,
-        loginType: store.user.loginType
+        tab: store.navigation.tab
     };
 }
 

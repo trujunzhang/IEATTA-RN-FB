@@ -78,16 +78,15 @@ class RestaurantPhotoHorizonView extends React.Component {
     }
 
     componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.appModel && nextProps.appModel.photos) {
+        if (nextProps.appModel && nextProps.appModel.restaurantPhoto) {
             // debugger
-            if (nextProps.appModel.photos.restaurantId && nextProps.appModel.photos.restaurantId === this.props.item.objectId) {
+            if (nextProps.appModel.restaurantPhoto.restaurantId && nextProps.appModel.restaurantPhoto.restaurantId === this.props.item.objectId) {
                 this.setState({
-                    photos: nextProps.appModel.photos.results || []
+                    photos: nextProps.appModel.restaurantPhoto.results || []
                 })
             }
         }
     }
-
 
     componentDidMount() {
         this.props.dispatch(queryPhotosForRestaurant(this.props.item.objectId))
@@ -95,8 +94,6 @@ class RestaurantPhotoHorizonView extends React.Component {
 
     render() {
         const {photos} = this.state;
-
-
         return (
             <PhotoGrid
                 ref={this.storeInnerRef.bind(this)}
