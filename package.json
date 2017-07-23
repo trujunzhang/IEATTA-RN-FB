@@ -56,7 +56,7 @@
     "react-redux": "^5.0.5",
     "react-relay": "~0.9.1",
     "react-timer-mixin": "0.13.3",
-    "realm": "^1.8.3",
+    "realm": "^0.14.1",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^4.8.0",

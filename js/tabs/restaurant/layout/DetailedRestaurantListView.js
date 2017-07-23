@@ -106,6 +106,7 @@ class DetailedRestaurantListView extends React.Component {
                 ref={this.storeInnerRef.bind(this)}
                 data={this.state.sections}
                 renderTopHeader={this.renderTopHeaderView.bind(this)}
+                renderFooter={this.renderFooter.bind(this)}
                 renderRow={this.renderRow.bind(this)}
                 renderSectionHeader={this.renderSectionHeader.bind(this)}
                 {...(this.props /* flow can't guarantee the shape of props */)}
@@ -114,6 +115,9 @@ class DetailedRestaurantListView extends React.Component {
         )
     }
 
+    renderFooter() {
+        return (<View style={{height: 60}}/>)
+    }
 
     renderRow(session: any, day: number) {
         return (

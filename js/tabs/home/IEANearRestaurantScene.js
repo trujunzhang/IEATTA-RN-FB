@@ -163,6 +163,7 @@ class IEANearRestaurantScene extends Component {
                     data={this.state.sections}
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
+                    renderFooter={this.renderFooter.bind(this)}
                     {...(this.props /* flow can't guarantee the shape of props */)}
                     renderEmptyList={this.renderEmptyList.bind(this)}
                 />

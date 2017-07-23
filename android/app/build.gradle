@@ -33,6 +33,13 @@ import com.android.build.OutputFile
  *   // bundleInPaidRelease: true,
  *   // bundleInBeta: true,
  *
+ *   // whether to disable dev mode in custom build variants (by default only disabled in release)
+ *   // for example: to disable dev mode in the staging build type (if configured)
+ *   devDisabledInStaging: true,
+ *   // The configuration property can be in the following formats
+ *   //         'devDisabledIn${productFlavor}${buildType}'
+ *   //         'devDisabledIn${buildType}'
+ *
  *   // the root of your project, i.e. where "package.json" lives
  *   root: "../../",
  *
@@ -82,21 +89,21 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
-def F8APP_RELEASE_STORE_FILE= '../keystores/ieatta.jks'
-def F8APP_RELEASE_KEY_ALIAS= 'ieatta'
-def F8APP_RELEASE_STORE_PASSWORD= 'ieatta'
-def F8APP_RELEASE_KEY_PASSWORD= 'ieatta-app'
+def F8APP_RELEASE_STORE_FILE = '../keystores/ieatta.jks'
+def F8APP_RELEASE_KEY_ALIAS = 'ieatta'
+def F8APP_RELEASE_STORE_PASSWORD = 'ieatta'
+def F8APP_RELEASE_KEY_PASSWORD = 'ieatta-app'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.2'
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.ieatta"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -106,14 +113,13 @@ android {
             // To sign the app with production keystore, add the following
             // to your ~/.gradle/gradle.properties:
 
-
             // Note that Facebook login won't work unless you change
             // strings.xml/facebook_app_id and configure your own app
 
-                storeFile file(F8APP_RELEASE_STORE_FILE)
-                storePassword F8APP_RELEASE_STORE_PASSWORD
-                keyAlias F8APP_RELEASE_KEY_ALIAS
-                keyPassword F8APP_RELEASE_KEY_PASSWORD
+            storeFile file(F8APP_RELEASE_STORE_FILE)
+            storePassword F8APP_RELEASE_STORE_PASSWORD
+            keyAlias F8APP_RELEASE_KEY_ALIAS
+            keyPassword F8APP_RELEASE_KEY_PASSWORD
         }
     }
     splits {
@@ -147,18 +153,17 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-fbsdk')
-    compile project(':react-native-fs')
     compile project(':realm')
     compile project(':react-native-vector-icons')
+    compile project(':react-native-svg')
     compile project(':react-native-simpledialog-android')
     compile project(':react-native-send-intent')
     compile project(':react-native-maps')
     compile project(':react-native-linear-gradient')
     compile project(':react-native-i18n')
-    compile project(':react-native-device-info')
+    compile project(':react-native-fs')
+    compile project(':react-native-fbsdk')
     compile project(':react-native-background-timer')
-    compile project(':react-native-svg')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
