@@ -35,23 +35,13 @@ const {
     PHOTO_BROWSER_CLOSE
 } = require('../lib/constants').default
 
-async function _syncBetweenParseAndRealm(): Promise<Array<Action>> {
 
-    const asyncParse = new AsyncParse()
-
-    await asyncParse.startScheduledTask()
-
-    const action = {
-        type: SET_SYNC_UPDATEDAT,
-        payload: asyncParse.getLastUpdatedAt()
-    }
-
-    return Promise.all([
-        Promise.resolve(action)
-    ])
+function closePhotosBrowser(media: Array, initialIndex: Int): ThunkAction {
+    return {
+        type: PHOTO_BROWSER_CLOSE,
+    };
 }
-
-function openPhotoBrowser(media: Array, initialIndex: Int): ThunkAction {
+function openPhotosBrowser(media: Array, initialIndex: Int): ThunkAction {
     debugger
     return {
         type: PHOTO_BROWSER_OPEN,
@@ -63,4 +53,4 @@ function openPhotoBrowser(media: Array, initialIndex: Int): ThunkAction {
 }
 
 
-export default {openPhotoBrowser}
+export default {openPhotosBrowser, closePhotosBrowser}

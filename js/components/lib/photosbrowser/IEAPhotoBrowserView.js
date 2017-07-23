@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  */
 
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     ActionSheetIOS,
     ListView,
@@ -12,7 +12,9 @@ import {
     TouchableOpacity,
     View,
     Platform,
-} from 'react-native';
+} from 'react-native'
+
+const {closePhotosBrowser} = require('../../../actions')
 
 import PhotoBrowser from 'react-native-photo-browser';
 
@@ -43,7 +45,7 @@ class IEAPhotoBrowserView extends Component {
     }
 
     onBackPress() {
-        debugger
+        this.props.dispatch(closePhotosBrowser())
     }
 
     render() {
@@ -95,4 +97,8 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = IEAPhotoBrowserView;
+
+const {connect} = require('react-redux')
+
+module.exports = connect()(IEAPhotoBrowserView)
+
