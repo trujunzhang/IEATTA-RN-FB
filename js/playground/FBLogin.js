@@ -46,4 +46,4 @@ class FBLogin extends Component {
     }
 }
 
-module.exports = FBLogin
+module.exports = FBLogin;
