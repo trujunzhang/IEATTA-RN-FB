@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
 });
 
 
-module.exports = FBLogin;
+module.exports = BadInstagramCloneApp;
