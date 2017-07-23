@@ -39,7 +39,7 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
-const PureListView = require('../../../common/PureListView')
+const F8Colors = require('F8Colors')
 const PhotoGrid = require('../../../common/PhotoGrid').default
 
 const {queryPhotosForRestaurant} = require('../../../actions')
@@ -50,6 +50,12 @@ const {
     PARSE_ORIGINAL_IMAGES,
     PARSE_THUMBNAIL_IMAGES
 } = require('../../../lib/constants').default
+
+import Svg, {
+    G,
+    Path,
+} from 'react-native-svg'
+
 
 type Props = {
     photos: Array;
@@ -113,11 +119,23 @@ class RestaurantPhotoHorizonView extends React.Component {
     renderPhotoHeader(): ?ReactElement {
         return (
             <View style={{
-                width: 100,
-                height: 100,
-                backgroundColor: 'orange'
+                width: PHOTO_ITEM_WIDTH,
+                height: PHOTO_ITEM_WIDTH,
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: F8Colors.controllerViewColor
             }}>
-
+                <Svg width="48" height="48">
+                    <Path fill="#666"
+                          d="M38 40H10a6 6 0 0 1-6-6V18a6 6 0 0 1 6-6h4.367C15.194 9.675 17.39 8 20 8h8c2.61 0 4.806 1.675 5.633 4H38a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6zM24.01 17a9 9 0 0 0-9 9 9 9 0 1 0 9-9zm0 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                </Svg>
+                <Text style={{
+                    fontSize: 14,
+                    color: '#666',
+                    fontWeight: 'bold',
+                    backgroundColor: 'transparent'
+                }}>{"Add"}</Text>
             </View>
         )
     }

@@ -20,8 +20,6 @@ import LinearGradient from 'react-native-linear-gradient'
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 const RestaurantPhotoHorizonView = require('./RestaurantPhotoHorizonView')
 
-const {openPhotosBrowser} = require('../../../actions')
-
 import Svg, {
     G,
     Path,

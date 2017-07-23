@@ -39,11 +39,11 @@ import {
     Dimensions
 } from 'react-native'
 
-let F8Colors = require('F8Colors');
-let {Text} = require('F8Text');
-let F8Touchable = require('F8Touchable');
+const F8Colors = require('F8Colors')
+const {Text} = require('F8Text')
+const F8Touchable = require('F8Touchable')
 
-import type {Session} from '../../../reducers/sessions';
+import type {Session} from '../../../reducers/sessions'
 
 class EventCell extends React.Component {
     props: {
