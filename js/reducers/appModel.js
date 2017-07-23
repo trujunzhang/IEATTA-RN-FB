@@ -33,10 +33,19 @@ import type {Action} from '../actions/types';
 const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
-    QUERY_PHOTOS_FOR_RESTAURANT
+    QUERY_PHOTOS_FOR_RESTAURANT,
+    PHOTO_BROWSER_OPEN,
+    PHOTO_BROWSER_CLOSE,
 } = require('../lib/constants').default
 
-function appModel(state: State = [], action: Action): State {
+
+
+const initialState = {
+    //isPhotoBrowser: false,
+    isPhotoBrowser: true,
+}
+
+function appModel(state: State = initialState, action: Action): State {
     if (action.type === QUERY_NEAR_RESTAURANTS) {
         const nextState = Object.assign({}, state, {
             restaurants: action.payload
@@ -52,6 +61,18 @@ function appModel(state: State = [], action: Action): State {
     if (action.type === QUERY_PHOTOS_FOR_RESTAURANT) {
         const nextState = Object.assign({}, state, {
             photos: action.payload
+        })
+        return nextState
+    }
+    if (action.type === PHOTO_BROWSER_OPEN) {
+        const nextState = Object.assign({}, state, {
+            isPhotoBrowser:true
+        })
+        return nextState
+    }
+    if (action.type === PHOTO_BROWSER_CLOSE) {
+        const nextState = Object.assign({}, state, {
+            isPhotoBrowser: false
         })
         return nextState
     }

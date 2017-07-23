@@ -308,13 +308,6 @@
 			remoteGlobalIDString = CDD7BF831B2D5126006FDA75;
 			remoteInfo = RNI18nTests;
 		};
-		5E7572D31F10A28900437335 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B84BEB0633F4DE4B53CE6C9 /* RNDeviceInfo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
-			remoteInfo = RNDeviceInfo;
-		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -389,7 +382,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ieatta/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		15E487ADC0AA46A288DF7F31 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		1B84BEB0633F4DE4B53CE6C9 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		22647F03E07E4A66B2D622D3 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		24CF13B9D04D4208A60B6433 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		29C7F452B8F54C68A541923D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
@@ -710,14 +702,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E7572D01F10A28900437335 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5E7572D41F10A28900437335 /* libRNDeviceInfo.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,7 +756,6 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				AABACD39E13E4A8CBE9175EC /* RNSVG.xcodeproj */,
 				3993429BE8214226BB2287C4 /* RNBackgroundTimer.xcodeproj */,
-				1B84BEB0633F4DE4B53CE6C9 /* RNDeviceInfo.xcodeproj */,
 				9C9BE7ED146046C082A78C6C /* RNI18n.xcodeproj */,
 				37F9CADACFB44E8BA2928B68 /* BVLinearGradient.xcodeproj */,
 				E20D3592361A4042BE2F479F /* AirMaps.xcodeproj */,
@@ -1019,10 +1002,6 @@
 				{
 					ProductGroup = 5E7572921F10A28800437335 /* Products */;
 					ProjectRef = 3993429BE8214226BB2287C4 /* RNBackgroundTimer.xcodeproj */;
-				},
-				{
-					ProductGroup = 5E7572D01F10A28900437335 /* Products */;
-					ProjectRef = 1B84BEB0633F4DE4B53CE6C9 /* RNDeviceInfo.xcodeproj */;
 				},
 				{
 					ProductGroup = 5ECE4CAE1F19E8EF00F12920 /* Products */;
@@ -1274,13 +1253,6 @@
 			fileType = wrapper.cfbundle;
 			path = RNI18nTests.xctest;
 			remoteRef = 5E7572CE1F10A28900437335 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5E7572D41F10A28900437335 /* libRNDeviceInfo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNDeviceInfo.a;
-			remoteRef = 5E7572D31F10A28900437335 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {

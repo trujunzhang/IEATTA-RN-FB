@@ -1,6 +1,12 @@
 import keyMirror from 'key-mirror'
 
 export default keyMirror({
+
+    // Photos Browser
+    PHOTO_BROWSER_OPEN: null,
+    PHOTO_BROWSER_CLOSE: null,
+
+    // Query Realm Objects List
     QUERY_NEAR_RESTAURANTS: null,
     QUERY_EVENTS_FOR_RESTAURANT: null,
     QUERY_PHOTOS_FOR_RESTAURANT: null,
@@ -35,7 +41,7 @@ export default keyMirror({
     LOGIN_FORM_TYPE_MAIN: null,
     LOGIN_FORM_TYPE_LOGIN: null,
     LOGIN_FORM_TYPE_REGISTER: null,
-    LOGIN_FORM_TYPE_FORGOTPASSWORD: null,
+    
     LOGIN_FORM_TYPE_RESET_PASSWD: null,
 
 

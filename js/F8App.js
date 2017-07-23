@@ -140,6 +140,10 @@ class F8App extends Component {
             return <LoginScreen />
             //return <LoginModal/>
         }
+        
+        if (this.props.appModel.isPhotoBrowser) {
+
+        }
 
         return (
             <View style={{flex: 1,}}>
@@ -158,7 +162,8 @@ function select(store) {
     // console.log("F8 app's select keys: " + JSON.stringify(store.user));
     return {
         isLoggedIn: store.user.isLoggedIn || store.user.hasSkippedLogin,
-        user: store.user
+        user: store.user,
+        appModel:store.appModel
     };
 }
 
