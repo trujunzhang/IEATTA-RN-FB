@@ -114,8 +114,8 @@ export function fromParsePeopleInEvent(map: Object): PeopleInEvent {
     return {
         // Basic Fields
         id: map.id,
-        createdAt: map.get('createdAt'),
-        updatedAt: map.get('updatedAt'),
+        createdAt: map.get('createdAt') || new Date(),
+        updatedAt: map.get('updatedAt') || new Date()
         // Attributes
     }
 }
