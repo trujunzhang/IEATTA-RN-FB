@@ -39,10 +39,13 @@ const {
 } = require('../lib/constants').default
 
 
-
 const initialState = {
     //isPhotoBrowser: false,
     isPhotoBrowser: true,
+    restaurants: [],
+    events: [],
+    photos: [],
+    photosBrowser: {}
 }
 
 function appModel(state: State = initialState, action: Action): State {
@@ -66,13 +69,15 @@ function appModel(state: State = initialState, action: Action): State {
     }
     if (action.type === PHOTO_BROWSER_OPEN) {
         const nextState = Object.assign({}, state, {
-            isPhotoBrowser:true
+            isPhotoBrowser: true,
+            photosBrowser: action.payload
         })
         return nextState
     }
     if (action.type === PHOTO_BROWSER_CLOSE) {
         const nextState = Object.assign({}, state, {
-            isPhotoBrowser: false
+            isPhotoBrowser: false,
+            photosBrowser: {}
         })
         return nextState
     }

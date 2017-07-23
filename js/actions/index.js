@@ -36,6 +36,7 @@ const testActions = require('./test');
 const installationActions = require('./installation');
 const globalActions = require('./global').default
 const realmActions = require('./realm').default
+const appPhotosActions = require('./appPhotos').default
 
 module.exports = {
     ...loginActions,
@@ -49,5 +50,6 @@ module.exports = {
     ...navigationActions,
     ...installationActions,
     ...globalActions,
-    ...realmActions
+    ...realmActions,
+    ...appPhotosActions
 };
