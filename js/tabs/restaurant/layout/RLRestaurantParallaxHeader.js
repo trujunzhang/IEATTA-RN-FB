@@ -47,10 +47,7 @@ class RLRestaurantParallaxHeader extends Component {
     renderBottom() {
         const {item} = this.props
         return (
-            <Text style={{
-                fontSize: 12,
-                color: "white"
-            }}>
+            <Text style={{fontSize: 12, color: "white"}}>
                 {item.address}
             </Text>
         )

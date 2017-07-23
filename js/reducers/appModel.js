@@ -68,6 +68,7 @@ function appModel(state: State = initialState, action: Action): State {
         return nextState
     }
     if (action.type === PHOTO_BROWSER_OPEN) {
+        debugger
         const nextState = Object.assign({}, state, {
             isPhotoBrowser: true,
             photosBrowser: action.payload

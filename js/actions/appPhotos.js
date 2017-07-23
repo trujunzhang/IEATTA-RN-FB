@@ -52,6 +52,7 @@ async function _syncBetweenParseAndRealm(): Promise<Array<Action>> {
 }
 
 function openPhotoBrowser(media: Array, initialIndex: Int): ThunkAction {
+    debugger
     return {
         type: PHOTO_BROWSER_OPEN,
         payload: {

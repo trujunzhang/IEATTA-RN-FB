@@ -20,6 +20,8 @@ import LinearGradient from 'react-native-linear-gradient'
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 const RestaurantPhotoHorizonView = require('./RestaurantPhotoHorizonView')
 
+const {openPhotoBrowser} = require('../../../actions')
+
 import Svg, {
     G,
     Path,
@@ -165,7 +167,8 @@ class RLRestaurantListViewHeaderView extends Component {
                     fontWeight: 'bold'
                 }}
                 onPress={() => {
-
+                    debugger
+                    this.props.dispatch(openPhotoBrowser())
                 }}
             />
         )
@@ -212,5 +215,7 @@ class RLRestaurantListViewHeaderView extends Component {
 }
 
 
-module.exports = RLRestaurantListViewHeaderView
+const {connect} = require('react-redux')
+
+module.exports = connect()(RLRestaurantListViewHeaderView)
 
