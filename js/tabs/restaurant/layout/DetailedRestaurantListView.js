@@ -147,8 +147,8 @@ class DetailedRestaurantListView extends React.Component {
     }
 
     onShowAllPhotosPress() {
-        const photos = this.props.appModel.restaurantPhoto.results || [];
-        const media = Photos.getMedia(photos)
+        const photos = this.props.appModel.restaurantPhoto.results || [],
+            media = Photos.getMedia(photos)
         this.props.navigator.push({
             photosBrowser: {
                 media: media,
