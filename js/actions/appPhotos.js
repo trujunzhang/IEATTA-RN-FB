@@ -43,10 +43,9 @@ function closePhotosBrowser(): ThunkAction {
 }
 function openPhotosBrowser(photos: Array, initialIndex: Int = 0): ThunkAction {
     let media = photos.results.map((item, index) => {
-        // debugger
         return {
             photo: `file://${getLocalImagePath(item.objectId, PARSE_ORIGINAL_IMAGES)}`,
-            caption: 'Grotto of the Madonna',
+            // caption: 'Grotto of the Madonna',
         }
     })
 
