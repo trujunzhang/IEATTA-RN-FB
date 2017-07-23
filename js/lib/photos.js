@@ -19,7 +19,7 @@ Photos.getMedia = function (photos) {
     return photos.map((item, index) => {
         return {
             photo: `file://${getLocalImagePath(item.objectId, PARSE_ORIGINAL_IMAGES)}`,
-            // caption: 'Grotto of the Madonna',
+            caption: 'Grotto of the Madonna',
         }
     })
 }

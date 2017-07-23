@@ -166,7 +166,9 @@ class RLRestaurantListViewHeaderView extends Component {
                     fontSize: 12,
                     fontWeight: 'bold'
                 }}
-                onPress={this.props.onShowAllPhotosPress}
+                onPress={() => {
+                    this.props.onShowAllPhotosPress()
+                }}
             />
         )
     }
