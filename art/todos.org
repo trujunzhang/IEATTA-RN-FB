@@ -1,10 +1,13 @@
 07-13-2017:
-  1. Add facebook login and email login.
+  1. (*)Add facebook login and email login.
 
 
 07-21-2017:
-  1. Add GPS location
+  1. (*)Add GPS location
   2. Add new Restaurant
+
+07-24-2017:
+  1. Add events Cell
 
 
 RNSVGPathParser
