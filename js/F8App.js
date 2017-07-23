@@ -25,7 +25,6 @@
 
 'use strict';
 
-
 /**
  * The components needed from React
  */
