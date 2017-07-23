@@ -109,13 +109,10 @@ class RestaurantPhotoHorizonView extends React.Component {
     }
 
     renderRow(photo: Object,
-              sectionID: number | string,
-              rowID: number | string) {
-        debugger
-
+              itemWidth: Int,
+              index: Int) {
         const localImagePath = getLocalImagePath(photo.objectId, PARSE_THUMBNAIL_IMAGES),
             onShowAllPhotosPress = this.props.onShowAllPhotosPress
-        // debugger
         return (
             <TouchableOpacity
                 key={photo.objectId}
@@ -125,7 +122,7 @@ class RestaurantPhotoHorizonView extends React.Component {
                     marginRight: 6
                 }}
                 onPress={ () => {
-                    onShowAllPhotosPress()
+                    onShowAllPhotosPress(index)
                 }}>
                 <Image
                     key={photo.objectId}

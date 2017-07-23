@@ -149,13 +149,14 @@ class DetailedRestaurantListView extends React.Component {
         );
     }
 
-    onShowAllPhotosPress() {
+    onShowAllPhotosPress(initialIndex = 0) {
+        debugger
         const photos = this.props.appModel.restaurantPhoto.results || [],
             media = Photos.getMedia(photos)
         this.props.navigator.push({
             photosBrowser: {
                 media: media,
-                initialIndex: 0
+                initialIndex: initialIndex
             }
         });
     }
