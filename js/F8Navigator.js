@@ -96,8 +96,8 @@ let F8Navigator = React.createClass({
             return true;
         }
 
-        if (this.props.tab !== 'schedule') {
-            this.props.dispatch(switchTab('schedule'));
+        if (this.props.tab !== 'home') {
+            this.props.dispatch(switchTab('home'));
             return true;
         }
         return false;
