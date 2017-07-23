@@ -102,9 +102,23 @@ class RestaurantPhotoHorizonView extends React.Component {
                 itemsPerRow={photos.length}
                 itemMargin={6}
                 renderRow={this.renderRow.bind(this)}
+                renderPhotoHeader={this.renderPhotoHeader.bind(this)}
                 {...(this.props /* flow can't guarantee the shape of props */)}
                 renderEmptyList={this.renderEmptyList.bind(this)}
             />
+        )
+    }
+
+
+    renderPhotoHeader(): ?ReactElement {
+        return (
+            <View style={{
+                width: 100,
+                height: 100,
+                backgroundColor: 'orange'
+            }}>
+
+            </View>
         )
     }
 

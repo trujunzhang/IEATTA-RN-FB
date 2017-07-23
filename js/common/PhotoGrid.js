@@ -47,9 +47,11 @@ class PhotoGrid extends React.Component {
                 { ...this.props }
                 dataSource={ this.state.data.cloneWithRows(rows) }
                 renderRow={ this.renderRow.bind(this) }
+                renderFooter={this.props.renderPhotoHeader}
                 style={{flex: 1}}/>
         )
     }
+
 
     renderRow(items) {
         // Calculate the width of a single item based on the device width
@@ -64,7 +66,7 @@ class PhotoGrid extends React.Component {
 
         return (
             <View style={[styles.row, {marginBottom: adjustedMargin}]}>
-                { items.map((item, index) => this.props.renderRow(item, itemWidth,index)) }
+                { items.map((item, index) => this.props.renderRow(item, itemWidth, index)) }
                 { itemsPerRow - items.length > 0 && <View style={{width: itemWidth * (itemsPerRow - items.length)}}/>}
             </View>
         )
