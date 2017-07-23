@@ -21,7 +21,7 @@ export function configureImageFolder() {
     RNFS.mkdir(thumbnailFold)
 }
 
-export function getLocalImagePath(id, type) {
+export function getLocalImagePath(id, type = PARSE_THUMBNAIL_IMAGES) {
     return `${RNFS.DocumentDirectoryPath}/${type}/${id}.jpg`;
 }
 

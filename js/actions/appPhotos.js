@@ -24,15 +24,16 @@
 
 'use strict'
 
-
-let AsyncParse = require('../parse/sync').default
+const {getLocalImagePath} = require('../parse/fsApi')
 
 /**
  * The states were interested in
  */
 const {
     PHOTO_BROWSER_OPEN,
-    PHOTO_BROWSER_CLOSE
+    PHOTO_BROWSER_CLOSE,
+    PARSE_ORIGINAL_IMAGES,
+    PARSE_THUMBNAIL_IMAGES
 } = require('../lib/constants').default
 
 function closePhotosBrowser(): ThunkAction {
@@ -44,7 +45,7 @@ function openPhotosBrowser(photos: Array, initialIndex: Int = 0): ThunkAction {
     let media = photos.results.map((item, index) => {
         // debugger
         return {
-            photo: 'http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg',
+            photo: `file://${getLocalImagePath(item.objectId, PARSE_ORIGINAL_IMAGES)}`,
             caption: 'Grotto of the Madonna',
         }
     })
