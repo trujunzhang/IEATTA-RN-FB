@@ -94,7 +94,9 @@ class IEADetailedEvent extends React.Component {
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                <PeopleInEventListView item={item} navigator={this.props.navigator}/>
+                <PeopleInEventListView item={item}
+                                       forRestaurant={this.props.forRestaurant}
+                                       navigator={this.props.navigator}/>
             </ListContainer>
         );
 

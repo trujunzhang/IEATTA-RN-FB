@@ -147,7 +147,7 @@ let F8Navigator = React.createClass({
         }
 
         if (route.event) {
-            return <IEADetailedEvent navigator={navigator} item={route.event}/>
+            return <IEADetailedEvent navigator={navigator} item={route.event} forRestaurant={route.forRestaurant}/>
         }
 
         if (route.photosBrowser) {

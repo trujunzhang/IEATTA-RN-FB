@@ -162,7 +162,7 @@ class RestaurantItem extends Component {
             "restaurantId": "OnNGSfwoou",
             "restaurantName": "LISA"
         }
-        this.props.navigator.push({event});
+        this.props.navigator.push({event: event, forRestaurant: restaurant});
     }
 
     componentDidMount() {
