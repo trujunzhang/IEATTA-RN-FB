@@ -119,6 +119,13 @@ class EventsListView extends React.Component {
         )
     }
 
+    /**
+     *
+     * @param item is the 'UserSchema'.
+     * @param sectionID
+     * @param rowID
+     * @returns {XML}
+     */
     renderRow(item: any,
               sectionID: number | string,
               rowID: number | string) {

@@ -120,13 +120,4 @@ const styles = StyleSheet.create({
 });
 
 
-let {connect} = require('react-redux');
-
-
-function select(store, props) {
-    return {
-        showTick: true,
-    };
-}
-
-module.exports = connect(select)(PeopleInEventCell);
+module.exports = PeopleInEventCell;
