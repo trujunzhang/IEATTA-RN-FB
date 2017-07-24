@@ -50,7 +50,7 @@ let F8Touchable = require('F8Touchable');
 class PeopleInEventCell extends React.Component {
 
     renderLeft() {
-        const {item} = this.props;
+        const item = this.props.user;
         const avatorW = 36;
         return (
             <View style={{
@@ -66,7 +66,7 @@ class PeopleInEventCell extends React.Component {
     }
 
     renderRight() {
-        const {item} = this.props
+        const item = this.props.user;
         return (
             <View style={{
                 flex: 1,
@@ -90,7 +90,7 @@ class PeopleInEventCell extends React.Component {
     }
 
     renderCell() {
-        const {item} = this.props;
+        const item = this.props.user;
         return (
             <View
                 key={item.objectId}
@@ -119,9 +119,8 @@ class PeopleInEventCell extends React.Component {
     }
 
     onPress() {
-        const user = this.props.item;
-        debugger
-        // this.props.navigator.push({user});
+        const user = this.props.user;
+        this.props.navigator.push({orderedUser: user, forRestaurant: this.props.restaurant, forEvent: this.props.item});
     }
 
     render() {

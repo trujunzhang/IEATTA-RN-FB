@@ -130,7 +130,7 @@ class EventsListView extends React.Component {
               sectionID: number | string,
               rowID: number | string) {
         return (
-            <PeopleInEventCell {...this.props} item={item}/>
+            <PeopleInEventCell {...this.props} user={item}/>
         )
     }
 
