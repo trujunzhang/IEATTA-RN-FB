@@ -74,8 +74,7 @@ class IEADetailedEvent extends React.Component {
     }
 
     render() {
-        debugger
-        const {item} = this.props;
+        const {event} = this.props;
 
         const leftItem = {
             icon: require('../../common/img/back_white.png'),
@@ -86,8 +85,8 @@ class IEADetailedEvent extends React.Component {
 
         const content = (
             <ListContainer
-                item={item}
-                title={item.displayName}
+                item={event}
+                title={event.displayName}
                 renderParallaxHeader={(e) => {
                     return (<RLEventParallaxHeader {...this.props}/>)
                 }}

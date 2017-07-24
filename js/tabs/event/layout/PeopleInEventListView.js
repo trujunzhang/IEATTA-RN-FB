@@ -65,7 +65,7 @@ type Props = {
 };
 
 
-class EventsListView extends React.Component {
+class PeopleInEventListView extends React.Component {
     props: Props;
     state: State;
     _innerRef: ?PureListView;
@@ -84,7 +84,7 @@ class EventsListView extends React.Component {
 
     componentWillReceiveProps(nextProps: Props) {
         if (nextProps.appModel && nextProps.appModel.peopleInEvent) {
-            if (nextProps.appModel.peopleInEvent.eventId && nextProps.appModel.peopleInEvent.eventId === this.props.item.objectId) {
+            if (nextProps.appModel.peopleInEvent.eventId && nextProps.appModel.peopleInEvent.eventId === this.props.event.objectId) {
                 this.setState({
                     sections: {
                         MENU_SECTIONS_PEOPLE_IN_EVENTS: nextProps.appModel.peopleInEvent.results || []
@@ -95,8 +95,8 @@ class EventsListView extends React.Component {
     }
 
     componentDidMount() {
-        const {item, forRestaurant} = this.props;
-        this.props.dispatch(queryPeopleForEvent(item.objectId))
+        const {event, forRestaurant} = this.props;
+        this.props.dispatch(queryPeopleForEvent(event.objectId))
     }
 
     renderSectionHeader(sectionData, sectionId) {
@@ -119,18 +119,11 @@ class EventsListView extends React.Component {
         )
     }
 
-    /**
-     *
-     * @param item is the 'UserSchema'.
-     * @param sectionID
-     * @param rowID
-     * @returns {XML}
-     */
-    renderRow(item: any,
+    renderRow(user: any,
               sectionID: number | string,
               rowID: number | string) {
         return (
-            <PeopleInEventCell {...this.props} user={item}/>
+            <PeopleInEventCell {...this.props} user={user}/>
         )
     }
 
@@ -175,5 +168,5 @@ function select(store) {
     };
 }
 
-module.exports = connect(select)(EventsListView)
+module.exports = connect(select)(PeopleInEventListView)
 

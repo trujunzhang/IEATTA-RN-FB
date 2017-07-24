@@ -58,9 +58,7 @@ class EventCell extends React.Component {
     }
 
     onPress() {
-        const event = this.props.event;
-        this.props.navigator.push({event});
-        // this.props.navigator.push({event: event, forRestaurant: this.props.forRestaurant});
+        this.props.navigator.push({event: this.props.event, forRestaurant: this.props.forRestaurant});
     }
 
     render() {

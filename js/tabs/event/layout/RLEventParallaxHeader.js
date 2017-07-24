@@ -30,7 +30,6 @@ class RLEventParallaxHeader extends Component {
      * @returns {XML}
      */
     renderLeft() {
-        debugger
         const {forRestaurant} = this.props,
             localImagePath = getLocalImagePath(forRestaurant.listPhotoId)
         return (
@@ -49,7 +48,7 @@ class RLEventParallaxHeader extends Component {
     }
 
     renderRight() {
-        const {item, forRestaurant} = this.props
+        const {event, forRestaurant} = this.props
         return (
             <View style={{flex: 1, flexDirection: 'column'}}>
                 <Text
@@ -60,7 +59,7 @@ class RLEventParallaxHeader extends Component {
                         fontSize: 24,
                         fontWeight: 'bold'
                     }}>
-                    {item.displayName}
+                    {event.displayName}
                 </Text>
                 <CaptionTextView caption="Restaurant:" title={forRestaurant.displayName}/>
             </View>

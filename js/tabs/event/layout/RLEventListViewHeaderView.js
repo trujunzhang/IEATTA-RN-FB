@@ -34,8 +34,8 @@ class RLEventListViewHeaderView extends Component {
     }
 
     renderAddress() {
-        const {item, forRestaurant} = this.props,
-            address = forRestaurant.addressxx || '1 Stoneridge Mall Rd,Pleasanton, CA 94588,United States',
+        const {event, forRestaurant} = this.props,
+            address = forRestaurant.address,
             rows = address.split(',')
 
         return (
@@ -74,10 +74,9 @@ class RLEventListViewHeaderView extends Component {
     }
 
     renderEventDate() {
-        const {item} = this.props,
-            info = Events.getDateInfo(item),
-            address = item.address || '',
-            rows = address.split(',')
+        const {event} = this.props,
+            info = Events.getDateInfo(event);
+
 
         return (
             <View style={[{
@@ -110,7 +109,7 @@ class RLEventListViewHeaderView extends Component {
 
 
     renderWhat() {
-        const {item} = this.props;
+        const {event} = this.props;
 
         return (
             <View style={[{
@@ -136,7 +135,7 @@ class RLEventListViewHeaderView extends Component {
                         marginVertical: 4,
                         paddingHorizontal: 8
                     }
-                ]}>{item.want}</Text>
+                ]}>{event.want}</Text>
 
             </View>
         )
