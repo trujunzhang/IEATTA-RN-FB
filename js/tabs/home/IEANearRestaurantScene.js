@@ -97,20 +97,17 @@ class IEANearRestaurantScene extends Component {
 
     renderRow = (item: Object,
                  sectionID: number | string,
-                 rowID: number | string,
-                 highlightRowFunc: (sectionID: ?number | string, rowID: ?number | string) => void) => {
+                 rowID: number | string) => {
 
-        const key = `${sectionID}-${rowID}`.replace(' ', '-')
-        // console.log("render row: ", key);
         if (sectionID === MENU_SECTIONS_MORE) {
-            return (<RestaurantHomeListItem key={key} item={item} navigator={this.props.navigator}/>)
+            return (<RestaurantHomeListItem key={item.tag} item={item} navigator={this.props.navigator}/>)
         }
-        return (<RestaurantItem key={key} item={item} navigator={this.props.navigator}/>)
+        return (<RestaurantItem key={item.objectId} item={item} navigator={this.props.navigator}/>)
     }
 
     renderSectionHeader(sectionData, sectionId) {
         return (
-            <SectionHeader sectionType={sectionId}/>
+            <SectionHeader key={sectionId} sectionType={sectionId}/>
         )
     }
 
