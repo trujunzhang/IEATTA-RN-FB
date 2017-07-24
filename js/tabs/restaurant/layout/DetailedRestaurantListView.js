@@ -124,7 +124,7 @@ class DetailedRestaurantListView extends React.Component {
               rowID: number | string) {
         return (
             <EventCell
-                onPress={() => this.openEvent(session, day)}
+                onPress={() => this.openEvent(item)}
                 item={item}
             />
         )

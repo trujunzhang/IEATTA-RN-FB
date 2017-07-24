@@ -226,5 +226,5 @@ class RLEventListViewHeaderView extends Component {
 }
 
 
-module.exports = RLEventListViewHeaderView
+module.exports = RLEventListViewHeaderView;
 

@@ -100,11 +100,12 @@ class ParallaxBackground extends React.Component {
     }
 
     renderBackgroundImage(): ?ReactElement {
-        const {backgroundImage, minHeight, maxHeight, offset} = this.props,
-            {isLocal, path, width} = backgroundImage
+        const {backgroundImage, minHeight, maxHeight, offset} = this.props;
         if (!backgroundImage) {
             return null;
         }
+        const {isLocal, path, width} = backgroundImage;
+
         // debugger
         // const source = resolveAssetSource(`file://${path}`)
         // if (!source) {

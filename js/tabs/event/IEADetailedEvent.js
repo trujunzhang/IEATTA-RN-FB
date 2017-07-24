@@ -99,7 +99,6 @@ class IEADetailedEvent extends React.Component {
             <ListContainer
                 item={item}
                 title={item.displayName}
-                backgroundColor={F8Colors.controllerViewColor}
                 selectedSectionColor="#51CDDA"
                 renderParallaxHeader={(e) => {
                     return (<RLEventParallaxHeader item={item}/>)
