@@ -38,17 +38,15 @@ import {
     Dimensions
 } from 'react-native'
 
-const ListContainer = require('../../common/ListContainer')
 
+const F8Colors = require('F8Colors')
 const F8DrawerLayout = require('F8DrawerLayout')
 const FilterScreen = require('../../filter/FilterScreen')
 
 const RLEventParallaxHeader = require('./layout/RLEventParallaxHeader')
 const PeopleInEventListView = require('./layout/PeopleInEventListView')
 
-const F8Colors = require('F8Colors')
-
-import type {Session} from '../../reducers/sessions'
+const ListContainer = require('../../common/ListContainer')
 
 // TODO: Move from reselect to memoize?
 const {createSelector} = require('reselect')
@@ -60,7 +58,7 @@ const data = createSelector(
 type Props = {
     filter: any;
     day: number;
-    sessions: Array<Session>;
+    peopleInEvent: Array;
     navigator: Navigator;
     logOut: () => void;
 };
@@ -90,15 +88,13 @@ class IEADetailedEvent extends React.Component {
             <ListContainer
                 item={item}
                 title={item.displayName}
-                leftItem={leftItem}
-                selectedSectionColor="#51CDDA"
                 renderParallaxHeader={(e) => {
                     return (<RLEventParallaxHeader item={item}/>)
-                }}>
-                <PeopleInEventListView
-                    item={item}
-                    navigator={this.props.navigator}
-                />
+                }}
+                leftItem={leftItem}
+                backgroundColor={F8Colors.primaryColor}
+                selectedSectionColor="#51CDDA">
+                <PeopleInEventListView item={item} navigator={this.props.navigator}/>
             </ListContainer>
         );
 

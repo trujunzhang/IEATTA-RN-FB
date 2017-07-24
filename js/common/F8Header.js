@@ -138,11 +138,13 @@ class F8HeaderIOS extends React.Component {
                     flexDirection: 'column',
                     alignItems: 'center',
                 }}>
-                    <Text style={[styles.titleText, {
-                        color: titleColor,
-                        fontSize: 18,
-                        marginTop: -8
-                    }]}>
+                    <Text
+                        numberOfLines={1}
+                        style={[styles.titleText, {
+                            color: titleColor,
+                            fontSize: 18,
+                            marginTop: -8
+                        }]}>
                         {title}
                     </Text>
                     <Text style={[styles.subTitleText, {color: titleColor}]}>
@@ -153,7 +155,8 @@ class F8HeaderIOS extends React.Component {
         }
 
         return (
-            <Text style={[styles.titleText, {color: titleColor}]}>
+            <Text numberOfLines={1}
+                  style={[styles.titleText, {color: titleColor}]}>
                 {title}
             </Text>
         )

@@ -43,9 +43,9 @@ const RestaurantAvatorWidth = 80
 
 const F8Colors = require('F8Colors')
 
-const {getLocalImagePath} = require('../../parse/fsApi')
+const {getLocalImagePath} = require('../../../parse/fsApi')
 
-const IEAStarIcon = require('../../common/IEAStarIcon').default
+const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
 /**
  * The states were interested in
@@ -53,7 +53,7 @@ const IEAStarIcon = require('../../common/IEAStarIcon').default
 const {
     PARSE_ORIGINAL_IMAGES,
     PARSE_THUMBNAIL_IMAGES
-} = require('../../lib/constants').default
+} = require('../../../lib/constants').default
 
 class RestaurantItem extends Component {
 
@@ -151,15 +151,15 @@ class RestaurantItem extends Component {
 
     onPress() {
         const restaurant = this.props.item;
-        // this.props.navigator.push({restaurant});
+        this.props.navigator.push({restaurant});
         const event = {
             "displayName": "trujunzhang"
         }
-        this.props.navigator.push({event});
+        // this.props.navigator.push({event});
     }
 
     componentDidMount() {
-        this.onPress()
+        // this.onPress()
     }
 
     render() {

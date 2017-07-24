@@ -39,15 +39,13 @@ import {
 } from 'react-native'
 
 
-const ListContainer = require('../../common/ListContainer')
-
-
+const F8Colors = require('F8Colors')
 const F8DrawerLayout = require('F8DrawerLayout')
 
+const ListContainer = require('../../common/ListContainer')
 const FilterScreen = require('../../filter/FilterScreen')
 
 const RLRestaurantParallaxHeader = require('./layout/RLRestaurantParallaxHeader')
-
 const DetailedRestaurantListView = require('./layout/DetailedRestaurantListView')
 
 const {getLocalImagePath} = require('../../parse/fsApi')
@@ -71,7 +69,6 @@ const data = createSelector(
 );
 
 type Props = {
-    filter: any;
     events: Array<Event>;
     navigator: Navigator;
     logOut: () => void;
@@ -109,7 +106,7 @@ class IEADetailedRestaurant extends React.Component {
                     return (<RLRestaurantParallaxHeader item={item}/>)
                 }}
                 leftItem={leftItem}
-                backgroundColor="#5597B8"
+                backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
                 <DetailedRestaurantListView item={item} navigator={this.props.navigator}/>
             </ListContainer>
