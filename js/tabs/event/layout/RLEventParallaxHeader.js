@@ -95,5 +95,5 @@ class RLEventParallaxHeader extends Component {
 }
 
 
-module.exports = RLEventParallaxHeader
+module.exports = RLEventParallaxHeader;
 
