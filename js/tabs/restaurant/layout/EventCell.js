@@ -95,6 +95,7 @@ class EventCell extends React.Component {
                         <View style={{
                             flex: 1,
                             marginLeft: 8,
+                            marginVertical:6
                         }}>
                             {cell}
                         </View>
