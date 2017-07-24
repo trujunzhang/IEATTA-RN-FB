@@ -113,6 +113,7 @@ class PureListView extends React.Component {
                 initialListSize={10}
                 pageSize={LIST_VIEW_PAGE_SIZE}
                 {...this.props}
+                style={{backgroundColor:'transparent'}}
                 ref="listview"
                 dataSource={this.state.dataSource}
                 renderHeader={this.renderHeader}

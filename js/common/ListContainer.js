@@ -218,9 +218,7 @@ class ListContainer extends React.Component {
                     </F8Header>
                     {this.renderFixedStickyHeader(stickyHeader)}
                 </View>
-                <View style={{backgroundColor: F8Colors.controllerViewColor}}>
-                    {content}
-                </View>
+                {content}
                 {this.renderFloatingStickyHeader(stickyHeader)}
             </View>
         );

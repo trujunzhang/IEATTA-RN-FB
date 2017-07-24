@@ -35,6 +35,7 @@ import {
     Dimensions
 } from 'react-native'
 
+const F8Colors = require('F8Colors')
 
 const {
     MENU_SECTIONS_MORE,
@@ -55,20 +56,20 @@ class SectionHeader extends React.Component {
         return (
             <View
                 style={{
-                    marginTop: 14,
-                    marginBottom: 4,
-                    height: 36,
-                    //backgroundColor: 'yellow'
+                    paddingTop: 18,
+                    paddingBottom: 4,
+                    height: 50,
+                    backgroundColor: F8Colors.controllerViewColor
                 }}>
                 <Text style={[
                     {
-                        height: 36,
+                        // height: 24,
                         fontWeight: "normal",
                         color: "#666",
                         fontSize: 20
                     }, {
-                        paddingTop: 5,
-                        paddingBottom: 5,
+                        // paddingTop: 5,
+                        // paddingBottom: 5,
                         paddingLeft: 10,
                         paddingRight: 10
                     }, {
