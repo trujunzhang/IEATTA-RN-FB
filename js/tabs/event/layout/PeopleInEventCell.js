@@ -62,11 +62,6 @@ class PeopleInEventCell extends React.Component {
                 <Image style={styles.added} source={require('../../images/added-cell.png')}/>;
         }
         let time = "31/05/2017";
-        // if (this.props.showStartEndTime) {
-        //     time = formatTime(session.startTime) + ' - ' + formatTime(session.endTime);
-        // } else {
-        //     time = formatDuration(session.startTime, session.endTime);
-        // }
         let location = "location";//session.location && session.location.toUpperCase();
         let locationColor = '#f00';//F8Colors.colorForLocation(location);
         let cell =

@@ -54,7 +54,7 @@ import Svg, {
 class EventCell extends React.Component {
 
     componentDidMount() {
-        this.onPress()
+        // this.onPress()
     }
 
     onPress() {
