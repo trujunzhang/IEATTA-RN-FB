@@ -146,6 +146,7 @@ export function fromParseRecord(map: Object): Record {
 }
 
 export function fromParseUser(map: Object): User {
+    debugger
     return {
         // Basic Fields
         id: map.id,
@@ -154,7 +155,7 @@ export function fromParseUser(map: Object): User {
         // Attributes
         username: map.get('username'),
         loginType: map.get('loginType'),
-        email: map.get('email'),
+        email: map.get('email') || "",
 
         // upvotedPosts: _.pluck((map.get('upvotedPosts') || []).map(fromParsePointer), 'id'),
         // downvotedPosts: _.pluck((map.get('downvotedPosts') || []).map(fromParsePointer), 'id'),
