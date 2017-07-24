@@ -85,7 +85,7 @@ class RLEventParallaxHeader extends Component {
                     // paddingBottom: 80
                 }
             ]}>
-                <View style={{height: 160, flexDirection: 'row'}}>
+                <View style={{height: 140, flexDirection: 'row'}}>
                     {this.renderLeft()}
                     {this.renderRight()}
                 </View>
