@@ -17,6 +17,7 @@ function getQueryByType(type: string = PARSE_POSTS) {
     switch (type) {
         case PARSE_RECORDS:
             return new Parse.Query(ParseRecord)
+                .include('user')
                 .include('photo')
                 .include('restaurant').include('event').include('peopleInEvent')
                 .include('recipe')
