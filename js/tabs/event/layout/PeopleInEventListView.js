@@ -143,12 +143,11 @@ class EventsListView extends React.Component {
     renderEmptyList(): ?ReactElement {
         return (
             <EmptyPeopleInEvent
-                title={`No sessions on day match the filter`}
-                text="Check the schedule for the other day or remove the filter."
+                title={`No users on event ordered recipes`}
+                text="Check the cross icon to add new user."
             />
-        );
+        )
     }
-
 
     storeInnerRef(ref: ?PureListView) {
         this._innerRef = ref;
