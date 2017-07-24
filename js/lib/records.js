@@ -95,7 +95,8 @@ Records.getRealmData = function (parseObject, object) {
                 updatedAt: object.updatedAt,
                 // Attributes
                 displayName: object.displayName,
-                price: object.price
+                price: object.price,
+                // Pointer
             }
         case PARSE_PHOTOS:
             // debugger
