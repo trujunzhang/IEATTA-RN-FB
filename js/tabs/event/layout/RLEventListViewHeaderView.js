@@ -202,6 +202,14 @@ class RLEventListViewHeaderView extends Component {
             }, {
                 backgroundColor: F8Colors.controllerViewColor
             }]}>
+                <View style={{
+                    position: 'absolute',
+                    backgroundColor: F8Colors.primaryColor,
+                    top: 0,
+                    right: 0,
+                    width: width,
+                    height: 60
+                }}/>
                 <View style={[ // className="event-details_info-card card card--horizontal"
                     {
                         width: width - 30,
