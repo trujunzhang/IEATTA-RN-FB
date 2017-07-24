@@ -72,7 +72,15 @@ Records.getRealmData = function (parseObject, object) {
                 userId: object.userId
             }
         case PARSE_USERS:
-            return {}
+            return {
+                // Basic Fields
+                objectId: object.id,
+                updatedAt: object.updatedAt,
+                // Attributes
+                loginType: object.loginType,
+                displayName: object.username,
+                email: object.email
+            }
         case PARSE_RECORDS:
             return {}
         case PARSE_EVENTS:

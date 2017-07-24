@@ -111,7 +111,7 @@ export function fromParseFile(map: Object): File {
 }
 
 export function fromParsePeopleInEvent(map: Object): PeopleInEvent {
-    debugger
+    // debugger
     return {
         // Basic Fields
         id: map.id,
@@ -151,15 +151,14 @@ export function fromParseUser(map: Object): User {
         createdAt: map.get('createdAt'),
         updatedAt: map.get('updatedAt'),
         // Attributes
-        name: map.get('username'),
-        slug: map.get('slug'),
+        username: map.get('username'),
         loginType: map.get('loginType'),
         email: map.get('email'),
 
-        upvotedPosts: _.pluck((map.get('upvotedPosts') || []).map(fromParsePointer), 'id'),
-        downvotedPosts: _.pluck((map.get('downvotedPosts') || []).map(fromParsePointer), 'id'),
-        upvotedComments: _.pluck((map.get('upvotedComments') || []).map(fromParsePointer), 'id'),
-        downvotedComments: _.pluck((map.get('downvotedComments') || []).map(fromParsePointer), 'id')
+        // upvotedPosts: _.pluck((map.get('upvotedPosts') || []).map(fromParsePointer), 'id'),
+        // downvotedPosts: _.pluck((map.get('downvotedPosts') || []).map(fromParsePointer), 'id'),
+        // upvotedComments: _.pluck((map.get('upvotedComments') || []).map(fromParsePointer), 'id'),
+        // downvotedComments: _.pluck((map.get('downvotedComments') || []).map(fromParsePointer), 'id')
     }
 }
 
