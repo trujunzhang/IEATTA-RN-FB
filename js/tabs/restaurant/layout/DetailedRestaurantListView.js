@@ -124,7 +124,7 @@ class DetailedRestaurantListView extends React.Component {
               rowID: number | string) {
         return (
             <EventCell
-                onPress={() => this.openSession(session, day)}
+                onPress={() => this.openEvent(session, day)}
                 item={item}
             />
         )
@@ -163,12 +163,8 @@ class DetailedRestaurantListView extends React.Component {
         });
     }
 
-    openSession(session: any, day: number) {
-        this.props.navigator.push({
-            day,
-            session,
-            allSessions: this.state.todaySessions,
-        });
+    openEvent(event: any) {
+        this.props.navigator.push({event});
     }
 
     storeInnerRef(ref: ?PureListView) {
