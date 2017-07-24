@@ -146,7 +146,6 @@ export function fromParseRecord(map: Object): Record {
 }
 
 export function fromParseUser(map: Object): User {
-    debugger
     return {
         // Basic Fields
         id: map.id,
