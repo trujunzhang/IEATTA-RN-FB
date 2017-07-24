@@ -119,7 +119,9 @@ class PeopleInEventCell extends React.Component {
     }
 
     onPress() {
-
+        const user = this.props.item;
+        debugger
+        // this.props.navigator.push({user});
     }
 
     render() {
