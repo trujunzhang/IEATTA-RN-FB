@@ -91,9 +91,6 @@ async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const ids = _.pluck(results, 'userId')
     const users = UserService.getUsersContainedIn(ids)
 
-
-
-
     const action = {
         type: QUERY_PEOPLE_FOR_EVENT,
         payload: {

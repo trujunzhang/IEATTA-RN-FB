@@ -64,3 +64,7 @@ ios/Podfile.lock
 *.apk
 
 ios/Frameworks/
+
+# Android bundle
+android/app/src/main/assets/index.android.*
+android/app/src/main/res/drawable-*/
