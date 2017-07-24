@@ -14,6 +14,7 @@ const {
     PARSE_USERS,
     PARSE_RECORDS,
     PARSE_EVENTS,
+    PARSE_PEOPLE_IN_EVENTS,
     PARSE_RECIPES,
     PARSE_PHOTOS,
     PARSE_REVIEWS,
@@ -111,6 +112,28 @@ const EventService = {
 }
 
 
+const PeopleInEventService = {
+    findAll: function (sortBy) {
+        return repository.objects(PARSE_PEOPLE_IN_EVENTS)
+    },
+
+    save: function (item) {
+        if (repository.objects(PARSE_PEOPLE_IN_EVENTS).filtered('objectId == $0', item.id).length) return;
+        repository.write(() => {
+            repository.create(PARSE_PEOPLE_IN_EVENTS, Records.getRealmData(PARSE_PEOPLE_IN_EVENTS, item))
+        })
+    },
+
+    update: function (item, callback) {
+        if (!callback) return;
+        repository.write(() => {
+            callback();
+            item.updatedAt = new Date();
+        })
+    }
+}
+
+
 const PhotoService = {
     findAll: function (sortBy) {
         return repository.objects(PARSE_PHOTOS)
@@ -138,5 +161,6 @@ export default {
     ConfigureService,
     RestaurantService,
     EventService,
+    PeopleInEventService,
     PhotoService,
 }
