@@ -13,6 +13,7 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
+const CaptionTextView = require('CaptionTextView')
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
 class RLEventParallaxHeader extends Component {
@@ -39,29 +40,20 @@ class RLEventParallaxHeader extends Component {
     }
 
     renderRight() {
-        const {item} = this.props
+        const {item, forRestaurant} = this.props
         return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column'
-            }}>
+            <View style={{flex: 1, flexDirection: 'column'}}>
                 <Text
                     numberOfLines={3}
                     style={{
+                        paddingBottom: 8,
                         color: 'white',
                         fontSize: 24,
                         fontWeight: 'bold'
                     }}>
                     {item.displayName}
                 </Text>
-                <Text style={{
-                    marginTop: 8,
-                    color: '#0073bb',
-                    height: 24,
-                    fontSize: 14
-                }}>
-                    {item.restaurantName}
-                </Text>
+                <CaptionTextView caption="Restaurant:" title={forRestaurant.displayName}/>
             </View>
         )
     }
@@ -85,7 +77,7 @@ class RLEventParallaxHeader extends Component {
                     // paddingBottom: 80
                 }
             ]}>
-                <View style={{height: 170, flexDirection: 'row'}}>
+                <View style={{height: 160, flexDirection: 'row'}}>
                     {this.renderLeft()}
                     {this.renderRight()}
                 </View>

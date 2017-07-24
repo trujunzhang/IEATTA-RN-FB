@@ -15,6 +15,7 @@ const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
 const F8Button = require('F8Button')
+const CaptionTextView = require('CaptionTextView')
 
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
@@ -141,8 +142,8 @@ class RLEventListViewHeaderView extends Component {
                     flexDirection: 'column',
                     marginLeft: 8
                 }}>
-                    {this.renderFrom(info)}
-                    {this.renderEnd(info)}
+                    <CaptionTextView caption="From" title={info.startFormat}/>
+                    <CaptionTextView caption="To" title={info.endFormat}/>
                 </View>
 
             </View>
