@@ -41,6 +41,8 @@ const {width, height} = Dimensions.get('window')
 const RestaurantRowHeight = 84
 const RestaurantAvatorWidth = 80
 
+const F8Colors = require('F8Colors')
+
 const {getLocalImagePath} = require('../../parse/fsApi')
 
 const IEAStarIcon = require('../../common/IEAStarIcon').default
@@ -159,7 +161,7 @@ class RestaurantItem extends Component {
 
     render() {
         return (
-            <TouchableHighlight underlayColor="#3C5EAE" onPress={this.onPress.bind(this)}>
+            <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
                 {this.renderCell()}
             </TouchableHighlight>
         )
