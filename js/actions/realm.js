@@ -27,6 +27,7 @@
 const logError = require('logError');
 const InteractionManager = require('InteractionManager');
 
+const _ = require('underscore')
 import type {Action, ThunkAction} from './types'
 
 const {RestaurantService, EventService, PeopleInEventService, PhotoService} = require('../parse/realmApi').default
@@ -85,6 +86,10 @@ function queryNearRestaurant(): ThunkAction {
 
 async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const results = PeopleInEventService.findAll()
+
+    const ids = _.pluck(results, 'objectId')
+
+    debugger
 
     const action = {
         type: QUERY_PEOPLE_FOR_EVENT,
