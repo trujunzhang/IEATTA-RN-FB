@@ -153,13 +153,13 @@ class RestaurantItem extends Component {
         const restaurant = this.props.item;
         this.props.navigator.push({restaurant});
         const event = {
-            "displayName": "trujunzhang"
+            "displayName": "trujunzhang trujunzhang trujunzhang"
         }
         // this.props.navigator.push({event});
     }
 
     componentDidMount() {
-        // this.onPress()
+        this.onPress()
     }
 
     render() {

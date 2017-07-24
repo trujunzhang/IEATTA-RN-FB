@@ -269,7 +269,9 @@ class ListContainer extends React.Component {
             };
         }
         return (
-            <Animated.Text style={[styles.headerTitle, transform]}>
+            <Animated.Text
+                numberOfLines={1}
+                style={[styles.headerTitle, transform]}>
                 {this.props.title}
             </Animated.Text>
         );
