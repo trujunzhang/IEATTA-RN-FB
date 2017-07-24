@@ -41,7 +41,7 @@ import {
     Dimensions
 } from 'react-native'
 
-
+const F8Colors = require('F8Colors')
 const Animated = require('Animated')
 const NativeModules = require('NativeModules')
 const F8Header = require('F8Header')
@@ -218,7 +218,9 @@ class ListContainer extends React.Component {
                     </F8Header>
                     {this.renderFixedStickyHeader(stickyHeader)}
                 </View>
-                {content}
+                <View style={{backgroundColor: F8Colors.controllerViewColor}}>
+                    {content}
+                </View>
                 {this.renderFloatingStickyHeader(stickyHeader)}
             </View>
         );

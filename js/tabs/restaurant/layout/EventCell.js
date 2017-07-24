@@ -43,37 +43,29 @@ const F8Colors = require('F8Colors')
 const {Text} = require('F8Text')
 const F8Touchable = require('F8Touchable')
 
-import type {Session} from '../../../reducers/sessions'
+
+import Svg, {
+    G,
+    Path,
+} from 'react-native-svg'
+
 
 class EventCell extends React.Component {
     props: {
-        session: Session;
-        showTick: boolean;
-        showStartEndTime: boolean;
         onPress: ?() => void;
         style: any;
     };
 
     render() {
-        let session = this.props.session;
-        let tick;
-        if (this.props.showTick) {
-            tick =
-                <Image style={styles.added} source={require('../../images/added-cell.png')}/>;
-        }
+        const item = this.props.item;
         let time = "31/05/2017";
-        // if (this.props.showStartEndTime) {
-        //     time = formatTime(session.startTime) + ' - ' + formatTime(session.endTime);
-        // } else {
-        //     time = formatDuration(session.startTime, session.endTime);
-        // }
         let location = "location";//session.location && session.location.toUpperCase();
         let locationColor = '#f00';//F8Colors.colorForLocation(location);
         let cell =
             <View style={[styles.cell, this.props.style]}>
                 <View style={styles.titleSection}>
                     <Text numberOfLines={2} style={styles.titleText}>
-                        {session.title}
+                        {item.displayName}
                     </Text>
                 </View>
                 <Text numberOfLines={1} style={styles.duration}>
@@ -83,13 +75,23 @@ class EventCell extends React.Component {
                     {location && ' - '}
                     {time}
                 </Text>
-                {tick}
             </View>;
 
         if (this.props.onPress) {
             cell =
                 <F8Touchable onPress={this.props.onPress}>
-                    {cell}
+                    <View style={[styles.cell, {
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                    }]}>
+                        <Svg width="24" height="24">
+                            <Path fill="#666"
+                                  d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-5.634 7.723L12 18l-1.366-2.277a3.5 3.5 0 1 1 2.732 0zM12 11.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/>
+                        </Svg>
+                        <View>
+                            {cell}
+                        </View>
+                    </View>
                 </F8Touchable>;
         }
 

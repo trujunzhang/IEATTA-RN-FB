@@ -119,11 +119,13 @@ class DetailedRestaurantListView extends React.Component {
         return (<View style={{height: 60}}/>)
     }
 
-    renderRow(session: any, day: number) {
+    renderRow(item: any,
+              sectionID: number | string,
+              rowID: number | string) {
         return (
             <EventCell
                 onPress={() => this.openSession(session, day)}
-                session={session}
+                item={item}
             />
         )
     }

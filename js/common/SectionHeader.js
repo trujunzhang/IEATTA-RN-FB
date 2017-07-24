@@ -58,7 +58,7 @@ class SectionHeader extends React.Component {
                     marginTop: 14,
                     marginBottom: 4,
                     height: 36,
-                    // backgroundColor: 'yellow'
+                    //backgroundColor: 'yellow'
                 }}>
                 <Text style={[
                     {

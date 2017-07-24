@@ -38,9 +38,12 @@ import {
     Dimensions
 } from 'react-native'
 
+
 const ListContainer = require('../../common/ListContainer')
 
+
 const F8DrawerLayout = require('F8DrawerLayout')
+
 const FilterScreen = require('../../filter/FilterScreen')
 
 const RLRestaurantParallaxHeader = require('./layout/RLRestaurantParallaxHeader')
