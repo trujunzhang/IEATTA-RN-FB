@@ -133,7 +133,7 @@ class DetailedRestaurantListView extends React.Component {
     renderTopHeaderView(): ?ReactElement {
         return (
             <StaticContainer>
-                <View style={{flex: 1, marginTop: 200}}>
+                <View style={{flex: 1, marginTop: 20}}>
                     <RLRestaurantListViewHeaderView
                         item={this.props.item}
                         onShowAllPhotosPress={this.onShowAllPhotosPress.bind(this)}/>
