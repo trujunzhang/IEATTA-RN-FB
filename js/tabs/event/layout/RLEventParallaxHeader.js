@@ -16,6 +16,8 @@ const {width, height} = Dimensions.get('window')
 const CaptionTextView = require('CaptionTextView')
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
+const {getLocalImagePath} = require('../../../parse/fsApi')
+
 class RLEventParallaxHeader extends Component {
 
     constructor(props, context) {
@@ -28,14 +30,20 @@ class RLEventParallaxHeader extends Component {
      * @returns {XML}
      */
     renderLeft() {
+        const {forRestaurant} = this.props,
+            localImagePath = getLocalImagePath(forRestaurant.listPhotoId)
         return (
-            <Image style={{
-                width: 60,
-                height: 60,
-                borderRadius: 4,
-                marginRight: 16,
-            }}
-                   source={{url: 'https://s3-media4.fl.yelpcdn.com/bphoto/oBdw4OSzt2CpuOnpOGw4Ow/60s.jpg'}}/>
+            <Image style={[
+                {
+                    width: 60,
+                    height: 60,
+                    borderRadius: 4,
+                }, {
+                    marginTop: 10,
+                    marginRight: 16,
+                }
+            ]}
+                   source={{uri: `file://${localImagePath}`}}/>
         )
     }
 

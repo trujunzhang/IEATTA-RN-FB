@@ -47,14 +47,6 @@ const {getLocalImagePath} = require('../../../parse/fsApi')
 
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
-/**
- * The states were interested in
- */
-const {
-    PARSE_ORIGINAL_IMAGES,
-    PARSE_THUMBNAIL_IMAGES
-} = require('../../../lib/constants').default
-
 class RestaurantItem extends Component {
 
     constructor(props) {
@@ -65,7 +57,7 @@ class RestaurantItem extends Component {
     renderLeft() {
         const {item} = this.props,
             {localPhotoStatus} = item
-        const localImagePath = getLocalImagePath(item.listPhotoId, PARSE_THUMBNAIL_IMAGES)
+        const localImagePath = getLocalImagePath(item.listPhotoId)
         // debugger
         return (
             <View style={{
