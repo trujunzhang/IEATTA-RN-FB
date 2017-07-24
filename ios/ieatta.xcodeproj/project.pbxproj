@@ -25,7 +25,6 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		18558367DCB142A1AA122593 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22647F03E07E4A66B2D622D3 /* libRNSVG.a */; };
-		25F54C78AF1047DD8A57E878 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 861290CE5BCC4C0EB8D00D11 /* libRNDeviceInfo.a */; };
 		29B0D0B71210407AAA575E67 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0C19B043B44FEB82A76BCB /* libc++.tbd */; };
 		2C196FE2C4344455802BD86D /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E51ABEAA868445EC92F63598 /* Foundation.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -414,7 +413,6 @@
 		73881F91D3B7455CBD750624 /* libjschelpers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libjschelpers.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		861290CE5BCC4C0EB8D00D11 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		942B681E29FF4DC9822FC98F /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
 		9C9BE7ED146046C082A78C6C /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		9CE31BBFB40148A1ACE152AD /* libReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReact.a; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				18558367DCB142A1AA122593 /* libRNSVG.a in Frameworks */,
 				924C93636A81411898BA978E /* libRNBackgroundTimer.a in Frameworks */,
-				25F54C78AF1047DD8A57E878 /* libRNDeviceInfo.a in Frameworks */,
 				B6E49CFF58D142F6AE35AABA /* libReact.a in Frameworks */,
 				92859110AFE540809E7BCC7F /* libyoga.a in Frameworks */,
 				F997723D09344DF985FA61FB /* libcxxreact.a in Frameworks */,

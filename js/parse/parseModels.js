@@ -111,13 +111,18 @@ export function fromParseFile(map: Object): File {
 }
 
 export function fromParsePeopleInEvent(map: Object): PeopleInEvent {
-    debugger
+    // debugger
     return {
         // Basic Fields
         id: map.id,
         createdAt: map.get('createdAt') || new Date(),
-        updatedAt: map.get('updatedAt') || new Date()
+        updatedAt: map.get('updatedAt') || new Date(),
         // Attributes
+        // ...
+        // Pointer
+        restaurantId: map.get('restaurant') && map.get('restaurant').id,
+        eventId: map.get('event') && map.get('event').id,
+        userId: map.get('user') && map.get('user').id,
     }
 }
 
