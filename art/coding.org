@@ -70,6 +70,32 @@ My problem was that I did not set width and height first, which is not needed fo
 24x24_add_photo
 
 
+Parse.Cloud.afterSave(Parse.User, function(request, response) {
+    var userID = request.object.id;
+    console.log("User after save");
+    var token = request.object.get("token");
+    if(token == null || token == "") {
+        console.log("creating token");
+
+        var query = new Parse.Query(Parse.User);
+        query.equalTo("objectId", userID);
+        query.limit(1);
+
+        query.find({ useMasterKey: true }).then(function(results) {
+             if(results.length>0) {
+                 var user = results[0];
+                 user.set("token", tokenGenerator.createToken({uid: userID}))
+                 user.save();
+             }
+         },
+             function(error) {
+                 reportError("Parse.Cloud.afterSave", "firebase token ("+error.code+")");
+                 response.error("Error: Can't query for Installation objects.");
+             });
+    }
+});
+
+
 
 
 
