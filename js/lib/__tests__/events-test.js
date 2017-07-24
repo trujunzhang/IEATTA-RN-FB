@@ -31,15 +31,15 @@ describe('events functions', () => {
 
     it('format event date for start and end.', () => {
         const item = {
-            "start": "2013-06-23T04:20:00",
-            "end": "2013-06-23T016:30:00",
+            "start": "2017-06-28T10:30:57.566Z",
+            "end": "2017-06-28T11:30:57.566Z",
         }
 
         expect(
             Events.getDateInfo(item)
         ).toEqual({
-            "startFormat": "Sunday, 23 Jun, 4:20 am",
-            "endFormat": "Sunday, 23 Jun, 1:00 am"
+            "startFormat": "Wednesday, 28 Jun, 6:30 pm",
+            "endFormat": "Wednesday, 28 Jun, 7:30 pm"
         })
     })
 
