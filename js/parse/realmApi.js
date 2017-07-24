@@ -163,7 +163,7 @@ const UserService = {
     },
 
     getUsersContainedIn: function (ids) {
-        return repository.objects(PARSE_USERS)
+        return repository.objects(PARSE_USERS).filtered('objectId CONTAINS  $0', ids);
     },
 
     save: function (item) {
