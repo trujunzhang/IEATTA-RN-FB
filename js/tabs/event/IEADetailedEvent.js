@@ -77,35 +77,26 @@ class IEADetailedEvent extends React.Component {
     }
 
     render() {
-        const filterItem = {
-            title: 'Filter',
-            onPress: this.openFilterScreen,
-        };
+        const {item} = this.props;
 
-
-        // let sessions = this.props.sessions;
-        let sessions = [{
-            title: "wanghao"
-        }];
-
-        const item = {
-            displayName: "Boba Princess' VIP Affair",
-            restaurantName: "Carl's Jr",
-            address: "Carl's Jr., 708 S Broadway, Los Angeles, CA 90014, USA"
+        const leftItem = {
+            icon: require('../../common/img/back_white.png'),
+            onPress: () => {
+                this.props.navigator.pop()
+            }
         }
-        const events = []
 
         const content = (
             <ListContainer
                 item={item}
                 title={item.displayName}
+                leftItem={leftItem}
                 selectedSectionColor="#51CDDA"
                 renderParallaxHeader={(e) => {
                     return (<RLEventParallaxHeader item={item}/>)
                 }}>
                 <PeopleInEventListView
                     item={item}
-                    events={events}
                     navigator={this.props.navigator}
                 />
             </ListContainer>
