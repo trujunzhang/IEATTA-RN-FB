@@ -121,6 +121,7 @@ class PureListView extends React.Component {
                 renderFooter={this.renderFooter}
                 contentInset={{bottom, top: contentInset.top}}
                 onContentSizeChange={this.onContentSizeChange}
+                stickySectionHeadersEnabled={false}
                 enableEmptySections={true}
             />
         )

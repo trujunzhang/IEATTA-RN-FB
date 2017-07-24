@@ -96,7 +96,7 @@ class EventCell extends React.Component {
                         </Svg>
                         {/*Saturday, 1 Jul, 12:00 am – Monday, 31 Jul, 12:00 am*/}
                         <Text style={[styles.locationText, {color: '#666'}]}>
-                            {`${info.startFormat}-${info.endFormat}`}
+                            {`${info.startFormat} - ${info.endFormat}`}
                         </Text>
                     </View>
                 </View>
