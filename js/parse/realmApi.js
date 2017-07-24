@@ -162,8 +162,19 @@ const UserService = {
         return repository.objects(PARSE_USERS)
     },
 
+    /**
+     * Ref: https://github.com/realm/realm-js/issues/450
+     * Here is a code snippet that should generate the query you want to run:
+     *
+     * var filtered = sample.filtered([2,4,7,10].map((id) => 'id == ' + id).join(' OR '));
+     *
+     * This should create a query of the form id == 2 OR id == 4 OR id == 7 OR id ==10.
+     * Once we support IN queries it will do this for you internally.
+     * @param ids
+     * @returns {Results<T>}
+     */
     getUsersContainedIn: function (ids) {
-        return repository.objects(PARSE_USERS).filtered('objectId CONTAINS  $0', ids);
+        return repository.objects(PARSE_USERS).filtered(ids.map((id) => 'objectId == ' + id).join(' OR '));
     },
 
     save: function (item) {

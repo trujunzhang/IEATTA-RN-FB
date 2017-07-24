@@ -30,7 +30,7 @@ const InteractionManager = require('InteractionManager');
 const _ = require('underscore')
 import type {Action, ThunkAction} from './types'
 
-const {RestaurantService, EventService, PeopleInEventService, PhotoService} = require('../parse/realmApi').default
+const {RestaurantService, EventService, PeopleInEventService, PhotoService, UserService} = require('../parse/realmApi').default
 const {getLocalImageUri} = require('../parse/fsApi')
 
 /**
@@ -88,6 +88,7 @@ async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const results = PeopleInEventService.findAll()
 
     const ids = _.pluck(results, 'objectId')
+    const users = UserService.getUsersContainedIn(ids)
 
     debugger
 
