@@ -157,6 +157,31 @@ const PhotoService = {
 }
 
 
+const UserService = {
+    findAll: function (sortBy) {
+        return repository.objects(PARSE_USERS)
+    },
+
+    getUsersContainedIn: function (ids) {
+        return repository.objects(PARSE_USERS)
+    },
+
+    save: function (item) {
+        if (repository.objects(PARSE_USERS).filtered('objectId == $0', item.id).length) return;
+        repository.write(() => {
+            repository.create(PARSE_USERS, Records.getRealmData(PARSE_USERS, item))
+        })
+    },
+
+    update: function (item, callback) {
+        if (!callback) return;
+        repository.write(() => {
+            callback();
+            item.updatedAt = new Date();
+        })
+    }
+}
+
 export default {
     writeParseRecord,
     ConfigureService,
@@ -164,4 +189,5 @@ export default {
     EventService,
     PeopleInEventService,
     PhotoService,
+    UserService
 }
