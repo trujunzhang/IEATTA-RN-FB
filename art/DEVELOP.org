@@ -25,6 +25,9 @@
 * react-native-snap-carousel
   [https://www.npmjs.com/package/react-native-snap-carousel]
 
+* react-native-camera
+  [https://github.com/lwansbrough/react-native-camera]
+
 * Debug Tools
 ** reactotron
   [https://github.com/infinitered/reactotron/issues/289]
