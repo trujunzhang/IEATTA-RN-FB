@@ -112,7 +112,6 @@ class RLEventListViewHeaderView extends Component {
     renderWhat() {
         const {item} = this.props;
 
-
         return (
             <View style={[{
                 flexDirection: 'column',
@@ -154,7 +153,7 @@ class RLEventListViewHeaderView extends Component {
             <View style={[{
                 flex: 1,
                 width: width,
-                paddingBottom: 15
+                paddingBottom: 5
             }, {
                 flexDirection: 'row',
                 alignItems: 'center',

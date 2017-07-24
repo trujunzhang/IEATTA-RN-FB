@@ -57,7 +57,6 @@ const data = createSelector(
 
 type Props = {
     filter: any;
-    day: number;
     peopleInEvent: Array;
     navigator: Navigator;
     logOut: () => void;
@@ -117,7 +116,6 @@ class IEADetailedEvent extends React.Component {
     renderNavigationView() {
         return <FilterScreen onClose={() => this._drawer && this._drawer.closeDrawer()}/>;
     }
-
 
     openFilterScreen() {
         if (Platform.OS === 'ios') {

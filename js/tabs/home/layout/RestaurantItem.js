@@ -65,10 +65,7 @@ class RestaurantItem extends Component {
                 width: 60,
                 height: 60
             }}>
-                <Image style={{
-                    flex: 1,
-                    borderRadius: 4
-                }}
+                <Image style={{flex: 1, borderRadius: 4}}
                        source={{uri: `file://${localImagePath}`}}/>
             </View>
         )
