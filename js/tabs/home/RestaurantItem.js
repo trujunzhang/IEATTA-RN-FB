@@ -151,7 +151,11 @@ class RestaurantItem extends Component {
 
     onPress() {
         const restaurant = this.props.item;
-        this.props.navigator.push({restaurant});
+        // this.props.navigator.push({restaurant});
+        const event = {
+            "displayName": "trujunzhang"
+        }
+        this.props.navigator.push({event});
     }
 
     componentDidMount() {
