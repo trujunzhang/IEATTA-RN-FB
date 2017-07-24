@@ -87,7 +87,7 @@ function queryNearRestaurant(): ThunkAction {
 async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const results = PeopleInEventService.findAll()
 
-    const ids = _.pluck(results, 'objectId')
+    const ids = _.pluck(results, 'userId')
     const users = UserService.getUsersContainedIn(ids)
 
     debugger

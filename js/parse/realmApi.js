@@ -174,7 +174,11 @@ const UserService = {
      * @returns {Results<T>}
      */
     getUsersContainedIn: function (ids) {
-        return repository.objects(PARSE_USERS).filtered(ids.map((id) => 'objectId == ' + id).join(' OR '));
+        const query = (ids.map((id) => {
+            return `objectId == '${id}'`
+        })).join(' OR ')
+
+        return repository.objects(PARSE_USERS).filtered(query);
     },
 
     save: function (item) {
