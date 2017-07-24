@@ -175,8 +175,8 @@ class RLEventListViewHeaderView extends Component {
                         fontSize: 14,
                         color: F8Colors.appTextColor
                     }, {
-                        marginTop: 4,
-                        marginBottom: 4,
+                        marginVertical: 4,
+                        paddingHorizontal: 8
                     }
                 ]}>{item.want}</Text>
 
