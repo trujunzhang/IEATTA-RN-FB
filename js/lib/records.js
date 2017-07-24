@@ -65,6 +65,11 @@ Records.getRealmData = function (parseObject, object) {
                 objectId: object.id,
                 updatedAt: object.updatedAt,
                 // Attributes
+                // ...
+                // Pointer
+                restaurantId: object.restaurantId,
+                eventId: object.eventId,
+                userId: object.userId
             }
         case PARSE_USERS:
             return {}

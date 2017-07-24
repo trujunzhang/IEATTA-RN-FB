@@ -111,6 +111,11 @@ PeopleInEventSchema.schema = {
         objectId: 'string',
         updatedAt: 'date',
         // Attributes
+        // ...
+        // Pointer
+        restaurantId: 'string',
+        eventId: 'string',
+        userId: 'string'
     }
 }
 
