@@ -65,8 +65,6 @@ My problem was that I did not set width and height first, which is not needed fo
 }
 
 
-"realm": "^0.14.1"
-
 24x24_add_photo
 
 
