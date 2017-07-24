@@ -34,6 +34,7 @@ const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
     QUERY_PHOTOS_FOR_RESTAURANT,
+    QUERY_PEOPLE_FOR_EVENT,
     PHOTO_BROWSER_OPEN,
     PHOTO_BROWSER_CLOSE,
 } = require('../lib/constants').default
@@ -67,6 +68,12 @@ function appModel(state: State = initialState, action: Action): State {
         })
         return nextState
     }
+    if (action.type === QUERY_PEOPLE_FOR_EVENT) {
+        const nextState = Object.assign({}, state, {
+            peopleInEvent: action.payload
+        })
+        return nextState
+    }
     if (action.type === PHOTO_BROWSER_OPEN) {
         const nextState = Object.assign({}, state, {
             isPhotoBrowser: true,
@@ -81,6 +88,7 @@ function appModel(state: State = initialState, action: Action): State {
         })
         return nextState
     }
+
 
     return state;
 }

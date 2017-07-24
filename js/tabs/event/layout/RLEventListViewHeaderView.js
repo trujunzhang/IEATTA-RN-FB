@@ -73,48 +73,6 @@ class RLEventListViewHeaderView extends Component {
         )
     }
 
-    renderFrom({startFormat}) {
-        return (
-            <View style={[{
-                flexDirection: 'row',
-                alignItems: 'center'
-            }]}>
-                <Text style={[{
-                    fontWeight: "bold",
-                    fontSize: 14,
-                    color: "black"
-                }, {
-                    marginRight: 6
-                }]}>{"From:"}</Text>
-                <Text style={{
-                    fontSize: 14,
-                    color: F8Colors.appTextColor
-                }}>{startFormat}</Text>
-            </View>
-        )
-    }
-
-    renderEnd({endFormat}) {
-        return (
-            <View style={[{
-                flexDirection: 'row',
-                alignItems: 'center'
-            }]}>
-                <Text style={[{
-                    fontWeight: "bold",
-                    fontSize: 14,
-                    color: "black"
-                }, {
-                    marginRight: 6
-                }]}>{"To:"}</Text>
-                <Text style={{
-                    fontSize: 14,
-                    color: F8Colors.appTextColor
-                }}>{endFormat}</Text>
-            </View>
-        )
-    }
-
     renderEventDate() {
         const {item} = this.props,
             info = Events.getDateInfo(item),

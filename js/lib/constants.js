@@ -10,6 +10,7 @@ export default keyMirror({
     QUERY_NEAR_RESTAURANTS: null,
     QUERY_EVENTS_FOR_RESTAURANT: null,
     QUERY_PHOTOS_FOR_RESTAURANT: null,
+    QUERY_PEOPLE_FOR_EVENT: null,
 
     // Parse local Images folders
     PARSE_ORIGINAL_IMAGES: null,
@@ -20,6 +21,8 @@ export default keyMirror({
     MENU_SECTIONS_MORE: null,
     MENU_SECTIONS_RESTAURANTS: null,
     MENU_SECTIONS_EVENTS: null,
+    MENU_SECTIONS_PEOPLE_IN_EVENTS: null,
+
     // Home More Menus
     MENU_ITEM_ADD_A_RESTAURANT: null,
     MENU_ITEM_SEARCH_RESTAURANTS: null,
@@ -41,7 +44,7 @@ export default keyMirror({
     LOGIN_FORM_TYPE_MAIN: null,
     LOGIN_FORM_TYPE_LOGIN: null,
     LOGIN_FORM_TYPE_REGISTER: null,
-    
+
     LOGIN_FORM_TYPE_RESET_PASSWD: null,
 
 

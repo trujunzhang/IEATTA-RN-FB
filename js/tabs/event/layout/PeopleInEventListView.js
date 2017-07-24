@@ -41,21 +41,27 @@ const {width, height} = Dimensions.get('window')
 
 const PeopleInEventCell = require('./PeopleInEventCell')
 const EmptyPeopleInEvent = require('./EmptyPeopleInEvent')
-let PureListView = require('../../../common/PureListView')
+const PureListView = require('../../../common/PureListView')
 
 const StaticContainer = require('react-native/Libraries/Components/StaticContainer')
 const RLEventListViewHeaderView = require('./RLEventListViewHeaderView')
 
+const {queryPeopleForEvent} = require('../../../actions')
+
+
+/**
+ * The states were interested in
+ */
+const {
+    MENU_SECTIONS_PEOPLE_IN_EVENTS,
+} = require('../../../lib/constants').default
+
+
 type Props = {
-    day: number;
-    sessions: Array<Session>;
     navigator: Navigator;
     renderEmptyList?: (day: number) => ReactElement;
 };
 
-type State = {
-    todaySessions: Array;
-};
 
 class EventsListView extends React.Component {
     props: Props;
@@ -64,24 +70,38 @@ class EventsListView extends React.Component {
 
     constructor(props: Props) {
         super(props);
-        this.state = {
-            todaySessions: []
-        };
 
         this._innerRef = null;
-    }
 
-    componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.sessions !== this.props.sessions ||
-            nextProps.day !== this.props.day) {
-            this.setState({
-                todaySessions: []
-            });
+        this.state = {
+            sections: {
+                MENU_SECTIONS_PEOPLE_IN_EVENTS: []
+            }
         }
     }
 
-    renderSectionHeader() {
-        return <View/>
+    componentWillReceiveProps(nextProps: Props) {
+        if (nextProps.appModel && nextProps.appModel.peopleInEvent) {
+            if (nextProps.appModel.peopleInEvent.eventId && nextProps.appModel.peopleInEvent.eventId === this.props.item.objectId) {
+                this.setState({
+                    sections: {
+                        MENU_SECTIONS_EVENTS: nextProps.appModel.peopleInEvent.results || []
+                    }
+                })
+            }
+        }
+    }
+
+
+    componentDidMount() {
+        const {item, forRestaurant} = this.props;
+        this.props.dispatch(queryPeopleForEvent(item.objectId))
+    }
+
+    renderSectionHeader(sectionData, sectionId) {
+        return (
+            <SectionHeader sectionType={sectionId}/>
+        )
     }
 
     render() {
@@ -162,4 +182,14 @@ class EventsListView extends React.Component {
     }
 }
 
-module.exports = EventsListView
+
+const {connect} = require('react-redux')
+
+function select(store) {
+    return {
+        appModel: store.appModel
+    };
+}
+
+module.exports = connect(select)(EventsListView)
+

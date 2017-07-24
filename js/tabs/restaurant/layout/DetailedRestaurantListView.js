@@ -50,6 +50,15 @@ const {queryEventsForRestaurant} = require('../../../actions')
 
 const Photos = require('../../../lib/photos').default
 
+
+/**
+ * The states were interested in
+ */
+const {
+    MENU_SECTIONS_EVENTS,
+} = require('../../../lib/constants').default
+
+
 type Props = {
     events: Array;
     navigator: Navigator;
