@@ -48,7 +48,7 @@ class RLEventParallaxHeader extends Component {
                 <Text
                     numberOfLines={3}
                     style={{
-                        color: 'black',
+                        color: 'white',
                         fontSize: 24,
                         fontWeight: 'bold'
                     }}>
@@ -85,7 +85,7 @@ class RLEventParallaxHeader extends Component {
                     // paddingBottom: 80
                 }
             ]}>
-                <View style={{height: 140, flexDirection: 'row'}}>
+                <View style={{height: 200, flexDirection: 'row'}}>
                     {this.renderLeft()}
                     {this.renderRight()}
                 </View>
