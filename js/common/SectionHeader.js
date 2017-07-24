@@ -59,12 +59,15 @@ class SectionHeader extends React.Component {
     render() {
         return (
             <View
-                style={{
-                    paddingTop: 18,
-                    paddingBottom: 4,
-                    height: 50,
-                    backgroundColor: F8Colors.controllerViewColor
-                }}>
+                style={[
+                    {
+                        paddingTop: 18,
+                        paddingBottom: 4,
+                        height: 50
+                    }, {
+                        backgroundColor: F8Colors.controllerViewColor
+                    }
+                ]}>
                 <Text style={[
                     {
                         // height: 24,
@@ -86,25 +89,5 @@ class SectionHeader extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'white',
-        padding: 30,
-        paddingTop: 75,
-        alignItems: 'center',
-    },
-    title: {
-        textAlign: 'center',
-        marginBottom: 10,
-    },
-    image: {
-        marginBottom: 10,
-    },
-    text: {
-        textAlign: 'center',
-        marginBottom: 35,
-    },
-});
 
 module.exports = SectionHeader

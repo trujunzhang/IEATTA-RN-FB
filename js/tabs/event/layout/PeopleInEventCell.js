@@ -43,32 +43,21 @@ let F8Colors = require('F8Colors');
 let {Text} = require('F8Text');
 let F8Touchable = require('F8Touchable');
 
-import type {Session} from '../../../reducers/sessions';
-
 class PeopleInEventCell extends React.Component {
     props: {
-        session: Session;
-        showTick: boolean;
-        showStartEndTime: boolean;
-        onPress: ?() => void;
         style: any;
     };
 
     render() {
-        let session = this.props.session;
-        let tick;
-        if (this.props.showTick) {
-            tick =
-                <Image style={styles.added} source={require('../../images/added-cell.png')}/>;
-        }
+        let item = this.props.item;
         let time = "31/05/2017";
-        let location = "location";//session.location && session.location.toUpperCase();
-        let locationColor = '#f00';//F8Colors.colorForLocation(location);
+        let location = "location";
+        let locationColor = '#f00';
         let cell =
             <View style={[styles.cell, this.props.style]}>
                 <View style={styles.titleSection}>
                     <Text numberOfLines={2} style={styles.titleText}>
-                        {session.title}
+                        {item.title || "wanghao"}
                     </Text>
                 </View>
                 <Text numberOfLines={1} style={styles.duration}>
@@ -78,7 +67,6 @@ class PeopleInEventCell extends React.Component {
                     {location && ' - '}
                     {time}
                 </Text>
-                {tick}
             </View>;
 
         if (this.props.onPress) {

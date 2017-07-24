@@ -87,7 +87,7 @@ class EventsListView extends React.Component {
             if (nextProps.appModel.peopleInEvent.eventId && nextProps.appModel.peopleInEvent.eventId === this.props.item.objectId) {
                 this.setState({
                     sections: {
-                        MENU_SECTIONS_EVENTS: nextProps.appModel.peopleInEvent.results || []
+                        MENU_SECTIONS_PEOPLE_IN_EVENTS: nextProps.appModel.peopleInEvent.results || []
                     }
                 })
             }
@@ -106,21 +106,10 @@ class EventsListView extends React.Component {
     }
 
     render() {
-        const todaySessions = [
-            {'title': 'section1'},
-            {'title': 'section2'},
-            {'title': 'section3'},
-            {'title': 'section4'},
-            {'title': 'section5'},
-            {'title': 'section6'},
-            {'title': 'section7'},
-            {'title': 'section8'}
-        ]
-
         return (
             <PureListView
                 ref={this.storeInnerRef.bind(this)}
-                data={todaySessions}
+                data={this.state.sections}
                 renderTopHeader={this.renderTopHeaderView.bind(this)}
                 renderRow={this.renderRow.bind(this)}
                 renderSectionHeader={this.renderSectionHeader.bind(this)}
@@ -130,12 +119,13 @@ class EventsListView extends React.Component {
         )
     }
 
-
-    renderRow(session: any, day: number) {
+    renderRow(item: any,
+              sectionID: number | string,
+              rowID: number | string) {
         return (
             <PeopleInEventCell
-                onPress={() => this.openSession(session, day)}
-                session={session}
+                navigator={this.props.navigator}
+                item={item}
             />
         )
     }
@@ -162,13 +152,6 @@ class EventsListView extends React.Component {
         );
     }
 
-    openSession(session: any, day: number) {
-        this.props.navigator.push({
-            day,
-            session,
-            allSessions: this.state.todaySessions,
-        });
-    }
 
     storeInnerRef(ref: ?PureListView) {
         this._innerRef = ref;
