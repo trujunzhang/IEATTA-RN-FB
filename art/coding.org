@@ -93,6 +93,9 @@ Parse.Cloud.afterSave(Parse.User, function(request, response) {
     }
 });
 
+* Convert Realm objects to Json
+const results = PeopleInEventService.findAll()
+const json = JSON.stringify(results)
 
 
 
