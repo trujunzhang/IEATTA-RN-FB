@@ -1,7 +1,5 @@
 const Parse = require('parse/react-native')
-
 const Parameters = require('./parameters').default
-
 const {ParsePost, ParseRecord, ParseUser} = require('./objects').default
 
 
@@ -18,7 +16,10 @@ const {
 function getQueryByType(type: string = PARSE_POSTS) {
     switch (type) {
         case PARSE_RECORDS:
-            return new Parse.Query(ParseRecord).include('photo').include('restaurant').include('event').include('recipe')
+            return new Parse.Query(ParseRecord)
+                .include('photo')
+                .include('restaurant').include('event').include('peopleInEvent')
+                .include('recipe')
         case PARSE_POSTS:
             return new Parse.Query(ParsePost).include('photos')
         case PARSE_USERS:

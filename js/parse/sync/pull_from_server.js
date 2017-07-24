@@ -73,10 +73,12 @@ async function getMoviesFromApi() {
 }
 
 export async function pullFromServer(countPerTime, lastRecordUpdatedData) {
-    const recordsQuery = getRecordsParameters({lastUpdatedAt: lastRecordUpdatedData})
+    // const recordsQuery = getRecordsParameters({lastUpdatedAt: lastRecordUpdatedData})
+    const recordsQuery = getRecordsParameters({lastUpdatedAt: null}).equalTo("recordType", "peopleInEvent")
+    // debugger
     let results = await recordsQuery.limit(countPerTime).find()
     let records = (results || []).map(fromParseRecord)
-    // debugger
+    debugger
 
     for (let i = 0; i < records.length; i++) {
         await saveRecord(records[i], i)

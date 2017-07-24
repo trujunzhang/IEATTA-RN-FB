@@ -111,6 +111,7 @@ export function fromParseFile(map: Object): File {
 }
 
 export function fromParsePeopleInEvent(map: Object): PeopleInEvent {
+    debugger
     return {
         // Basic Fields
         id: map.id,
