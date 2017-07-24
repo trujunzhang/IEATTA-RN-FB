@@ -41,7 +41,9 @@ const {width, height} = Dimensions.get('window')
 
 const PeopleInEventCell = require('./PeopleInEventCell')
 const EmptyPeopleInEvent = require('./EmptyPeopleInEvent')
-const PureListView = require('../../../common/PureListView')
+
+const PureListView = require('PureListView')
+const SectionHeader = require('SectionHeader')
 
 const StaticContainer = require('react-native/Libraries/Components/StaticContainer')
 const RLEventListViewHeaderView = require('./RLEventListViewHeaderView')
@@ -91,7 +93,6 @@ class EventsListView extends React.Component {
             }
         }
     }
-
 
     componentDidMount() {
         const {item, forRestaurant} = this.props;

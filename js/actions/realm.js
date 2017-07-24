@@ -85,7 +85,7 @@ function queryNearRestaurant(): ThunkAction {
 
 async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const results = PeopleInEventService.findAll()
-    debugger
+
     const action = {
         type: QUERY_PEOPLE_FOR_EVENT,
         payload: {
@@ -175,5 +175,6 @@ function queryPhotosForRestaurant(restaurantId: string): ThunkAction {
 export default {
     queryNearRestaurant,
     queryEventsForRestaurant,
+    queryPeopleForEvent,
     queryPhotosForRestaurant,
 }

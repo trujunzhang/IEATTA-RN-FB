@@ -40,8 +40,8 @@ import {
 
 const EventCell = require('./EventCell')
 const EmptyEvent = require('./EmptyEvent')
-const PureListView = require('../../../common/PureListView')
-const SectionHeader = require('../../../common/SectionHeader')
+const PureListView = require('PureListView')
+const SectionHeader = require('SectionHeader')
 
 const StaticContainer = require('react-native/Libraries/Components/StaticContainer')
 const RLRestaurantListViewHeaderView = require('./RLRestaurantListViewHeaderView')

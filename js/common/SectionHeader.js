@@ -19,8 +19,10 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE
  *
+ * @providesModule SectionHeader
  * @flow
  */
+
 'use strict';
 
 /**
@@ -41,13 +43,15 @@ const {
     MENU_SECTIONS_MORE,
     MENU_SECTIONS_RESTAURANTS,
     MENU_SECTIONS_EVENTS,
+    MENU_SECTIONS_PEOPLE_IN_EVENTS
 } = require('../lib/constants').default
 
 
 const SECTION_TITLES = {
     MENU_SECTIONS_MORE: 'More',
     MENU_SECTIONS_RESTAURANTS: 'Restaurants Nearby',
-    MENU_SECTIONS_EVENTS: 'Events'
+    MENU_SECTIONS_EVENTS: 'Events',
+    MENU_SECTIONS_PEOPLE_IN_EVENTS: 'Ordered Users'
 }
 
 class SectionHeader extends React.Component {

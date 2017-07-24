@@ -42,8 +42,9 @@ const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
 const F8Header = require('F8Header')
-const PureListView = require('../../common/PureListView')
-const SectionHeader = require('../../common/SectionHeader')
+
+const PureListView = require('PureListView')
+const SectionHeader = require('SectionHeader')
 
 const {
     MENU_ITEM_ADD_A_RESTAURANT,
