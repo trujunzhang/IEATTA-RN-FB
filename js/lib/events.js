@@ -12,14 +12,14 @@ Events.getDateInfo = function (item) {
     const start = item.start;
     const end = item.end;
 
+    const moment = require('moment')
     //for example: "Saturday, 1 Jul, 12:00 am"
-    const day = moment(start).format('dddd DD-MM-YYYY');
-
-    debugger
+    const day = moment(start).format('dddd, DD MMM, h:mm a')
+    // debugger
 
     return {
-        "startFormat": "",
-        "endFormat": ""
+        "startFormat": moment(start).format('dddd, DD MMM, h:mm a'),
+        "endFormat": moment(end).format('dddd, DD MMM, h:mm a')
     }
 }
 
