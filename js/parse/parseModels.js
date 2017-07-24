@@ -136,11 +136,12 @@ export function fromParseRecord(map: Object): Record {
         recordType: map.get('recordType'),
         recordId: map.get('recordId'),
         // Pointer
-        event: map.get('event') && fromParseEvent(map.get('event')),
+        user: map.get('user') && fromParseUser(map.get('user')),
         restaurant: map.get('restaurant') && fromParseRestaurant(map.get('restaurant')),
+        event: map.get('event') && fromParseEvent(map.get('event')),
+        peopleInEvent: map.get('peopleInEvent') && fromParsePeopleInEvent(map.get('peopleInEvent')),
         recipe: map.get('recipe') && fromParseRecipe(map.get('recipe')),
-        photo: map.get('photo') && fromParsePhoto(map.get('photo')),
-        peopleInEvent: map.get('peopleInEvent') && fromParsePeopleInEvent(map.get('peopleInEvent'))
+        photo: map.get('photo') && fromParsePhoto(map.get('photo'))
     }
 }
 

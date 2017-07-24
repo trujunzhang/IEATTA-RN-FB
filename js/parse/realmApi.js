@@ -22,6 +22,7 @@ const {
 
 
 function writeParseRecord(record) {
+    debugger
     const object = record[record.recordType]
     const {parseObject, realmSchema} = Records.realmObjects[record.recordType]
 
