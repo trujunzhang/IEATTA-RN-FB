@@ -18,6 +18,8 @@ const F8Button = require('F8Button')
 
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
+const Events = require('../../../lib/events').default
+
 import Svg, {
     G,
     Path,
@@ -31,8 +33,8 @@ class RLEventListViewHeaderView extends Component {
     }
 
     renderAddress() {
-        const {item} = this.props,
-            address = item.address || '',
+        const {item, forRestaurant} = this.props,
+            address = forRestaurant.addressxx || '1 Stoneridge Mall Rd,Pleasanton, CA 94588,United States',
             rows = address.split(',')
 
         return (
@@ -62,7 +64,7 @@ class RLEventListViewHeaderView extends Component {
                             style={{
                                 fontSize: 14,
                                 color: F8Colors.appTextColor
-                            }}>{item}</Text>
+                            }}>{item.trim()}</Text>
                     })}
                 </View>
 
@@ -70,7 +72,7 @@ class RLEventListViewHeaderView extends Component {
         )
     }
 
-    renderFrom() {
+    renderFrom({startFormat}) {
         return (
             <View style={[{
                 flexDirection: 'row',
@@ -86,12 +88,12 @@ class RLEventListViewHeaderView extends Component {
                 <Text style={{
                     fontSize: 14,
                     color: F8Colors.appTextColor
-                }}>{"Monday, May 18, 7:00 pm"}</Text>
+                }}>{startFormat}</Text>
             </View>
         )
     }
 
-    renderEnd() {
+    renderEnd({endFormat}) {
         return (
             <View style={[{
                 flexDirection: 'row',
@@ -107,13 +109,14 @@ class RLEventListViewHeaderView extends Component {
                 <Text style={{
                     fontSize: 14,
                     color: F8Colors.appTextColor
-                }}>{"Monday, May 18, 7:00 pm"}</Text>
+                }}>{endFormat}</Text>
             </View>
         )
     }
 
     renderEventDate() {
         const {item} = this.props,
+            info = Events.getDateInfo(item),
             address = item.address || '',
             rows = address.split(',')
 
@@ -138,8 +141,8 @@ class RLEventListViewHeaderView extends Component {
                     flexDirection: 'column',
                     marginLeft: 8
                 }}>
-                    {this.renderFrom()}
-                    {this.renderEnd()}
+                    {this.renderFrom(info)}
+                    {this.renderEnd(info)}
                 </View>
 
             </View>
@@ -148,9 +151,8 @@ class RLEventListViewHeaderView extends Component {
 
 
     renderWhat() {
-        const {item} = this.props,
-            address = item.address || '',
-            rows = address.split(',')
+        const {item} = this.props;
+
 
         return (
             <View style={[{
@@ -176,7 +178,7 @@ class RLEventListViewHeaderView extends Component {
                         marginTop: 4,
                         marginBottom: 4,
                     }
-                ]}>{'If you DID NOT receive a Confirmation message from Donna T, we apologize for not being able to accommodate your RSVP. Hope you can come to the next future local gig. Thanks for all your excitement and support!'}</Text>
+                ]}>{item.want}</Text>
 
             </View>
         )

@@ -89,14 +89,12 @@ class IEADetailedEvent extends React.Component {
                 item={item}
                 title={item.displayName}
                 renderParallaxHeader={(e) => {
-                    return (<RLEventParallaxHeader item={item}/>)
+                    return (<RLEventParallaxHeader {...this.props}/>)
                 }}
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                <PeopleInEventListView item={item}
-                                       forRestaurant={this.props.forRestaurant}
-                                       navigator={this.props.navigator}/>
+                <PeopleInEventListView {...this.props}/>
             </ListContainer>
         );
 

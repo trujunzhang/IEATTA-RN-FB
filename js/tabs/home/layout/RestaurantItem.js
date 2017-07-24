@@ -151,7 +151,7 @@ class RestaurantItem extends Component {
 
     onPress() {
         const restaurant = this.props.item;
-        this.props.navigator.push({restaurant});
+        // this.props.navigator.push({restaurant});
         const event = {
             "objectId": "p25iag5OcM",
             "updatedAt": "2017-07-12T01:16:19.472Z",
@@ -162,11 +162,11 @@ class RestaurantItem extends Component {
             "restaurantId": "OnNGSfwoou",
             "restaurantName": "LISA"
         }
-        // this.props.navigator.push({event: event, forRestaurant: restaurant});
+        this.props.navigator.push({event: event, forRestaurant: restaurant});
     }
 
     componentDidMount() {
-        // this.onPress()
+        this.onPress()
     }
 
     render() {
