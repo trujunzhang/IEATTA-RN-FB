@@ -148,7 +148,12 @@ class RestaurantItem extends Component {
     }
 
     onPress() {
-        const restaurant = this.props.item
+        const restaurant = this.props.item;
+        this.props.navigator.push({restaurant});
+    }
+
+    componentDidMount() {
+        const restaurant = this.props.item;
         this.props.navigator.push({restaurant});
     }
 

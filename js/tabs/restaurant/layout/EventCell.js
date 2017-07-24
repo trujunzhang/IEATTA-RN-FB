@@ -59,7 +59,8 @@ class EventCell extends React.Component {
 
     render() {
         const item = this.props.item;
-
+        const info = Events.getDateInfo(item);
+        debugger
         return (<F8Touchable onPress={this.props.onPress}>
             <View style={[{
                 paddingLeft: 17,

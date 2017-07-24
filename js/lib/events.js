@@ -5,11 +5,22 @@ import moment from 'moment'
 const Events = {}
 
 /**
- * @summary Check if a user is an admin
- * @param {Object|string} user - The user or their userId
+ * format is "Saturday, 1 Jul, 12:00 am – Monday, 31 Jul, 12:00 am"
+ * @param item
  */
 Events.getDateInfo = function (item) {
+    const start = item.start;
+    const end = item.end;
 
+    //for example: "Saturday, 1 Jul, 12:00 am"
+    const day = moment(start).format('dddd DD-MM-YYYY');
+
+    debugger
+
+    return {
+        "startFormat": "",
+        "endFormat": ""
+    }
 }
 
 
