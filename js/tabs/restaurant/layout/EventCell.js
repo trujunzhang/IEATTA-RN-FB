@@ -68,14 +68,13 @@ class EventCell extends React.Component {
         return (
             <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
                 <View style={[{
-                    paddingLeft: 17,
                     backgroundColor: 'white',
                     // backgroundColor: 'red'
                 }, {
                     flexDirection: 'column',
                 }, {
-                    marginHorizontal: 8,
-                    marginVertical: 6
+                    paddingHorizontal: 8,
+                    paddingVertical: 6
                 }]}>
                     <Text numberOfLines={2} style={[styles.titleText, {
                         color: '#0073bb',

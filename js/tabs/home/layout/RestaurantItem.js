@@ -109,8 +109,8 @@ class RestaurantItem extends Component {
             }}>
                 <Text style={{
                     height: 17,
-                    fontWeight: "bold",
-                    fontSize: 14,
+                    fontWeight: "700",
+                    fontSize: 16,
                     color: "#333"
                 }}>{item.displayName}</Text>
                 {this.renderMiddle()}
