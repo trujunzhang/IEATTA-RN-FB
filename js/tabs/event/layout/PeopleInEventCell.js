@@ -31,93 +31,105 @@
  */
 import React, {Component} from 'react'
 import {
-    TouchableOpacity,
+    TouchableHighlight,
     View,
     Image,
     StyleSheet,
-    Platform,
     Dimensions
 } from 'react-native'
+const {width, height} = Dimensions.get('window')
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+const CellRowHeight = 60
 
 let F8Colors = require('F8Colors');
 let {Text} = require('F8Text');
 let F8Touchable = require('F8Touchable');
 
 class PeopleInEventCell extends React.Component {
-    props: {
-        style: any;
-    };
+
+    renderLeft() {
+        const {item} = this.props;
+        const avatorW = 36;
+        return (
+            <View style={{
+                marginRight: 10,
+                marginTop: 4,
+                width: avatorW,
+                height: avatorW,
+            }}>
+                <Image style={{flex: 1, borderRadius: avatorW / 2}}
+                       source={{uri: 'https://s3-media1.fl.yelpcdn.com/photo/Zx3PIaWtxW2rJDmgxINjHg/60s.jpg'}}/>
+            </View>
+        )
+    }
+
+    renderRight() {
+        const {item} = this.props
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                // backgroundColor: 'blue'
+            }}>
+                <Text style={[{
+                    marginBottom: 4
+                }, {
+                    fontWeight: "700",
+                    fontSize: 16,
+                    color: "#333"
+                }]}>{item.displayName}</Text>
+                <Text style={{
+                    height: 17,
+                    fontSize: 14,
+                    color: "#333"
+                }}>{"3 Recipes Ordered"}</Text>
+            </View>
+        )
+    }
+
+    renderCell() {
+        const {item} = this.props;
+        return (
+            <View
+                key={item.objectId}
+                style={{
+                    paddingLeft: 10,
+                    marginRight: 10,
+                    backgroundColor: "white",
+                    width: width,
+                    height: CellRowHeight,
+                }}>
+                <View style={{// .action-list .action
+                    flex: 1,
+                    marginLeft: -10,
+                    marginRight: -10,
+                    padding: 10,
+                    flexDirection: 'row',
+                }}>
+                    {this.renderLeft()}
+                    {this.renderRight()}
+                </View>
+                <View style={{position: 'absolute', right: 10, top: (CellRowHeight - 24) / 2}}>
+                    <Icon name="angle-right" size={24} color="#C8C7CC"/>
+                </View>
+            </View>
+        )
+    }
+
+    onPress() {
+
+    }
 
     render() {
-        let item = this.props.item;
-        let time = "31/05/2017";
-        let location = "location";
-        let locationColor = '#f00';
-        let cell =
-            <View style={[styles.cell, this.props.style]}>
-                <View style={styles.titleSection}>
-                    <Text numberOfLines={2} style={styles.titleText}>
-                        {item.title || "wanghao"}
-                    </Text>
-                </View>
-                <Text numberOfLines={1} style={styles.duration}>
-                    <Text style={[styles.locationText, {color: locationColor}]}>
-                        {location}
-                    </Text>
-                    {location && ' - '}
-                    {time}
-                </Text>
-            </View>;
-
-        if (this.props.onPress) {
-            cell =
-                <F8Touchable onPress={this.props.onPress}>
-                    {cell}
-                </F8Touchable>;
-        }
-
-        return cell;
+        return (
+            <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
+                {this.renderCell()}
+            </TouchableHighlight>
+        )
     }
 }
-
-
-const styles = StyleSheet.create({
-    cell: {
-        paddingVertical: 15,
-        paddingLeft: 17,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-    },
-    titleSection: {
-        paddingRight: 9,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    titleAndDuration: {
-        justifyContent: 'center',
-    },
-    titleText: {
-        flex: 1,
-        fontSize: 17,
-        lineHeight: 24,
-        color: F8Colors.darkText,
-        marginBottom: 4,
-        marginRight: 10,
-    },
-    duration: {
-        fontSize: 12,
-        color: F8Colors.lightText,
-    },
-    locationText: {
-        fontSize: 12,
-    },
-    added: {
-        position: 'absolute',
-        backgroundColor: 'transparent',
-        right: 0,
-        top: 0,
-    },
-});
 
 
 module.exports = PeopleInEventCell;

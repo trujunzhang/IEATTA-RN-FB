@@ -38,6 +38,7 @@ import {
     Dimensions
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
+
 const RestaurantRowHeight = 84
 const RestaurantAvatorWidth = 80
 
@@ -116,7 +117,7 @@ class RestaurantItem extends Component {
         const {item} = this.props;
         return (
             <View
-                key={item.object}
+                key={item.objectId}
                 style={{
                     paddingLeft: 10,
                     marginRight: 10,
