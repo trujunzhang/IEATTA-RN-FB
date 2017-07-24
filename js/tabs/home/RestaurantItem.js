@@ -155,8 +155,7 @@ class RestaurantItem extends Component {
     }
 
     componentDidMount() {
-        const restaurant = this.props.item;
-        this.props.navigator.push({restaurant});
+        this.onPress()
     }
 
     render() {

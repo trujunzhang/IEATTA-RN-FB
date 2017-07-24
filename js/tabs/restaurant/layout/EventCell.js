@@ -53,6 +53,10 @@ import Svg, {
 
 class EventCell extends React.Component {
 
+    componentDidMount() {
+        this.onPress()
+    }
+
     onPress() {
         const event = this.props.item;
         this.props.navigator.push({event});
