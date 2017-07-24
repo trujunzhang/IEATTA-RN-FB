@@ -16,7 +16,6 @@ const {width, height} = Dimensions.get('window')
 const F8Colors = require('F8Colors')
 const F8Button = require('F8Button')
 
-import LinearGradient from 'react-native-linear-gradient'
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
 import Svg, {
@@ -230,9 +229,18 @@ class RLEventListViewHeaderView extends Component {
             </View>
         )
     }
-
 }
 
 
-module.exports = RLEventListViewHeaderView;
+const {connect} = require('react-redux')
+
+function select(store) {
+    return {
+        appModel: store.appModel,
+        user: store.user,
+    }
+}
+
+module.exports = connect(select)(RLEventListViewHeaderView)
+
 
