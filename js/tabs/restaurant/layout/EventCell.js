@@ -85,22 +85,25 @@ class EventCell extends React.Component {
                         backgroundColor: 'white',
                         // backgroundColor: 'red'
                     }, {
-                        flexDirection: 'row',
-                        alignItems: 'center',
+                        flexDirection: 'column',
+                    }, {
+                        marginHorizontal: 8,
+                        marginVertical: 6
                     }]}>
-                        <Svg width="24" height="24">
-                            <Path fill="#666"
-                                  d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-5.634 7.723L12 18l-1.366-2.277a3.5 3.5 0 1 1 2.732 0zM12 11.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/>
-                        </Svg>
+                        <Text numberOfLines={2} style={styles.titleText}>
+                            {item.displayName}
+                        </Text>
                         <View style={{
                             flex: 1,
-                            marginLeft: 8,
-                            marginVertical:6
                         }}>
-                            {cell}
+                            <Svg width="24" height="24">
+                                <Path fill="#666"
+                                      d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-5.634 7.723L12 18l-1.366-2.277a3.5 3.5 0 1 1 2.732 0zM12 11.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/>
+                            </Svg>
+
                         </View>
                     </View>
-                </F8Touchable>;
+                </F8Touchable>
         }
 
         return cell;
