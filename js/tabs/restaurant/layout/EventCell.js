@@ -80,7 +80,11 @@ class EventCell extends React.Component {
         if (this.props.onPress) {
             cell =
                 <F8Touchable onPress={this.props.onPress}>
-                    <View style={[styles.cell, {
+                    <View style={[{
+                        paddingLeft: 17,
+                        backgroundColor: 'white',
+                        // backgroundColor: 'red'
+                    }, {
                         flexDirection: 'row',
                         alignItems: 'center',
                     }]}>
@@ -88,7 +92,10 @@ class EventCell extends React.Component {
                             <Path fill="#666"
                                   d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-5.634 7.723L12 18l-1.366-2.277a3.5 3.5 0 1 1 2.732 0zM12 11.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/>
                         </Svg>
-                        <View>
+                        <View style={{
+                            flex: 1,
+                            marginLeft: 8,
+                        }}>
                             {cell}
                         </View>
                     </View>
@@ -101,12 +108,7 @@ class EventCell extends React.Component {
 
 
 const styles = StyleSheet.create({
-    cell: {
-        paddingVertical: 15,
-        paddingLeft: 17,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-    },
+    cell: {},
     titleSection: {
         paddingRight: 9,
         flexDirection: 'row',
