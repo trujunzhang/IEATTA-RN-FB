@@ -124,7 +124,7 @@ class DetailedRestaurantListView extends React.Component {
               rowID: number | string) {
         return (
             <EventCell
-                onPress={() => this.openEvent(item)}
+                navigator={this.props.navigator}
                 item={item}
             />
         )
@@ -163,9 +163,6 @@ class DetailedRestaurantListView extends React.Component {
         });
     }
 
-    openEvent(event: any) {
-        this.props.navigator.push({event});
-    }
 
     storeInnerRef(ref: ?PureListView) {
         this._innerRef = ref;

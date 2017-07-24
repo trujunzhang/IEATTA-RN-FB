@@ -52,15 +52,16 @@ import Svg, {
 
 
 class EventCell extends React.Component {
-    props: {
-        onPress: ?() => void;
-        style: any;
-    };
+
+    openEvent() {
+        const event = this.props.item;
+        this.props.navigator.push({event});
+    }
 
     render() {
         const item = this.props.item;
         const info = Events.getDateInfo(item);
-        return (<F8Touchable onPress={this.props.onPress}>
+        return (<F8Touchable onPress={this.openEvent.bind(this)}>
             <View style={[{
                 paddingLeft: 17,
                 backgroundColor: 'white',
