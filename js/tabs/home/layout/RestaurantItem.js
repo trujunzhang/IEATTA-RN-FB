@@ -153,7 +153,13 @@ class RestaurantItem extends Component {
         const restaurant = this.props.item;
         this.props.navigator.push({restaurant});
         const event = {
-            "displayName": "trujunzhang trujunzhang trujunzhang"
+            "objectId": "p25iag5OcM",
+            "updatedAt": "2017-07-12T01:16:19.472Z",
+            "displayName": "Outdoor Skating and Holiday Festivities in Downtown Burbank",
+            "start": "2017-06-28T10:30:57.566Z",
+            "end": "2017-06-28T11:30:57.566Z",
+            "want": "Downtown Burbank Announces 2015 Return of Outdoor Skating and Holiday Festivities Downtown Burbank's most festive holiday tradition returns for outdoor ice skating, fundraising events, and special performances at The Rink in Downtown Burbank. The fun begins December 10, 2015 and runs through January 3, 2016.",
+            "restaurantId": "OnNGSfwoou"
         }
         // this.props.navigator.push({event});
     }
