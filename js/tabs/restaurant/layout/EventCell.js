@@ -43,6 +43,7 @@ const F8Colors = require('F8Colors')
 const {Text} = require('F8Text')
 const F8Touchable = require('F8Touchable')
 
+const Events = require('../../../lib/events').default
 
 import Svg, {
     G,

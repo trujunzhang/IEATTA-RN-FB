@@ -16,4 +16,4 @@ Users.isAdmin = function (user) {
 }
 
 
-export default Users
+export default Users;
