@@ -86,9 +86,9 @@ class IEADetailedRestaurant extends React.Component {
     }
 
     render() {
-        const {item} = this.props,
-            {localPhotoStatus} = item
-        const localImagePath = getLocalImagePath(item.listPhotoId, PARSE_THUMBNAIL_IMAGES)
+        const {restaurant} = this.props,
+            {localPhotoStatus} = restaurant
+        const localImagePath = getLocalImagePath(restaurant.listPhotoId, PARSE_THUMBNAIL_IMAGES)
 
         const leftItem = {
             icon: require('../../common/img/back_white.png'),
@@ -99,16 +99,16 @@ class IEADetailedRestaurant extends React.Component {
 
         const content = (
             <ListContainer
-                item={item}
-                title={item.displayName}
+                item={restaurant}
+                title={restaurant.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
-                    return (<RLRestaurantParallaxHeader item={item}/>)
+                    return (<RLRestaurantParallaxHeader item={restaurant}/>)
                 }}
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                <DetailedRestaurantListView item={item} navigator={this.props.navigator}/>
+                <DetailedRestaurantListView forRestaurant={restaurant} navigator={this.props.navigator}/>
             </ListContainer>
         )
 

@@ -204,7 +204,7 @@ class RLRestaurantListViewHeaderView extends Component {
                     borderColor: "#ccc"
                 }]}>
                     <RestaurantPhotoHorizonView
-                        item={this.props.item}
+                        forRestaurant={this.props.forRestaurant}
                         onShowAllPhotosPress={this.props.onShowAllPhotosPress}/>
                     {this.renderSeeAllPhotosButton()}
                 </View>

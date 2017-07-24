@@ -30,6 +30,7 @@ class RLEventParallaxHeader extends Component {
      * @returns {XML}
      */
     renderLeft() {
+        debugger
         const {forRestaurant} = this.props,
             localImagePath = getLocalImagePath(forRestaurant.listPhotoId)
         return (

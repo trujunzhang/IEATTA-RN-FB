@@ -58,13 +58,14 @@ class EventCell extends React.Component {
     }
 
     onPress() {
-        const event = this.props.item;
+        const event = this.props.event;
         this.props.navigator.push({event});
+        // this.props.navigator.push({event: event, forRestaurant: this.props.forRestaurant});
     }
 
     render() {
-        const item = this.props.item;
-        const info = Events.getDateInfo(item);
+        const {event} = this.props;
+        const info = Events.getDateInfo(event);
         return (
             <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
                 <View style={[{
@@ -83,7 +84,7 @@ class EventCell extends React.Component {
                     }, {
                         marginBottom: 8
                     }]}>
-                        {item.displayName}
+                        {event.displayName}
                     </Text>
                     <View style={{
                         flex: 1,

@@ -55,6 +55,8 @@ const {switchTab} = require('./actions');
 const IEANearRestaurantScene = require('./tabs/home/IEANearRestaurantScene')
 const IEADetailedRestaurant = require('./tabs/restaurant/IEADetailedRestaurant')
 const IEADetailedEvent = require('./tabs/event/IEADetailedEvent')
+const IEAOrderedUser = require('./tabs/orderedUser/IEAOrderedUser')
+
 const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
 
 let F8Navigator = React.createClass({
@@ -143,7 +145,7 @@ let F8Navigator = React.createClass({
             return <RatingScreen navigator={navigator} surveys={route.surveys}/>;
         }
         if (route.restaurant) {
-            return <IEADetailedRestaurant navigator={navigator} item={route.restaurant}/>
+            return <IEADetailedRestaurant navigator={navigator} restaurant={route.restaurant}/>
         }
 
         if (route.event) {
@@ -151,7 +153,11 @@ let F8Navigator = React.createClass({
         }
 
         if (route.orderedUser) {
-            return <IEADetailedEvent navigator={navigator} item={route.event} forRestaurant={route.forRestaurant}/>
+            debugger
+            return <IEAOrderedUser navigator={navigator}
+                                   item={route.orderedUser}
+                                   forRestaurant={route.forRestaurant}
+                                   forEvent={route.forEvent}/>
         }
 
         if (route.photosBrowser) {

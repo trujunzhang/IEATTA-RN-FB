@@ -74,6 +74,7 @@ class IEADetailedEvent extends React.Component {
     }
 
     render() {
+        debugger
         const {item} = this.props;
 
         const leftItem = {

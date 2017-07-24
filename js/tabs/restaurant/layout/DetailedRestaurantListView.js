@@ -88,7 +88,7 @@ class DetailedRestaurantListView extends React.Component {
 
     componentWillReceiveProps(nextProps: Props) {
         if (nextProps.appModel && nextProps.appModel.events) {
-            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.item.objectId) {
+            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.forRestaurant.objectId) {
                 this.setState({
                     sections: {
                         MENU_SECTIONS_EVENTS: nextProps.appModel.events.results || []
@@ -99,7 +99,7 @@ class DetailedRestaurantListView extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(queryEventsForRestaurant(this.props.item.objectId))
+        this.props.dispatch(queryEventsForRestaurant(this.props.forRestaurant.objectId))
     }
 
 
@@ -128,13 +128,15 @@ class DetailedRestaurantListView extends React.Component {
         return (<View style={{height: 60}}/>)
     }
 
-    renderRow(item: any,
+
+    renderRow(event: any,
               sectionID: number | string,
               rowID: number | string) {
         return (
             <EventCell
                 navigator={this.props.navigator}
-                item={item}
+                forRestaurant={this.props.forRestaurant}
+                event={event}
             />
         )
     }
@@ -144,7 +146,7 @@ class DetailedRestaurantListView extends React.Component {
             <StaticContainer>
                 <View style={{flex: 1, marginTop: 200}}>
                     <RLRestaurantListViewHeaderView
-                        item={this.props.item}
+                        forRestaurant={this.props.forRestaurant}
                         onShowAllPhotosPress={this.onShowAllPhotosPress.bind(this)}/>
                 </View>
             </StaticContainer>
@@ -155,7 +157,7 @@ class DetailedRestaurantListView extends React.Component {
         return (
             <EmptyEvent
                 title={`No events on the restaurant`}
-                text="Chick the add icon to add an event."
+                text="Chick the cross icon to add new event."
             />
         );
     }
