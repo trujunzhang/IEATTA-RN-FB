@@ -40,20 +40,18 @@ class RLEventParallaxHeader extends Component {
 
     renderRight() {
         const {item} = this.props
-        // const item = {
-        //     displayName: "UYE: Boba Princess' VIP Affair @ Tea Lyfe",
-        //     address: "Carl's Jr"
-        // }
         return (
             <View style={{
                 flex: 1,
                 flexDirection: 'column'
             }}>
-                <Text style={{
-                    color: 'black',
-                    fontSize: 24,
-                    fontWeight: 'bold'
-                }}>
+                <Text
+                    numberOfLines={3}
+                    style={{
+                        color: 'black',
+                        fontSize: 24,
+                        fontWeight: 'bold'
+                    }}>
                     {item.displayName}
                 </Text>
                 <Text style={{
@@ -87,7 +85,7 @@ class RLEventParallaxHeader extends Component {
                     // paddingBottom: 80
                 }
             ]}>
-                <View style={{height: 100, flexDirection: 'row'}}>
+                <View style={{height: 140, flexDirection: 'row'}}>
                     {this.renderLeft()}
                     {this.renderRight()}
                 </View>
