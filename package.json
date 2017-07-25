@@ -38,6 +38,7 @@
     "react": "15.4.1",
     "react-native": "0.42.3",
     "react-native-background-timer": "^1.0.3",
+    "react-native-beautiful-image": "^1.0.4",
     "react-native-camera": "^0.6.0",
     "react-native-fbsdk": "^0.5.0",
     "react-native-fs": "^2.3.3",
