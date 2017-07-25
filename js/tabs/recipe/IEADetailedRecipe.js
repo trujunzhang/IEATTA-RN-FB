@@ -80,7 +80,7 @@ class IEADetailedRecipe extends React.Component {
 
     render() {
         const {recipe} = this.props,
-            {localPhotoStatus} = item
+            {localPhotoStatus} = recipe
         const localImagePath = getLocalImagePath(recipe.listPhotoId, PARSE_THUMBNAIL_IMAGES)
 
         const leftItem = {
@@ -96,11 +96,12 @@ class IEADetailedRecipe extends React.Component {
                 title={recipe.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
-                    return (<RLRecipeParallaxHeader item={item}/>)
+                    return (<RLRecipeParallaxHeader  {...this.props}/>)
                 }}
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
+                {/*<DetailedRecipeListView {...this.props}/>*/}
             </ListContainer>
         )
 

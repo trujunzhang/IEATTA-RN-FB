@@ -158,11 +158,11 @@ class RestaurantCell extends Component {
             "displayName": "Jaron Lawrence",
             "email": ""
         }
-        this.props.navigator.push({
-            orderedUser: user,
-            forRestaurant: restaurant,
-            forEvent: event
-        });
+        // this.props.navigator.push({
+        //     orderedUser: user,
+        //     forRestaurant: restaurant,
+        //     forEvent: event
+        // });
         const recipe = {
             "objectId": "GsJxbBcJaE",
             "updatedAt": "2017-07-11T13:07:00.434Z",
@@ -174,12 +174,12 @@ class RestaurantCell extends Component {
             "listPhotoId": "HdxKn0YrZZ",
             "localPhotoStatus": false
         }
-        // this.props.navigator.push({
-        //     recipe: recipe,
-        //     forRestaurant: restaurant,
-        //     forEvent: event,
-        //     forUser: user
-        // });
+        this.props.navigator.push({
+            recipe: recipe,
+            forRestaurant: restaurant,
+            forEvent: event,
+            forUser: user
+        });
     }
 
     componentDidMount() {

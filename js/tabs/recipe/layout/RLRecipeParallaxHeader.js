@@ -13,15 +13,9 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
-
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
 class RLRecipeParallaxHeader extends Component {
-
-    constructor(props, context) {
-        super(props);
-        this.state = this.initialState = {};
-    }
 
     /**
      * className:'biz-rating biz-rating-large clearfix'
@@ -45,16 +39,16 @@ class RLRecipeParallaxHeader extends Component {
     }
 
     renderBottom() {
-        const {item} = this.props
+        const {forRestaurant} = this.props
         return (
             <Text style={{fontSize: 12, color: "white"}}>
-                {item.address}
+                {forRestaurant.address}
             </Text>
         )
     }
 
     render() {
-        const {item} = this.props
+        const {recipe} = this.props
         return (
             <View style={{
                 flex: 1,
@@ -73,7 +67,7 @@ class RLRecipeParallaxHeader extends Component {
                     fontWeight: 'bold',
                     letterSpacing: -1,
                     color: 'white'
-                }}>{item.displayName}</Text>
+                }}>{recipe.displayName}</Text>
                 {this.renderMiddle()}
                 {this.renderBottom()}
             </View>
@@ -84,5 +78,5 @@ class RLRecipeParallaxHeader extends Component {
 }
 
 
-module.exports = RLRecipeParallaxHeader
+module.exports = RLRecipeParallaxHeader;
 
