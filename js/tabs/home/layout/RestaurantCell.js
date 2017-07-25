@@ -145,7 +145,7 @@ class RestaurantCell extends Component {
 
     onPress() {
         const {restaurant} = this.props;
-        // this.props.navigator.push({restaurant});
+        this.props.navigator.push({restaurant});
 
         const event = {
             "objectId": "p25iag5OcM",
@@ -181,16 +181,16 @@ class RestaurantCell extends Component {
             "listPhotoId": "HdxKn0YrZZ",
             "localPhotoStatus": false
         }
-        this.props.navigator.push({
-            recipe: recipe,
-            forRestaurant: restaurant,
-            forEvent: event,
-            forUser: user
-        });
+        // this.props.navigator.push({
+        //     recipe: recipe,
+        //     forRestaurant: restaurant,
+        //     forEvent: event,
+        //     forUser: user
+        // });
     }
 
     componentDidMount() {
-        // this.onPress()
+        this.onPress()
     }
 
     render() {
