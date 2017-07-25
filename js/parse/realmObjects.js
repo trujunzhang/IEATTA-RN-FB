@@ -132,6 +132,10 @@ RecipeSchema.schema = {
         // Attributes
         displayName: 'string',
         price: 'string',
+        // Pointer
+        restaurantId: 'string',
+        eventId: 'string',
+        userId: 'string'
     }
 }
 

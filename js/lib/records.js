@@ -105,6 +105,9 @@ Records.getRealmData = function (parseObject, object) {
                 displayName: object.displayName,
                 price: object.price,
                 // Pointer
+                restaurantId: object.restaurantId,
+                eventId: object.eventId,
+                userId: object.userId
             }
         case PARSE_PHOTOS:
             // debugger

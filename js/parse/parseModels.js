@@ -188,7 +188,11 @@ export function fromParseRecipe(map: Object): Recipe {
         updatedAt: map.get('updatedAt'),
         // Attributes
         displayName: map.get('displayName'),
-        price: map.get('price')
+        price: map.get('price'),
+        // point
+        restaurantId: map.get('restaurant') && map.get('restaurant').id || '',
+        eventId: map.get('event') && map.get('event').id || '',
+        userId: map.get('user') && map.get('user').id || ''
     }
 }
 
