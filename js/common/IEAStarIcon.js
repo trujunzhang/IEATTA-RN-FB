@@ -63,7 +63,6 @@ class IEAStarIcon extends Component {
     }
 }
 
-
-export default IEAStarIcon
+module.exports = IEAStarIcon;
 
 

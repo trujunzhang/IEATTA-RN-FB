@@ -14,8 +14,6 @@ import {
 const {width, height} = Dimensions.get('window')
 
 const CaptionTextView = require('CaptionTextView')
-const IEAStarIcon = require('../../../common/IEAStarIcon').default
-
 const {getLocalImagePath} = require('../../../parse/fsApi')
 
 class RLEventParallaxHeader extends Component {

@@ -17,8 +17,6 @@ const F8Colors = require('F8Colors')
 const F8Button = require('F8Button')
 const CaptionTextView = require('CaptionTextView')
 
-const IEAStarIcon = require('../../../common/IEAStarIcon').default
-
 const Events = require('../../../lib/events').default
 
 import Svg, {

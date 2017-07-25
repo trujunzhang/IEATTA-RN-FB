@@ -13,59 +13,32 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
-
-const IEAStarIcon = require('../../../common/IEAStarIcon').default
+const {getLocalImagePath} = require('../../../parse/fsApi')
 
 class RLOrderedUserParallaxHeader extends Component {
 
-    constructor(props, context) {
-        super(props);
-        this.state = this.initialState = {};
-    }
-
-    /**
-     * className:'biz-rating biz-rating-large clearfix'
-     * @returns {XML}
-     */
-    renderMiddle() {
+    renderLeft() {
+        const {forRestaurant} = this.props,
+            localImagePath = getLocalImagePath(forRestaurant.listPhotoId)
         return (
-            <View style={{
-                height: 28,
-                flexDirection: 'row',
-                alignItems: 'center',
-            }}>
-                <IEAStarIcon/>
-                <Text style={{
-                    marginLeft: 4,
-                    fontSize: 12,
-                    color: "#ccc"
-                }}>{"30 reviews"}</Text>
-            </View>
+            <Image style={[
+                {
+                    width: 60,
+                    height: 60,
+                    borderRadius: 4,
+                }, {
+                    marginTop: 0,
+                    marginRight: 16,
+                }
+            ]}
+                   source={{uri: `file://${localImagePath}`}}/>
         )
     }
 
-    renderBottom() {
-        const {forRestaurant} = this.props
+    renderRight() {
+        const {orderedUser, forRestaurant, forEvent} = this.props;
         return (
-            <Text style={{fontSize: 12, color: "white"}}>
-                {forRestaurant.address}
-            </Text>
-        )
-    }
-
-    render() {
-        const {forRestaurant} = this.props
-        return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column',
-                width: width,
-                //backgroundColor: 'red',
-                paddingLeft: 10,
-                paddingRight: 10,
-                justifyContent: 'flex-end',
-                paddingBottom: 80
-            }}>
+            <View>
                 <Text style={{
                     width: width,
                     height: 36,
@@ -73,9 +46,28 @@ class RLOrderedUserParallaxHeader extends Component {
                     fontWeight: 'bold',
                     letterSpacing: -1,
                     color: 'white'
-                }}>{forRestaurant.displayName}</Text>
-                {this.renderMiddle()}
-                {this.renderBottom()}
+                }}>{orderedUser.displayName}</Text>
+                <Text style={{fontSize: 12, color: "white"}}>
+                    {forRestaurant.displayName}
+                </Text>
+            </View>
+        )
+    }
+
+    render() {
+        return (
+            <View style={{
+                flex: 1,
+                width: width,
+                // backgroundColor: 'red',
+                paddingHorizontal: 10,
+                justifyContent: 'flex-end',
+                paddingBottom: 20
+            }}>
+                <View style={{height: 140, flexDirection: 'row'}}>
+                    {this.renderLeft()}
+                    {this.renderRight()}
+                </View>
             </View>
         )
     }

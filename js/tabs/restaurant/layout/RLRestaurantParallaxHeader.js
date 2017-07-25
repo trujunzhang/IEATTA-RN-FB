@@ -13,8 +13,7 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
-
-const IEAStarIcon = require('../../../common/IEAStarIcon').default
+const IEAStarIcon = require('IEAStarIcon')
 
 class RLRestaurantParallaxHeader extends Component {
 
