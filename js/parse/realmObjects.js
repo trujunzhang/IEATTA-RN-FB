@@ -136,7 +136,10 @@ RecipeSchema.schema = {
         restaurantId: 'string',
         eventId: 'string',
         userId: 'string',
-        listPhotoId: 'string'
+
+        // Photos
+        listPhotoId: 'string',
+        localPhotoStatus: 'bool'
     }
 }
 

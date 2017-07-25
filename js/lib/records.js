@@ -104,6 +104,9 @@ Records.getRealmData = function (parseObject, object) {
                 // Attributes
                 displayName: object.displayName,
                 price: object.price,
+                // Photos
+                listPhotoId: object.listPhotoId || '',
+                localPhotoStatus: false,
                 // Pointer
                 restaurantId: object.restaurantId,
                 eventId: object.eventId,
