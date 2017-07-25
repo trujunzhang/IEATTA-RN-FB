@@ -163,7 +163,17 @@ class RestaurantCell extends Component {
             forRestaurant: restaurant,
             forEvent: event
         });
-        const recipe = {}
+        const recipe = {
+            "objectId": "GsJxbBcJaE",
+            "updatedAt": "2017-07-11T13:07:00.434Z",
+            "displayName": "House salad with salmon",
+            "price": "40",
+            "restaurantId": "",
+            "eventId": "",
+            "userId": "",
+            "listPhotoId": "HdxKn0YrZZ",
+            "localPhotoStatus": false
+        }
         // this.props.navigator.push({
         //     recipe: recipe,
         //     forRestaurant: restaurant,
