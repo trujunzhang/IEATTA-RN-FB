@@ -41,10 +41,11 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
+const CellRowHeight = 84
+
 const F8Colors = require('F8Colors')
 const {Text} = require('F8Text')
-
-const CellRowHeight = 84
+const CaptionTextView = require('CaptionTextView')
 
 const {getLocalImagePath} = require('../../../parse/fsApi')
 
@@ -115,12 +116,7 @@ class OrderedRecipeCell extends React.Component {
                     color: "#333"
                 }}>{recipe.displayName}</Text>
                 {this.renderMiddle()}
-                <Text numberOfLines={1}
-                      style={{
-                          height: 17,
-                          fontSize: 14,
-                          color: "#333"
-                      }}>{recipe.price}</Text>
+                <CaptionTextView caption="$" title={recipe.price}/>
             </View>
         )
     }
