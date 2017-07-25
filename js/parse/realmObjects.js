@@ -135,7 +135,8 @@ RecipeSchema.schema = {
         // Pointer
         restaurantId: 'string',
         eventId: 'string',
-        userId: 'string'
+        userId: 'string',
+        listPhotoId: 'string'
     }
 }
 

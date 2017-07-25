@@ -119,7 +119,10 @@ Records.getRealmData = function (parseObject, object) {
                 photoType: object.photoType,
                 // Pointer
                 restaurantId: object.restaurantId || '',
-                recipeId: object.recipeId || ''
+                recipeId: object.recipeId || '',
+                // Photos
+                listPhotoId: object.listPhotoId || '',
+                localPhotoStatus: false
             }
         case PARSE_REVIEWS:
             return {
