@@ -163,6 +163,13 @@ class RestaurantCell extends Component {
             forRestaurant: restaurant,
             forEvent: event
         });
+        const recipe = {}
+        // this.props.navigator.push({
+        //     recipe: recipe,
+        //     forRestaurant: restaurant,
+        //     forEvent: event,
+        //     forUser: user
+        // });
     }
 
     componentDidMount() {
