@@ -56,9 +56,9 @@ class RestaurantCell extends Component {
     }
 
     renderLeft() {
-        const {item} = this.props,
-            {localPhotoStatus} = item
-        const localImagePath = getLocalImagePath(item.listPhotoId)
+        const {restaurant} = this.props,
+            {localPhotoStatus} = restaurant
+        const localImagePath = getLocalImagePath(restaurant.listPhotoId)
         // debugger
         return (
             <View style={{
@@ -90,7 +90,7 @@ class RestaurantCell extends Component {
     }
 
     renderRight() {
-        const {item} = this.props
+        const {restaurant} = this.props
         return (
             <View style={{
                 flex: 1,
@@ -102,23 +102,23 @@ class RestaurantCell extends Component {
                     fontWeight: "700",
                     fontSize: 16,
                     color: "#333"
-                }}>{item.displayName}</Text>
+                }}>{restaurant.displayName}</Text>
                 {this.renderMiddle()}
                 <Text numberOfLines={1}
                       style={{
                           height: 17,
                           fontSize: 14,
                           color: "#333"
-                      }}>{item.address}</Text>
+                      }}>{restaurant.address}</Text>
             </View>
         )
     }
 
     renderCell() {
-        const {item} = this.props;
+        const {restaurant} = this.props;
         return (
             <View
-                key={item.objectId}
+                key={restaurant.objectId}
                 style={{
                     paddingLeft: 10,
                     marginRight: 10,
@@ -141,8 +141,9 @@ class RestaurantCell extends Component {
     }
 
     onPress() {
-        const restaurant = this.props.item;
+        const {restaurant} = this.props;
         this.props.navigator.push({restaurant});
+
         const event = {
             "objectId": "p25iag5OcM",
             "updatedAt": "2017-07-12T01:16:19.472Z",

@@ -103,7 +103,7 @@ class IEANearRestaurantScene extends Component {
         if (sectionID === MENU_SECTIONS_MORE) {
             return (<RestaurantHomeListItem key={item.tag} item={item} navigator={this.props.navigator}/>)
         }
-        return (<RestaurantCell key={item.objectId} item={item} navigator={this.props.navigator}/>)
+        return (<RestaurantCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
     }
 
     renderSectionHeader(sectionData, sectionId) {
