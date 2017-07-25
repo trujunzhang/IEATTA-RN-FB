@@ -44,7 +44,7 @@ const PureListView = require('PureListView')
 const SectionHeader = require('SectionHeader')
 
 const StaticContainer = require('react-native/Libraries/Components/StaticContainer')
-const RLRestaurantListViewHeaderView = require('./RLRestaurantListViewHeaderView')
+const RLRecipeListViewHeaderView = require('./RLRecipeListViewHeaderView')
 
 const {queryEventsForRestaurant} = require('../../../actions')
 
@@ -138,7 +138,7 @@ class DetailedRecipeListView extends React.Component {
         return (
             <StaticContainer>
                 <View style={{flex: 1, marginTop: 200}}>
-                    <RLRestaurantListViewHeaderView
+                    <RLRecipeListViewHeaderView
                         item={this.props.item}
                         onShowAllPhotosPress={this.onShowAllPhotosPress.bind(this)}/>
                 </View>
@@ -149,8 +149,8 @@ class DetailedRecipeListView extends React.Component {
     renderEmptyList(): ?ReactElement {
         return (
             <EmptyRecipe
-                title={`No events on the restaurant`}
-                text="Chick the add icon to add an event."
+                title={`No recipes for the user`}
+                text="Chick the cross icon to add new recipe."
             />
         );
     }

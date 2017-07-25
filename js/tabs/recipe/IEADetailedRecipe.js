@@ -46,11 +46,9 @@ const ListContainer = require('../../common/ListContainer')
 const FilterScreen = require('../../filter/FilterScreen')
 
 const RLRecipeParallaxHeader = require('./layout/RLRecipeParallaxHeader')
-const DetailedRestaurantListView = require('./layout/DetailedRestaurantListView')
+const DetailedRecipeListView = require('./layout/DetailedRecipeListView')
 
 const {getLocalImagePath} = require('../../parse/fsApi')
-const {Event} = require('../../parse/parseModels')
-
 
 /**
  * The states were interested in
@@ -64,12 +62,7 @@ const {
 const {createSelector} = require('reselect')
 
 
-const data = createSelector(
-    (store) => store.events,
-);
-
 type Props = {
-    events: Array<Event>;
     navigator: Navigator;
     logOut: () => void;
 };
@@ -86,9 +79,9 @@ class IEADetailedRecipe extends React.Component {
     }
 
     render() {
-        const {item} = this.props,
+        const {recipe} = this.props,
             {localPhotoStatus} = item
-        const localImagePath = getLocalImagePath(item.listPhotoId, PARSE_THUMBNAIL_IMAGES)
+        const localImagePath = getLocalImagePath(recipe.listPhotoId, PARSE_THUMBNAIL_IMAGES)
 
         const leftItem = {
             icon: require('../../common/img/back_white.png'),
@@ -99,8 +92,8 @@ class IEADetailedRecipe extends React.Component {
 
         const content = (
             <ListContainer
-                item={item}
-                title={item.displayName}
+                item={recipe}
+                title={recipe.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
                     return (<RLRecipeParallaxHeader item={item}/>)
@@ -108,7 +101,6 @@ class IEADetailedRecipe extends React.Component {
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                <DetailedRestaurantListView item={item} navigator={this.props.navigator}/>
             </ListContainer>
         )
 
