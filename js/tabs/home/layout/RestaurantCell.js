@@ -48,7 +48,7 @@ const {getLocalImagePath} = require('../../../parse/fsApi')
 
 const IEAStarIcon = require('../../../common/IEAStarIcon').default
 
-class RestaurantItem extends Component {
+class RestaurantCell extends Component {
 
     constructor(props) {
         super(props);
@@ -181,4 +181,4 @@ class RestaurantItem extends Component {
 
 }
 
-module.exports = RestaurantItem
+module.exports = RestaurantCell

@@ -55,7 +55,7 @@ const {
     MENU_SECTIONS_RESTAURANTS,
 } = require('../../lib/constants').default
 
-const RestaurantItem = require('./layout/RestaurantItem')
+const RestaurantCell = require('./layout/RestaurantCell')
 const RestaurantHomeListItem = require('./layout/RestaurantHomeListItem')
 
 const Restaurants = require('../../lib/restaurants').default
@@ -103,7 +103,7 @@ class IEANearRestaurantScene extends Component {
         if (sectionID === MENU_SECTIONS_MORE) {
             return (<RestaurantHomeListItem key={item.tag} item={item} navigator={this.props.navigator}/>)
         }
-        return (<RestaurantItem key={item.objectId} item={item} navigator={this.props.navigator}/>)
+        return (<RestaurantCell key={item.objectId} item={item} navigator={this.props.navigator}/>)
     }
 
     renderSectionHeader(sectionData, sectionId) {
