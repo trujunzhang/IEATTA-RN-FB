@@ -148,29 +148,6 @@ class RLOrderedUserListViewHeaderView extends Component {
         )
     }
 
-    renderSeeAllPhotosButton() {
-        return (
-            <F8Button
-                type="photos"
-                style={{
-                    marginTop: 10,
-                    height: 43,
-                    backgroundColor: '#41c532',
-                    borderRadius: 4
-                }}
-                caption="See all photos"
-                captionStyle={{
-                    color: '#FFF',
-                    fontSize: 12,
-                    fontWeight: 'bold'
-                }}
-                onPress={() => {
-                    this.props.onShowAllPhotosPress()
-                }}
-            />
-        )
-    }
-
     render() {
         return (
             <View style={{
@@ -181,29 +158,6 @@ class RLOrderedUserListViewHeaderView extends Component {
             }}>
                 {this.renderActions()}
 
-                <View style={[{ // className="island island--light"
-                    width: width,
-                    height: 175,
-                    flexDirection: 'column',
-                    backgroundColor: 'white'
-                }, {// Padding and Margin
-                    marginTop: 30,
-                    marginBottom: 30,
-                    paddingLeft: 10,
-                    paddingRight: 10,
-                    paddingTop: 10,
-                    paddingBottom: 10
-                }, {// shadow
-                    borderTopWidth: 1,
-                    borderBottomWidth: 1,
-                    borderLeftWidth: 0,
-                    borderRightWidth: 0,
-                    borderWidth: 1,
-                    borderStyle: "solid",
-                    borderColor: "#ccc"
-                }]}>
-                    {this.renderSeeAllPhotosButton()}
-                </View>
             </View>
         )
     }

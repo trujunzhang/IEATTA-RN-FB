@@ -88,7 +88,7 @@ class OrderedUserListView extends React.Component {
 
     componentWillReceiveProps(nextProps: Props) {
         if (nextProps.appModel && nextProps.appModel.events) {
-            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.item.objectId) {
+            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.forRestaurant.objectId) {
                 this.setState({
                     sections: {
                         MENU_SECTIONS_EVENTS: nextProps.appModel.events.results || []
@@ -99,7 +99,7 @@ class OrderedUserListView extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(queryEventsForRestaurant(this.props.item.objectId))
+        this.props.dispatch(queryEventsForRestaurant(this.props.forRestaurant.objectId))
     }
 
 

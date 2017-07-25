@@ -153,7 +153,6 @@ let F8Navigator = React.createClass({
         }
 
         if (route.orderedUser) {
-            debugger
             return <IEAOrderedUser navigator={navigator}
                                    orderedUser={route.orderedUser}
                                    forRestaurant={route.forRestaurant}

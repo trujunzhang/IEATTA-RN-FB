@@ -103,12 +103,12 @@ class IEAOrderedUser extends React.Component {
                 title={orderedUser.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
-                    return (<RLOrderedUserParallaxHeader item={item}/>)
+                    return (<RLOrderedUserParallaxHeader {...this.props}/>)
                 }}
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                <OrderedUserListView item={item} navigator={this.props.navigator}/>
+                <OrderedUserListView {...this.props}/>
             </ListContainer>
         )
 
