@@ -157,6 +157,28 @@ const PhotoService = {
 }
 
 
+const RecipeService = {
+    findAll: function () {
+        return repository.objects(PARSE_RECIPES)
+    },
+
+    save: function (item) {
+        if (repository.objects(PARSE_RECIPES).filtered('objectId == $0', item.id).length) return;
+        repository.write(() => {
+            repository.create(PARSE_RECIPES, Records.getRealmData(PARSE_RECIPES, item))
+        })
+    },
+
+    update: function (item, callback) {
+        if (!callback) return;
+        repository.write(() => {
+            callback();
+            item.updatedAt = new Date();
+        })
+    }
+}
+
+
 const UserService = {
     findAll: function (sortBy) {
         return repository.objects(PARSE_USERS)
@@ -204,5 +226,6 @@ export default {
     EventService,
     PeopleInEventService,
     PhotoService,
-    UserService
+    UserService,
+    RecipeService
 }

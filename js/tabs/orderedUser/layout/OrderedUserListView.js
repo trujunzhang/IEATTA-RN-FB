@@ -46,7 +46,7 @@ const SectionHeader = require('SectionHeader')
 const StaticContainer = require('react-native/Libraries/Components/StaticContainer')
 const RLOrderedUserListViewHeaderView = require('./RLOrderedUserListViewHeaderView')
 
-const {queryEventsForRestaurant} = require('../../../actions')
+const {queryRecipesForUser} = require('../../../actions')
 
 const Photos = require('../../../lib/photos').default
 
@@ -99,7 +99,7 @@ class OrderedUserListView extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(queryEventsForRestaurant(this.props.forRestaurant.objectId))
+        this.props.dispatch(queryRecipesForUser(this.props.forRestaurant.objectId))
     }
 
 
