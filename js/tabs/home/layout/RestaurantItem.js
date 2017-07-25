@@ -152,7 +152,7 @@ class RestaurantItem extends Component {
             "restaurantId": "OnNGSfwoou",
             "restaurantName": "LISA"
         }
-        // this.props.navigator.push({event: event, forRestaurant: restaurant});
+        this.props.navigator.push({event: event, forRestaurant: restaurant});
         const user = {
             "objectId": "aGkde8iuL6",
             "updatedAt": "2017-07-11T07:47:06.425Z",
@@ -160,15 +160,15 @@ class RestaurantItem extends Component {
             "displayName": "Jaron Lawrence",
             "email": ""
         }
-        // this.props.navigator.push({
-        //     orderedUser: user,
-        //     forRestaurant: restaurant,
-        //     forEvent: event
-        // });
+        this.props.navigator.push({
+            orderedUser: user,
+            forRestaurant: restaurant,
+            forEvent: event
+        });
     }
 
     componentDidMount() {
-        // this.onPress()
+        this.onPress()
     }
 
     render() {
