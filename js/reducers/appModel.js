@@ -34,6 +34,7 @@ const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
     QUERY_PHOTOS_FOR_RESTAURANT,
+    QUERY_PHOTOS_FOR_RECIPE,
     QUERY_USERS_FOR_EVENT,
     QUERY_RECIPES_FOR_USER,
     PHOTO_BROWSER_OPEN,
@@ -66,6 +67,12 @@ function appModel(state: State = initialState, action: Action): State {
     if (action.type === QUERY_PHOTOS_FOR_RESTAURANT) {
         const nextState = Object.assign({}, state, {
             restaurantPhoto: action.payload
+        })
+        return nextState
+    }
+    if (action.type === QUERY_PHOTOS_FOR_RECIPE) {
+        const nextState = Object.assign({}, state, {
+            recipePhoto: action.payload
         })
         return nextState
     }

@@ -42,14 +42,9 @@ const {width, height} = Dimensions.get('window')
 const F8Colors = require('F8Colors')
 const PhotoGrid = require('../../../common/PhotoGrid').default
 
-const {queryPhotosForRestaurant} = require('../../../actions')
+const {queryPhotosForRecipe} = require('../../../actions')
 
 const {getLocalImagePath} = require('../../../parse/fsApi')
-
-const {
-    PARSE_ORIGINAL_IMAGES,
-    PARSE_THUMBNAIL_IMAGES
-} = require('../../../lib/constants').default
 
 import Svg, {
     G,
@@ -84,18 +79,18 @@ class RecipePhotoHorizonView extends React.Component {
     }
 
     componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.appModel && nextProps.appModel.restaurantPhoto) {
+        if (nextProps.appModel && nextProps.appModel.recipePhoto) {
             // debugger
-            if (nextProps.appModel.restaurantPhoto.restaurantId && nextProps.appModel.restaurantPhoto.restaurantId === this.props.item.objectId) {
+            if (nextProps.appModel.recipePhoto.recipeId && nextProps.appModel.recipePhoto.recipeId === this.props.forRecipe.objectId) {
                 this.setState({
-                    photos: nextProps.appModel.restaurantPhoto.results || []
+                    photos: nextProps.appModel.recipePhoto.results || []
                 })
             }
         }
     }
 
     componentDidMount() {
-        this.props.dispatch(queryPhotosForRestaurant(this.props.item.objectId))
+        this.props.dispatch(queryPhotosForRecipe(this.props.forRecipe.objectId))
     }
 
     render() {
@@ -143,7 +138,7 @@ class RecipePhotoHorizonView extends React.Component {
     renderRow(photo: Object,
               itemWidth: Int,
               index: Int) {
-        const localImagePath = getLocalImagePath(photo.objectId, PARSE_THUMBNAIL_IMAGES),
+        const localImagePath = getLocalImagePath(photo.objectId),
             onShowAllPhotosPress = this.props.onShowAllPhotosPress
         return (
             <TouchableOpacity

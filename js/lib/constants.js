@@ -10,6 +10,7 @@ export default keyMirror({
     QUERY_NEAR_RESTAURANTS: null,
     QUERY_EVENTS_FOR_RESTAURANT: null,
     QUERY_PHOTOS_FOR_RESTAURANT: null,
+    QUERY_PHOTOS_FOR_RECIPE: null,
     QUERY_USERS_FOR_EVENT: null,
     QUERY_RECIPES_FOR_USER: null,
 

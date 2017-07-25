@@ -204,7 +204,7 @@ class RLRecipeListViewHeaderView extends Component {
                     borderColor: "#ccc"
                 }]}>
                     <RecipePhotoHorizonView
-                        item={this.props.item}
+                        forRecipe={this.props.forRecipe}
                         onShowAllPhotosPress={this.props.onShowAllPhotosPress}/>
                     {this.renderSeeAllPhotosButton()}
                 </View>

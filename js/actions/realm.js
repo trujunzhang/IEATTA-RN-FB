@@ -44,6 +44,7 @@ const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
     QUERY_PHOTOS_FOR_RESTAURANT,
+    QUERY_PHOTOS_FOR_RECIPE,
     QUERY_USERS_FOR_EVENT,
     QUERY_RECIPES_FOR_USER,
     PARSE_ORIGINAL_IMAGES,
@@ -183,6 +184,36 @@ function queryPhotosForRestaurant(restaurantId: string): ThunkAction {
 }
 
 
+async function _queryPhotosForRecipe(recipeId: string): Promise<Array<Action>> {
+    const results = PhotoService.findAll().filtered('recipeId = "' + recipeId + '"');
+
+    const action = {
+        type: QUERY_PHOTOS_FOR_RECIPE,
+        payload: {
+            recipeId: recipeId,
+            results: results
+        }
+    }
+    return Promise.all([
+        Promise.resolve(action)
+    ])
+}
+
+function queryPhotosForRecipe(recipeId: string): ThunkAction {
+    return (dispatch) => {
+        const action = _queryPhotosForRecipe(recipeId)
+
+        // Loading friends schedules shouldn't block the login process
+        action.then(
+            ([result]) => {
+                dispatch(result)
+            }
+        )
+        return action
+    }
+}
+
+
 async function _queryRecipesForUser(restaurantId: string, eventId: string, userId: string): Promise<Array<Action>> {
     // const results = RecipeService.findAll().filtered('restaurantId = "' + restaurantId + '"');
     const results = RecipeService.findAll().slice(0, 5);
@@ -221,4 +252,5 @@ export default {
     queryPeopleForEvent,
     queryPhotosForRestaurant,
     queryRecipesForUser,
+    queryPhotosForRecipe,
 }
