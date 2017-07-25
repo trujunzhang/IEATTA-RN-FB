@@ -104,11 +104,12 @@ class RestaurantCell extends Component {
                     color: "#333"
                 }}>{item.displayName}</Text>
                 {this.renderMiddle()}
-                <Text style={{
-                    height: 17,
-                    fontSize: 14,
-                    color: "#333"
-                }}>{item.address}</Text>
+                <Text numberOfLines={1}
+                      style={{
+                          height: 17,
+                          fontSize: 14,
+                          color: "#333"
+                      }}>{item.address}</Text>
             </View>
         )
     }
