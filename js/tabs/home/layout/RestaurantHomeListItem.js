@@ -118,4 +118,4 @@ class RestaurantHomeListItem extends Component {
 
 }
 
-module.exports = RestaurantHomeListItem
+module.exports = RestaurantHomeListItem;

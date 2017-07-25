@@ -181,4 +181,4 @@ class RestaurantCell extends Component {
 
 }
 
-module.exports = RestaurantCell
+module.exports = RestaurantCell;

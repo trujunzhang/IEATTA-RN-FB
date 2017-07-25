@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = EmptyRestaurant
+module.exports = EmptyRestaurant;
