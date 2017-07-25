@@ -58,13 +58,12 @@ class OrderedRecipeCell extends React.Component {
     }
 
     onPress() {
-        const event = this.props.item;
-        this.props.navigator.push({event});
+        const {recipe} = this.props;
+        this.props.navigator.push({recipe});
     }
 
     render() {
-        const item = this.props.item;
-        const info = Events.getDateInfo(item);
+        const {recipe} = this.props;
         return (
             <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
                 <View style={[{
@@ -83,22 +82,8 @@ class OrderedRecipeCell extends React.Component {
                     }, {
                         marginBottom: 8
                     }]}>
-                        {item.displayName}
+                        {recipe.displayName}
                     </Text>
-                    <View style={{
-                        flex: 1,
-                        flexDirection: 'row',
-                        alignItems: 'center'
-                    }}>
-                        <Svg width="24" height="24">
-                            <Path fill="#666"
-                                  d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-6 5h4v4h-4v-4z"/>
-                        </Svg>
-                        {/*Saturday, 1 Jul, 12:00 am – Monday, 31 Jul, 12:00 am*/}
-                        <Text style={[styles.locationText, {color: '#666'}]}>
-                            {`${info.startFormat} - ${info.endFormat}`}
-                        </Text>
-                    </View>
                 </View>
             </TouchableHighlight>
         )

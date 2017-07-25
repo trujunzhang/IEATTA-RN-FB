@@ -60,13 +60,8 @@ const {
 
 
 type Props = {
-    events: Array;
     navigator: Navigator;
     renderEmptyList?: (day: number) => ReactElement;
-};
-
-type State = {
-    events: Array;
 };
 
 class OrderedUserListView extends React.Component {
@@ -87,11 +82,11 @@ class OrderedUserListView extends React.Component {
 
 
     componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.appModel && nextProps.appModel.events) {
-            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.forRestaurant.objectId) {
+        if (nextProps.appModel && nextProps.appModel.orderedRecipes) {
+            if (nextProps.appModel.orderedRecipes.restaurantId && nextProps.appModel.orderedRecipes.restaurantId === this.props.forRestaurant.objectId) {
                 this.setState({
                     sections: {
-                        MENU_SECTIONS_ORDERED_RECIPES: nextProps.appModel.events.results || []
+                        MENU_SECTIONS_ORDERED_RECIPES: nextProps.appModel.orderedRecipes.results || []
                     }
                 })
             }
@@ -128,14 +123,11 @@ class OrderedUserListView extends React.Component {
         return (<View style={{height: 60}}/>)
     }
 
-    renderRow(item: any,
+    renderRow(recipe: any,
               sectionID: number | string,
               rowID: number | string) {
         return (
-            <OrderedRecipeCell
-                navigator={this.props.navigator}
-                item={item}
-            />
+            <OrderedRecipeCell {...this.props} recipe={recipe}/>
         )
     }
 
@@ -154,8 +146,8 @@ class OrderedUserListView extends React.Component {
     renderEmptyList(): ?ReactElement {
         return (
             <EmptyOrderedRecipe
-                title={`No events on the restaurant`}
-                text="Chick the add icon to add an event."
+                title={`No recipes ordered by the user`}
+                text="Chick the add icon to add an recipe."
             />
         );
     }
