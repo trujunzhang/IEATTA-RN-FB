@@ -67,7 +67,7 @@ class OrderedRecipeCell extends React.Component {
             recipe: recipe,
             forRestaurant: forRestaurant,
             forEvent: forEvent,
-            orderedUser: orderedUser
+            forUser: orderedUser
         });
     }
 
