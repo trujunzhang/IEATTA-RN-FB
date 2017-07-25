@@ -17,6 +17,7 @@ const F8Colors = require('F8Colors')
 const F8Button = require('F8Button')
 const IEAStarIcon = require('IEAStarIcon')
 
+import LinearGradient from 'react-native-linear-gradient'
 const RecipePhotoHorizonView = require('./RecipePhotoHorizonView')
 
 import Svg, {
