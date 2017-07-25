@@ -168,6 +168,7 @@ class RLRecipeListViewHeaderView extends Component {
     }
 
     render() {
+        debugger
         return (
             <View style={{
                 flex: 1,

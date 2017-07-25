@@ -138,7 +138,7 @@ class DetailedRecipeListView extends React.Component {
             <StaticContainer>
                 <View style={{flex: 1, marginTop: 200}}>
                     <RLRecipeListViewHeaderView
-                        item={this.props.item}
+                        forRecipe={this.props.recipe}
                         onShowAllPhotosPress={this.onShowAllPhotosPress.bind(this)}/>
                 </View>
             </StaticContainer>

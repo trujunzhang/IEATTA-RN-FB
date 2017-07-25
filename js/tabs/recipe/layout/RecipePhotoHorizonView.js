@@ -80,7 +80,6 @@ class RecipePhotoHorizonView extends React.Component {
 
     componentWillReceiveProps(nextProps: Props) {
         if (nextProps.appModel && nextProps.appModel.recipePhoto) {
-            // debugger
             if (nextProps.appModel.recipePhoto.recipeId && nextProps.appModel.recipePhoto.recipeId === this.props.forRecipe.objectId) {
                 this.setState({
                     photos: nextProps.appModel.recipePhoto.results || []
