@@ -86,9 +86,9 @@ class IEAOrderedUser extends React.Component {
     }
 
     render() {
-        const {item} = this.props,
-            {localPhotoStatus} = item
-        const localImagePath = getLocalImagePath(item.listPhotoId, PARSE_THUMBNAIL_IMAGES)
+        const {orderedUser, forRestaurant, forEvent} = this.props,
+            {localPhotoStatus} = forRestaurant
+        const localImagePath = getLocalImagePath(forRestaurant.listPhotoId, PARSE_THUMBNAIL_IMAGES)
 
         const leftItem = {
             icon: require('../../common/img/back_white.png'),
@@ -99,8 +99,8 @@ class IEAOrderedUser extends React.Component {
 
         const content = (
             <ListContainer
-                item={item}
-                title={item.displayName}
+                item={orderedUser}
+                title={orderedUser.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
                     return (<RLOrderedUserParallaxHeader item={item}/>)

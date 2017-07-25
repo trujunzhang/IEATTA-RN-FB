@@ -155,7 +155,7 @@ let F8Navigator = React.createClass({
         if (route.orderedUser) {
             debugger
             return <IEAOrderedUser navigator={navigator}
-                                   item={route.orderedUser}
+                                   orderedUser={route.orderedUser}
                                    forRestaurant={route.forRestaurant}
                                    forEvent={route.forEvent}/>
         }

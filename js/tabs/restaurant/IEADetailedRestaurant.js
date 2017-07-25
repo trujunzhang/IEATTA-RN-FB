@@ -103,7 +103,7 @@ class IEADetailedRestaurant extends React.Component {
                 title={restaurant.displayName}
                 backgroundImage={{isLocal: true, path: localImagePath, width: 348}}
                 renderParallaxHeader={(e) => {
-                    return (<RLRestaurantParallaxHeader item={restaurant}/>)
+                    return (<RLRestaurantParallaxHeader {...this.props}/>)
                 }}
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}

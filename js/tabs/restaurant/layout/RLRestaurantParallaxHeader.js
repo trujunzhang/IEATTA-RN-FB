@@ -45,16 +45,16 @@ class RLRestaurantParallaxHeader extends Component {
     }
 
     renderBottom() {
-        const {item} = this.props
+        const {restaurant} = this.props
         return (
             <Text style={{fontSize: 12, color: "white"}}>
-                {item.address}
+                {restaurant.address}
             </Text>
         )
     }
 
     render() {
-        const {item} = this.props
+        const {restaurant} = this.props
         return (
             <View style={{
                 flex: 1,
@@ -73,7 +73,7 @@ class RLRestaurantParallaxHeader extends Component {
                     fontWeight: 'bold',
                     letterSpacing: -1,
                     color: 'white'
-                }}>{item.displayName}</Text>
+                }}>{restaurant.displayName}</Text>
                 {this.renderMiddle()}
                 {this.renderBottom()}
             </View>
@@ -84,5 +84,5 @@ class RLRestaurantParallaxHeader extends Component {
 }
 
 
-module.exports = RLRestaurantParallaxHeader
+module.exports = RLRestaurantParallaxHeader;
 
