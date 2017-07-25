@@ -50,12 +50,11 @@ const {queryEventsForRestaurant} = require('../../../actions')
 
 const Photos = require('../../../lib/photos').default
 
-
 /**
  * The states were interested in
  */
 const {
-    MENU_SECTIONS_EVENTS,
+    MENU_SECTIONS_DETAILED_RECIPE,
 } = require('../../../lib/constants').default
 
 
@@ -75,7 +74,7 @@ class DetailedRecipeListView extends React.Component {
 
         this.state = {
             sections: {
-                MENU_SECTIONS_EVENTS: []
+                MENU_SECTIONS_DETAILED_RECIPE: []
             }
         }
     }
@@ -86,7 +85,7 @@ class DetailedRecipeListView extends React.Component {
             if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.item.objectId) {
                 this.setState({
                     sections: {
-                        MENU_SECTIONS_EVENTS: nextProps.appModel.events.results || []
+                        MENU_SECTIONS_DETAILED_RECIPE: nextProps.appModel.events.results || []
                     }
                 })
             }

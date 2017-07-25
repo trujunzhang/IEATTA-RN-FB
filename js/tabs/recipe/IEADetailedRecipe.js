@@ -101,7 +101,7 @@ class IEADetailedRecipe extends React.Component {
                 leftItem={leftItem}
                 backgroundColor={F8Colors.primaryColor}
                 selectedSectionColor="#51CDDA">
-                {/*<DetailedRecipeListView {...this.props}/>*/}
+                <DetailedRecipeListView {...this.props}/>
             </ListContainer>
         )
 
