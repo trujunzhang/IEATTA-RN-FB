@@ -56,6 +56,7 @@ const IEANearRestaurantScene = require('./tabs/home/IEANearRestaurantScene')
 const IEADetailedRestaurant = require('./tabs/restaurant/IEADetailedRestaurant')
 const IEADetailedEvent = require('./tabs/event/IEADetailedEvent')
 const IEAOrderedUser = require('./tabs/orderedUser/IEAOrderedUser')
+const IEADetailedRecipe = require('./tabs/recipe/IEADetailedRecipe')
 
 const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
 
@@ -163,11 +164,11 @@ let F8Navigator = React.createClass({
         }
 
         if (route.recipe) {
-            debugger
-            return <IEAOrderedUser navigator={navigator}
-                                   orderedUser={route.orderedUser}
-                                   forRestaurant={route.forRestaurant}
-                                   forEvent={route.forEvent}/>
+            return <IEADetailedRecipe navigator={navigator}
+                                      recipe={route.recipe}
+                                      forRestaurant={route.forRestaurant}
+                                      forEvent={route.forEvent}
+                                      forUser={route.forUser}/>
         }
 
 

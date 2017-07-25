@@ -74,7 +74,7 @@ type Props = {
     logOut: () => void;
 };
 
-class IEADetailedRestaurant extends React.Component {
+class IEADetailedRecipe extends React.Component {
     props: Props;
     _drawer: ?F8DrawerLayout;
 
@@ -142,4 +142,4 @@ class IEADetailedRestaurant extends React.Component {
     }
 }
 
-module.exports = IEADetailedRestaurant;
+module.exports = IEADetailedRecipe;
