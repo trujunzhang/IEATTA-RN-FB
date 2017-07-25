@@ -44,7 +44,8 @@ const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
     QUERY_PHOTOS_FOR_RESTAURANT,
-    QUERY_PEOPLE_FOR_EVENT,
+    QUERY_USERS_FOR_EVENT,
+    QUERY_RECIPES_FOR_USER,
     PARSE_ORIGINAL_IMAGES,
     PARSE_THUMBNAIL_IMAGES
 } = require('../lib/constants').default
@@ -96,7 +97,7 @@ async function _queryPeopleForEvent(eventId: string): Promise<Array<Action>> {
     const users = UserService.getUsersContainedIn(ids)
 
     const action = {
-        type: QUERY_PEOPLE_FOR_EVENT,
+        type: QUERY_USERS_FOR_EVENT,
         payload: {
             eventId: eventId,
             results: users
@@ -183,7 +184,8 @@ function queryPhotosForRestaurant(restaurantId: string): ThunkAction {
 
 
 async function _queryRecipesForUser(restaurantId: string, eventId: string, userId: string): Promise<Array<Action>> {
-    const results = RecipeService.findAll().filtered('restaurantId = "' + restaurantId + '"');
+    // const results = RecipeService.findAll().filtered('restaurantId = "' + restaurantId + '"');
+    const results = RecipeService.findAll().slice(0, 5);
 
     const action = {
         type: QUERY_EVENTS_FOR_RESTAURANT,

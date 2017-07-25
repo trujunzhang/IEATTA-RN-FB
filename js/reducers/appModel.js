@@ -34,7 +34,8 @@ const {
     QUERY_NEAR_RESTAURANTS,
     QUERY_EVENTS_FOR_RESTAURANT,
     QUERY_PHOTOS_FOR_RESTAURANT,
-    QUERY_PEOPLE_FOR_EVENT,
+    QUERY_USERS_FOR_EVENT,
+    QUERY_RECIPES_FOR_USER,
     PHOTO_BROWSER_OPEN,
     PHOTO_BROWSER_CLOSE,
 } = require('../lib/constants').default
@@ -68,9 +69,15 @@ function appModel(state: State = initialState, action: Action): State {
         })
         return nextState
     }
-    if (action.type === QUERY_PEOPLE_FOR_EVENT) {
+    if (action.type === QUERY_USERS_FOR_EVENT) {
         const nextState = Object.assign({}, state, {
-            peopleInEvent: action.payload
+            usersInEvent: action.payload
+        })
+        return nextState
+    }
+    if (action.type === QUERY_RECIPES_FOR_USER) {
+        const nextState = Object.assign({}, state, {
+            orderedRecipes: action.payload
         })
         return nextState
     }

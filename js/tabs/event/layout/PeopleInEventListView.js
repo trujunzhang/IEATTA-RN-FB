@@ -83,11 +83,11 @@ class PeopleInEventListView extends React.Component {
     }
 
     componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.appModel && nextProps.appModel.peopleInEvent) {
-            if (nextProps.appModel.peopleInEvent.eventId && nextProps.appModel.peopleInEvent.eventId === this.props.event.objectId) {
+        if (nextProps.appModel && nextProps.appModel.usersInEvent) {
+            if (nextProps.appModel.usersInEvent.eventId && nextProps.appModel.usersInEvent.eventId === this.props.event.objectId) {
                 this.setState({
                     sections: {
-                        MENU_SECTIONS_PEOPLE_IN_EVENTS: nextProps.appModel.peopleInEvent.results || []
+                        MENU_SECTIONS_PEOPLE_IN_EVENTS: nextProps.appModel.usersInEvent.results || []
                     }
                 })
             }
