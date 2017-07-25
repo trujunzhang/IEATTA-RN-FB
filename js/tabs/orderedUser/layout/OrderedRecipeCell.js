@@ -62,8 +62,13 @@ class OrderedRecipeCell extends React.Component {
 
 
     onPress() {
-        const {recipe} = this.props;
-        this.props.navigator.push({recipe});
+        const {orderedUser, forRestaurant, forEvent, recipe} = this.props;
+        this.props.navigator.push({
+            recipe: recipe,
+            forRestaurant: forRestaurant,
+            forEvent: forEvent,
+            orderedUser: orderedUser
+        });
     }
 
     renderLeft() {
