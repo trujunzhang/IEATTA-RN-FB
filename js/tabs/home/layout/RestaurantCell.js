@@ -50,10 +50,6 @@ const IEAStarIcon = require('IEAStarIcon')
 
 class RestaurantCell extends Component {
 
-    constructor(props) {
-        super(props);
-
-    }
 
     renderLeft() {
         const {restaurant} = this.props,

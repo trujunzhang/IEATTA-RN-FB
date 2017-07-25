@@ -39,11 +39,17 @@ import {
     Platform,
     Dimensions
 } from 'react-native'
+const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
 const {Text} = require('F8Text')
 
-const Events = require('../../../lib/events').default
+const CellRowHeight = 84
+
+const {getLocalImagePath} = require('../../../parse/fsApi')
+
+const IEAStarIcon = require('IEAStarIcon')
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Svg, {
     G,
@@ -53,38 +59,106 @@ import Svg, {
 
 class OrderedRecipeCell extends React.Component {
 
-    componentDidMount() {
-        // this.onPress()
-    }
 
     onPress() {
         const {recipe} = this.props;
         this.props.navigator.push({recipe});
     }
 
-    render() {
+    renderLeft() {
+        const {recipe} = this.props,
+            {localPhotoStatus} = recipe
+        const localImagePath = getLocalImagePath(recipe.listPhotoId)
+        // debugger
+        return (
+            <View style={{
+                marginRight: 10,
+                width: 60,
+                height: 60
+            }}>
+                <Image style={{flex: 1, borderRadius: 4}}
+                       source={{uri: `file://${localImagePath}`}}/>
+            </View>
+        )
+    }
+
+
+    renderMiddle() {
+        return (
+            <View style={{
+                height: 28,
+                flexDirection: 'row',
+                alignItems: 'center',
+            }}>
+                <IEAStarIcon/>
+                <Text style={{
+                    marginLeft: 4,
+                    fontSize: 12,
+                    color: "#666"
+                }}>{"30 reviews"}</Text>
+            </View>
+        )
+    }
+
+    renderRight() {
+        const {recipe} = this.props
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                // backgroundColor: 'blue'
+            }}>
+                <Text style={{
+                    height: 17,
+                    fontWeight: "700",
+                    fontSize: 16,
+                    color: "#333"
+                }}>{recipe.displayName}</Text>
+                {this.renderMiddle()}
+                <Text numberOfLines={1}
+                      style={{
+                          height: 17,
+                          fontSize: 14,
+                          color: "#333"
+                      }}>{recipe.price}</Text>
+            </View>
+        )
+    }
+
+    renderCell() {
         const {recipe} = this.props;
         return (
-            <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
-                <View style={[{
-                    backgroundColor: 'white',
-                    // backgroundColor: 'red'
-                }, {
-                    flexDirection: 'column',
-                }, {
-                    paddingHorizontal: 8,
-                    paddingVertical: 6
-                }]}>
-                    <Text numberOfLines={2} style={[styles.titleText, {
-                        color: '#0073bb',
-                        fontWeight: 'bold',
-                        fontSize: 18
-                    }, {
-                        marginBottom: 8
-                    }]}>
-                        {recipe.displayName}
-                    </Text>
+            <View
+                key={recipe.objectId}
+                style={{
+                    paddingLeft: 10,
+                    marginRight: 10,
+                    backgroundColor: "white",
+                    width: width,
+                    height: CellRowHeight,
+                }}>
+                <View style={{// .action-list .action
+                    flex: 1,
+                    marginLeft: -10,
+                    marginRight: -10,
+                    padding: 10,
+                    flexDirection: 'row',
+                }}>
+                    {this.renderLeft()}
+                    {this.renderRight()}
                 </View>
+                <View style={{position: 'absolute', right: 10, top: (CellRowHeight - 24) / 2}}>
+                    <Icon name="angle-right" size={24} color="#C8C7CC"/>
+                </View>
+            </View>
+        )
+    }
+
+
+    render() {
+        return (
+            <TouchableHighlight underlayColor={F8Colors.cellUnderlayColor} onPress={this.onPress.bind(this)}>
+                {this.renderCell()}
             </TouchableHighlight>
         )
     }
