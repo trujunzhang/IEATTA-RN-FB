@@ -43,7 +43,8 @@ const {
     MENU_SECTIONS_MORE,
     MENU_SECTIONS_RESTAURANTS,
     MENU_SECTIONS_EVENTS,
-    MENU_SECTIONS_PEOPLE_IN_EVENTS
+    MENU_SECTIONS_PEOPLE_IN_EVENTS,
+    MENU_SECTIONS_ORDERED_RECIPES
 } = require('../lib/constants').default
 
 
@@ -51,7 +52,8 @@ const SECTION_TITLES = {
     MENU_SECTIONS_MORE: 'More',
     MENU_SECTIONS_RESTAURANTS: 'Restaurants Nearby',
     MENU_SECTIONS_EVENTS: 'Events',
-    MENU_SECTIONS_PEOPLE_IN_EVENTS: 'Ordered Users'
+    MENU_SECTIONS_PEOPLE_IN_EVENTS: 'Ordered Users',
+    MENU_SECTIONS_ORDERED_RECIPES: 'Recipes'
 }
 
 class SectionHeader extends React.Component {

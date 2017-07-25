@@ -142,7 +142,7 @@ class RestaurantCell extends Component {
 
     onPress() {
         const {restaurant} = this.props;
-        this.props.navigator.push({restaurant});
+        // this.props.navigator.push({restaurant});
 
         const event = {
             "objectId": "p25iag5OcM",
@@ -162,15 +162,15 @@ class RestaurantCell extends Component {
             "displayName": "Jaron Lawrence",
             "email": ""
         }
-        // this.props.navigator.push({
-        //     orderedUser: user,
-        //     forRestaurant: restaurant,
-        //     forEvent: event
-        // });
+        this.props.navigator.push({
+            orderedUser: user,
+            forRestaurant: restaurant,
+            forEvent: event
+        });
     }
 
     componentDidMount() {
-        // this.onPress()
+        this.onPress()
     }
 
     render() {

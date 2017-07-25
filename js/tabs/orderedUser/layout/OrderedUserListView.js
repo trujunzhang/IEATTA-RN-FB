@@ -55,7 +55,7 @@ const Photos = require('../../../lib/photos').default
  * The states were interested in
  */
 const {
-    MENU_SECTIONS_EVENTS,
+    MENU_SECTIONS_ORDERED_RECIPES,
 } = require('../../../lib/constants').default
 
 
@@ -80,7 +80,7 @@ class OrderedUserListView extends React.Component {
 
         this.state = {
             sections: {
-                MENU_SECTIONS_EVENTS: []
+                MENU_SECTIONS_ORDERED_RECIPES: []
             }
         }
     }
@@ -91,7 +91,7 @@ class OrderedUserListView extends React.Component {
             if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.forRestaurant.objectId) {
                 this.setState({
                     sections: {
-                        MENU_SECTIONS_EVENTS: nextProps.appModel.events.results || []
+                        MENU_SECTIONS_ORDERED_RECIPES: nextProps.appModel.events.results || []
                     }
                 })
             }
