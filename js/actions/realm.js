@@ -188,7 +188,7 @@ async function _queryRecipesForUser(restaurantId: string, eventId: string, userI
     const results = RecipeService.findAll().slice(0, 5);
 
     const action = {
-        type: QUERY_EVENTS_FOR_RESTAURANT,
+        type: QUERY_RECIPES_FOR_USER,
         payload: {
             restaurantId: restaurantId,
             eventId: eventId,
