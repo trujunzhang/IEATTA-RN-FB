@@ -81,19 +81,19 @@ class DetailedRecipeListView extends React.Component {
 
 
     componentWillReceiveProps(nextProps: Props) {
-        if (nextProps.appModel && nextProps.appModel.events) {
-            if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.item.objectId) {
-                this.setState({
-                    sections: {
-                        MENU_SECTIONS_DETAILED_RECIPE: nextProps.appModel.events.results || []
-                    }
-                })
-            }
-        }
+        // if (nextProps.appModel && nextProps.appModel.events) {
+        //     if (nextProps.appModel.events.restaurantId && nextProps.appModel.events.restaurantId === this.props.item.objectId) {
+        //         this.setState({
+        //             sections: {
+        //                 MENU_SECTIONS_DETAILED_RECIPE: nextProps.appModel.events.results || []
+        //             }
+        //         })
+        //     }
+        // }
     }
 
     componentDidMount() {
-        this.props.dispatch(queryEventsForRestaurant(this.props.item.objectId))
+        // this.props.dispatch(queryEventsForRestaurant(this.props.item.objectId))
     }
 
 

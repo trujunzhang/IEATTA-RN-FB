@@ -15,9 +15,9 @@ const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
 const F8Button = require('F8Button')
+const IEAStarIcon = require('IEAStarIcon')
 
 import LinearGradient from 'react-native-linear-gradient'
-const IEAStarIcon = require('../../../common/IEAStarIcon').default
 const RecipePhotoHorizonView = require('./RecipePhotoHorizonView')
 
 import Svg, {
@@ -26,11 +26,6 @@ import Svg, {
 } from 'react-native-svg'
 
 class RLRecipeListViewHeaderView extends Component {
-
-    constructor(props, context) {
-        super(props);
-        this.state = this.initialState = {};
-    }
 
     renderTopReviewAction() {
         const reviewPanelWidth = width * 0.9
