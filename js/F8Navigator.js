@@ -145,11 +145,14 @@ let F8Navigator = React.createClass({
             return <RatingScreen navigator={navigator} surveys={route.surveys}/>;
         }
         if (route.restaurant) {
-            return <IEADetailedRestaurant navigator={navigator} restaurant={route.restaurant}/>
+            return <IEADetailedRestaurant navigator={navigator}
+                                          restaurant={route.restaurant}/>
         }
 
         if (route.event) {
-            return <IEADetailedEvent navigator={navigator} event={route.event} forRestaurant={route.forRestaurant}/>
+            return <IEADetailedEvent navigator={navigator}
+                                     event={route.event}
+                                     forRestaurant={route.forRestaurant}/>
         }
 
         if (route.orderedUser) {
