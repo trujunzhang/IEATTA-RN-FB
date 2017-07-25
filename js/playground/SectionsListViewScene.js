@@ -52,7 +52,7 @@ const {
     MENU_ITEM_READ_REVIEWS
 } = require('../lib/constants').default
 
-const RestaurantItem = require('../tabs/home/layout/RestaurantItem')
+const RestaurantCell = require('../tabs/home/layout/RestaurantCell')
 const RestaurantHomeListItem = require('../tabs/home/layout/RestaurantHomeListItem')
 
 // debugger
@@ -139,7 +139,7 @@ class SectionsListViewScene extends Component {
             return (<RestaurantHomeListItem item={item}/>)
         }
         // debugger
-        return (<RestaurantItem item={item}/>)
+        return (<RestaurantCell item={item}/>)
     }
 
     renderSectionHeader(sectionData, sectionTitle) {
