@@ -121,7 +121,6 @@ class F8TabsView extends React.Component {
         } else {
             accountItem = (
                 <View>
-                    <Image source={require('./img/logo.png')}/>
                     <Text style={styles.name}>
                         APRIL 12 + 13 / SAN FRANCISCO
                     </Text>
