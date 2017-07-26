@@ -54,7 +54,7 @@ const {
 
 async function _queryNearRestaurant(): Promise<Array<Action>> {
 
-    const results = RestaurantService.findAll().filtered('displayName == $0', 'LASA')
+    const results = RestaurantService.findAll()//.filtered('displayName == $0', 'LASA')
     for (let i = 0; i < results.length; i++) {
         if (results[i].localPhotoStatus === true) {
             continue

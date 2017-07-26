@@ -36,9 +36,30 @@ const {queryNearRestaurant} = require('../../../actions')
 
 class IEASearchRestaurants extends Component {
 
-    constructor(props, context) {
+    _innerRef: ?PureListView;
+
+    static contextTypes = {
+        openDrawer: React.PropTypes.func
+    };
+
+    constructor(props) {
         super(props);
-        this.state = this.initialState = {};
+
+        this._innerRef = null;
+
+        this.state = {
+            sections: {
+                RESTAURANTS: []
+            }
+        }
+    }
+
+    componentWillReceiveProps(nextProps: Props) {
+        this.setState({
+            sections: {
+                RESTAURANTS: nextProps.appModel.restaurants
+            }
+        })
     }
 
     componentDidMount() {
@@ -69,7 +90,6 @@ class IEASearchRestaurants extends Component {
             }
         } : null
 
-        // debugger
 
         return (
             <View style={{flex: 1, backgroundColor: F8Colors.controllerViewColor}}>
@@ -81,7 +101,7 @@ class IEASearchRestaurants extends Component {
                     subTitle={"Eating Experience Tracker"}/>
                 <PureListView
                     ref={this.storeInnerRef.bind(this)}
-                    data={this.props.appModel.restaurants}
+                    data={this.state.sections}
                     renderRow={this.renderRow.bind(this)}
                     renderFooter={this.renderFooter.bind(this)}
                     {...(this.props /* flow can't guarantee the shape of props */)}
