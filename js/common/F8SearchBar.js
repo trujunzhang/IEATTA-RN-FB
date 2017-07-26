@@ -284,7 +284,10 @@ class F8SearchBar extends Component {
                     }
                     <View style={[
                         styles.nav,
-                        {height: (Platform.OS === 'ios' ? 52 : 62) + heightAdjust},
+                        {
+                            height: (Platform.OS === 'ios' ? 52 : 62) + heightAdjust,
+                            marginTop: (Platform.OS === 'ios' ? 0 : 24)
+                        }
                     ]}
                     >
                         {
@@ -372,11 +375,11 @@ const styles = StyleSheet.create({
         elevation: 2,
         shadowRadius: 5,
         width: width,
-        height: 70,
+        height: (Platform.OS === 'ios') ? 70 : 90,
     },
     navWrapper: {
         width: width,
-        height: 70,
+        height: (Platform.OS === 'ios') ? 70 : 90,
     },
     nav: {
         ...Platform.select({
@@ -391,7 +394,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: width,
-        height: 100,
     },
     input: {
         height: inputHeight,
