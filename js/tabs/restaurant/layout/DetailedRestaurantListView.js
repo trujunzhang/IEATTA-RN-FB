@@ -122,7 +122,6 @@ class DetailedRestaurantListView extends React.Component {
         return (<View style={{height: 60}}/>)
     }
 
-
     renderRow(event: any,
               sectionID: number | string,
               rowID: number | string) {

@@ -52,6 +52,8 @@ const I18n = require('react-native-i18n')
 import Translations from '../../../lib/Translations'
 I18n.translations = Translations
 
+const RestaurantPhotoHorizonView = require('../../restaurant/layout/RestaurantPhotoHorizonView')
+
 /**
  * The states were interested in
  */
@@ -233,7 +235,7 @@ class IEAEditRestaurant extends Component {
                         <RestaurantForm
                             form={this.props.auth.form}
                             value={this.state.value}
-                            onChange={self.onChange.bind(self)}/>
+                            onChange={this.onChange.bind(this)}/>
                     </View>
 
                     <FormButton
@@ -241,7 +243,59 @@ class IEAEditRestaurant extends Component {
                         onPress={this.onButtonPress.bind(this)}
                         buttonText={"Save"}/>
                 </View>
+
+
+                <View style={[{ // className="island island--light"
+                    width: width,
+                    height: 175,
+                    flexDirection: 'column',
+                    backgroundColor: 'white'
+                }, {// Padding and Margin
+                    marginTop: 30,
+                    marginBottom: 30,
+                    paddingLeft: 10,
+                    paddingRight: 10,
+                    paddingTop: 10,
+                    paddingBottom: 10
+                }, {// shadow
+                    borderTopWidth: 1,
+                    borderBottomWidth: 1,
+                    borderLeftWidth: 0,
+                    borderRightWidth: 0,
+                    borderWidth: 1,
+                    borderStyle: "solid",
+                    borderColor: "#ccc"
+                }]}>
+                    <RestaurantPhotoHorizonView
+                        forRestaurant={this.props.forRestaurant}
+                        onShowAllPhotosPress={this.props.onShowAllPhotosPress}/>
+                    {this.renderSeeAllPhotosButton()}
+                </View>
+
             </View>
+        )
+    }
+
+    renderSeeAllPhotosButton() {
+        return (
+            <F8Button
+                type="photos"
+                style={{
+                    marginTop: 10,
+                    height: 43,
+                    backgroundColor: '#41c532',
+                    borderRadius: 4
+                }}
+                caption="See all photos"
+                captionStyle={{
+                    color: '#FFF',
+                    fontSize: 12,
+                    fontWeight: 'bold'
+                }}
+                onPress={() => {
+                    this.props.onShowAllPhotosPress()
+                }}
+            />
         )
     }
 }

@@ -23,7 +23,6 @@
  */
 'use strict';
 
-
 /**
  * The components needed from React
  */
@@ -40,6 +39,7 @@ import {
 const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
+const F8Button = require('F8Button')
 const PhotoGrid = require('../../../common/PhotoGrid').default
 
 const {queryPhotosForRestaurant} = require('../../../actions')
