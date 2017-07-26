@@ -190,7 +190,7 @@ class RestaurantCell extends Component {
     }
 
     componentDidMount() {
-        this.onPress()
+        // this.onPress()
     }
 
     render() {
