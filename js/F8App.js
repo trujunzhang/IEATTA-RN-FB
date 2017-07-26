@@ -71,8 +71,8 @@ class F8App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // playground: true,
-            playground: false,
+            playground: true,
+            // playground: false,
         }
     }
 
@@ -102,12 +102,6 @@ class F8App extends Component {
         this.props.dispatch(loadConfig());
         // this.props.dispatch(loadSessions());
         // updateInstallation({version});
-
-        // this.props.dispatch(receivePushNotification({
-        //     foreground: true,
-        //     message: "wanghao",
-        //     data: {url: "http://www.djzhang.com"}
-        // }));
     }
 
     componentWillUnmount() {
@@ -126,13 +120,13 @@ class F8App extends Component {
 
     render() {
         if (this.state.playground) {
-            // return <Playground.Playground/>
+            return <Playground.Playground/>
             // return <Playground.RNFSApp/>
             // return <Playground.FBLogin/>
             // return <Playground.MapViewScene/>
             // return <Playground.SectionsListViewScene/>
             // return <Playground.PhotoBrowserExample/>
-            return <Playground.BadInstagramCloneApp/>
+            // return <Playground.BadInstagramCloneApp/>
             //return <Playground.ReactNativeMapsApp/>
         }
 
