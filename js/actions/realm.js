@@ -53,7 +53,6 @@ const {
 
 
 async function _queryNearRestaurant(term: Object): Promise<Array<Action>> {
-
     const results = RestaurantService.findByTerm(term)
     for (let i = 0; i < results.length; i++) {
         if (results[i].localPhotoStatus === true) {

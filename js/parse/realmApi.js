@@ -70,6 +70,8 @@ const RestaurantService = {
         }
         if (!!term.search) {
             objects = objects.filtered('displayName CONTAINS[c] $0 OR address CONTAINS[c] $0', term.search)
+            const length = objects.length;
+            // debugger
         }
         return objects;
     },

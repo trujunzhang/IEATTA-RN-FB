@@ -63,7 +63,7 @@ class IEASearchRestaurants extends Component {
         })
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.dispatch(queryNearRestaurant())
     }
 
@@ -81,6 +81,8 @@ class IEASearchRestaurants extends Component {
 
     handleSearch(input) {
         console.log("handle search, ", input);
+
+        this.props.dispatch(queryNearRestaurant({search: input}))
     }
 
 
