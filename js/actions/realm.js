@@ -250,8 +250,6 @@ function queryRecipesForUser(restaurantId: string, eventId: string, userId: stri
 
 async function _queryUsers(term: Object): Promise<Array<Action>> {
     const results = UserService.findByTerm(term)
-    let xxx = results.length
-    debugger
     const action = {
         type: QUERY_SEARCH_USERS,
         payload: results
