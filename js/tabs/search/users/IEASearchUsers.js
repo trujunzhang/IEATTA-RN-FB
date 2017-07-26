@@ -20,7 +20,7 @@ const F8SearchBar = require('F8SearchBar')
 const PureListView = require('PureListView')
 const SectionHeader = require('SectionHeader')
 
-const UserCell = require('../../home/layout/UserCell')
+const UserCell = require('./UserCell')
 
 const {queryNearRestaurant} = require('../../../actions')
 
@@ -95,7 +95,7 @@ class IEASearchUsers extends Component {
                     textColor="white"
                     selectionColor="#ccc"
                     backCloseSize={18}
-                    placeholder={"Search Restaurants"}
+                    placeholder={"Search Users"}
                     placeholderTextColor="#aaa"
                     autoCapitalize={false}
                     ref={(ref) => this.searchBar = ref}/>
