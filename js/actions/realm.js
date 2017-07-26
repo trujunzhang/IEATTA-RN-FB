@@ -33,7 +33,8 @@ import type {Action, ThunkAction} from './types'
 const {
     RestaurantService, EventService, PeopleInEventService,
     RecipeService,
-    PhotoService, UserServicef
+    PhotoService,
+    UserService,
 } = require('../parse/realmApi').default
 const {getLocalImageUri} = require('../parse/fsApi')
 
@@ -248,8 +249,9 @@ function queryRecipesForUser(restaurantId: string, eventId: string, userId: stri
 
 
 async function _queryUsers(term: Object): Promise<Array<Action>> {
-    const results = UserServicef.findByTerm(term)
-
+    const results = UserService.findByTerm(term)
+    let xxx = results.length
+    debugger
     const action = {
         type: QUERY_SEARCH_USERS,
         payload: results
