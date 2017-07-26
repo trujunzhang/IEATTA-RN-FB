@@ -45,7 +45,7 @@ const {height, width} = Dimensions.get('window') // Screen dimensions in current
  * ### Translations
  */
 const I18n = require('react-native-i18n')
-import Translations from '../../../../lib/Translations'
+import Translations from '../../../lib/Translations'
 I18n.translations = Translations
 
 /**
@@ -60,7 +60,7 @@ const {
     LOGIN_FORM_TYPE_LOGIN,
     LOGIN_FORM_TYPE_REGISTER,
     LOGIN_FORM_TYPE_FORGOTPASSWORD
-} = require('../../../../lib/constants').default
+} = require('../../../lib/constants').default
 
 /**
  * ## Styles

@@ -18,7 +18,7 @@ import React, {PropTypes} from 'react'
  * ### Translations
  */
 const I18n = require('react-native-i18n')
-import Translations from '../../../../lib/Translations'
+import Translations from '../../../lib/Translations'
 I18n.translations = Translations
 
 /**
@@ -28,12 +28,12 @@ const {
     REGISTER,
     LOGIN,
     FORGOT_PASSWORD
-} = require('../../../../lib/constants').default
+} = require('../../../lib/constants').default
 
 /**
  *  The fantastic little form library
  */
-const t = require('../../../vendor/tcomb-form-native')
+const t = require('../../../components/vendor/tcomb-form-native')
 let Form = t.form.Form
 
 
