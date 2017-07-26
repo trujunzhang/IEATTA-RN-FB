@@ -63,8 +63,15 @@ const ConfigureService = {
 }
 
 const RestaurantService = {
-    findAll: function (sortBy) {
-        return repository.objects(PARSE_RESTAURANTS)
+    findByTerm: function (term) {
+        let objects = repository.objects(PARSE_RESTAURANTS)
+        if (!!term.location) {
+
+        }
+        if (!!term.search) {
+            objects = objects.filtered('displayName CONTAINS[c] $0 OR address CONTAINS[c] $0', term.search)
+        }
+        return objects;
     },
 
     save: function (item) {

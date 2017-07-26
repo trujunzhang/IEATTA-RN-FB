@@ -52,9 +52,9 @@ const {
 } = require('../lib/constants').default
 
 
-async function _queryNearRestaurant(): Promise<Array<Action>> {
+async function _queryNearRestaurant(term: Object): Promise<Array<Action>> {
 
-    const results = RestaurantService.findAll()//.filtered('displayName == $0', 'LASA')
+    const results = RestaurantService.findByTerm(term)
     for (let i = 0; i < results.length; i++) {
         if (results[i].localPhotoStatus === true) {
             continue
@@ -75,9 +75,9 @@ async function _queryNearRestaurant(): Promise<Array<Action>> {
     ])
 }
 
-function queryNearRestaurant(): ThunkAction {
+function queryNearRestaurant(term: Object = {}): ThunkAction {
     return (dispatch) => {
-        const action = _queryNearRestaurant()
+        const action = _queryNearRestaurant(term)
 
         // Loading friends schedules shouldn't block the login process
         action.then(
