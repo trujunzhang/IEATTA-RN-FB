@@ -79,6 +79,10 @@ class IEASearchRestaurants extends Component {
         )
     }
 
+    handleSearch(input) {
+        console.log("handle search, ", input);
+    }
+
 
     render() {
         const leftItem = {
@@ -95,6 +99,7 @@ class IEASearchRestaurants extends Component {
                     onBack={() => {
                         this.props.navigator.pop()
                     }}
+                    handleSearch={this.handleSearch.bind(this)}
                     iconColor="white"
                     textColor="white"
                     selectionColor="#ccc"
