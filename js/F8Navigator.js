@@ -52,13 +52,21 @@ const RatingScreen = require('./rating/RatingScreen');
 
 const {switchTab} = require('./actions');
 
-const IEANearRestaurantScene = require('./tabs/home/IEANearRestaurantScene')
 const IEADetailedRestaurant = require('./tabs/restaurant/IEADetailedRestaurant')
 const IEADetailedEvent = require('./tabs/event/IEADetailedEvent')
 const IEAOrderedUser = require('./tabs/orderedUser/IEAOrderedUser')
 const IEADetailedRecipe = require('./tabs/recipe/IEADetailedRecipe')
 
 const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
+
+
+const {
+    MENU_ITEM_ADD_A_RESTAURANT,
+    MENU_ITEM_SEARCH_RESTAURANTS,
+    MENU_ITEM_MANAGE_FRIENDS,
+    MENU_ITEM_READ_REVIEWS
+} = require('./lib/constants').default
+
 
 let F8Navigator = React.createClass({
     _handlers: ([]: Array<() => boolean>),
@@ -129,6 +137,22 @@ let F8Navigator = React.createClass({
     },
 
     renderScene: function (route, navigator) {
+        switch (route.navigatorType) {
+            case MENU_ITEM_ADD_A_RESTAURANT: {
+                debugger
+                break;
+            }
+            case MENU_ITEM_SEARCH_RESTAURANTS: {
+                break;
+            }
+            case MENU_ITEM_MANAGE_FRIENDS: {
+                break;
+            }
+            case MENU_ITEM_READ_REVIEWS: {
+                break;
+            }
+        }
+
         if (route.filter) {
             return (
                 <FilterScreen navigator={navigator}/>

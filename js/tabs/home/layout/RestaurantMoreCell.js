@@ -67,12 +67,15 @@ class RestaurantMoreCell extends Component {
     }
 
     onPress() {
+        const {item} = this.props,
+            {tag, icon} = item;
 
+        this.props.navigator.push({tag: item});
     }
 
     renderIcon() {
         const {item} = this.props,
-            {tag, icon} = item
+            {tag, icon} = item;
 
         if (tag === MENU_ITEM_MANAGE_FRIENDS) {
             return (
