@@ -40,9 +40,9 @@ import
     Text,
     TouchableHighlight,
     View,
-    Dimensions
-}
-    from 'react-native'
+    Dimensions,
+    Platform
+}from 'react-native'
 const {height, width} = Dimensions.get('window')
 
 /**
@@ -217,6 +217,14 @@ class IEAEditRestaurant extends Component {
 
         // display the login / register / change password screens
         this.errorAlert.checkError(this.props.auth.form.error)
+
+        let leftItem = (Platform.OS === 'android') ? {
+            title: 'Menu',
+            icon: require('../../../common/img/hamburger.png'),
+            onPress: () => {
+                this.context.openDrawer()
+            }
+        } : null
 
         return (
             <View style={{flex: 1, backgroundColor: F8Colors.controllerViewColor}}>
