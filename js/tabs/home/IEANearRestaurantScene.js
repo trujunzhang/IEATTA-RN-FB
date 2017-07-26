@@ -119,7 +119,7 @@ class IEANearRestaurantScene extends Component {
     }
 
     render() {
-        console.log(JSON.stringify(this.props.user))
+        // console.log(JSON.stringify(this.props.user))
 
         let leftItem = (Platform.OS === 'android') ? {
             title: 'Menu',
