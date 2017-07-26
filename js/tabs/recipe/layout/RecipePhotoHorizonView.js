@@ -40,7 +40,7 @@ import {
 const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
-const PhotoGrid = require('../../../common/PhotoGrid').default
+const F8PhotoGrid = require('F8PhotoGrid')
 
 const {queryPhotosForRecipe} = require('../../../actions')
 
@@ -95,7 +95,7 @@ class RecipePhotoHorizonView extends React.Component {
     render() {
         const {photos} = this.state;
         return (
-            <PhotoGrid
+            <F8PhotoGrid
                 ref={this.storeInnerRef.bind(this)}
                 data={photos}
                 horizontal={true}
