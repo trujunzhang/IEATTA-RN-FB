@@ -226,7 +226,11 @@ class ListContainer extends React.Component {
 
     renderParallaxContent() {
         if (Platform.OS === 'android') {
-            return <View />;
+            return (
+                <View >
+
+                </View>
+            )
         }
         if (this.props.parallaxContent) {
             return this.props.parallaxContent;

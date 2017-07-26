@@ -55,23 +55,25 @@ class RLRestaurantParallaxHeader extends Component {
     render() {
         const {restaurant} = this.props
         return (
-            <View style={{
+            <View style={[{
                 flex: 1,
-                flexDirection: 'column',
-                width: width,
                 // backgroundColor: 'red',
+                flexDirection: 'column',
+                justifyContent: 'flex-end'
+            }, {
+                width: width,
                 paddingHorizontal: 10,
-                justifyContent: 'flex-end',
                 paddingBottom: 80
-            }}>
-                <Text style={{
+            }]}>
+                <Text style={[{
                     width: width,
-                    height: 36,
+                    height: 36
+                }, {
                     fontSize: 24,
                     fontWeight: 'bold',
                     letterSpacing: -1,
                     color: 'white'
-                }}>{restaurant.displayName}</Text>
+                }]}>{restaurant.displayName}</Text>
                 {this.renderMiddle()}
                 {this.renderBottom()}
             </View>
