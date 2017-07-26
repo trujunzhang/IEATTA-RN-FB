@@ -209,11 +209,6 @@ class IEAEditRestaurant extends Component {
     }
 
     renderContent() {
-        let self = this
-
-        let formType = LOGIN
-        let loginButtonText = "Save"
-        let onButtonPress = this.onButtonPress.bind(this)
 
         // display the login / register / change password screens
         this.errorAlert.checkError(this.props.auth.form.error)
@@ -236,7 +231,6 @@ class IEAEditRestaurant extends Component {
                 <View>
                     <View style={styles.inputs}>
                         <RestaurantForm
-                            formType={formType}
                             form={this.props.auth.form}
                             value={this.state.value}
                             onChange={self.onChange.bind(self)}/>
@@ -244,9 +238,8 @@ class IEAEditRestaurant extends Component {
 
                     <FormButton
                         isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
-                        onPress={onButtonPress}
-                        buttonText={loginButtonText}/>
-
+                        onPress={this.onButtonPress.bind(this)}
+                        buttonText={"Save"}/>
                 </View>
             </View>
         )

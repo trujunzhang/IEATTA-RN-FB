@@ -46,7 +46,6 @@ const RestaurantForm = React.createClass({
      * * onChange: function to call when user enters text
      */
     propTypes: {
-        formType: PropTypes.string,
         form: PropTypes.object,
         value: PropTypes.object,
         onChange: PropTypes.func
@@ -59,8 +58,6 @@ const RestaurantForm = React.createClass({
      *
      */
     render () {
-        let formType = this.props.formType
-
         let options = {
             fields: {}
         }
