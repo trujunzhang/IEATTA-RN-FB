@@ -218,13 +218,12 @@ class IEAEditRestaurant extends Component {
         // display the login / register / change password screens
         this.errorAlert.checkError(this.props.auth.form.error)
 
-        let leftItem = (Platform.OS === 'android') ? {
-            title: 'Menu',
-            icon: require('../../../common/img/hamburger.png'),
+        const leftItem = {
+            icon: require('../../common/img/back_white.png'),
             onPress: () => {
-                this.context.openDrawer()
+                this.props.navigator.pop()
             }
-        } : null
+        }
 
         return (
             <View style={{flex: 1, backgroundColor: F8Colors.controllerViewColor}}>
