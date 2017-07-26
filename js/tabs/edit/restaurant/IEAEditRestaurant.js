@@ -200,37 +200,16 @@ class IEAEditRestaurant extends Component {
         )
     }
 
+    onButtonPress() {
+
+    }
+
     renderContent() {
         let self = this
 
-        let formType = this.props.formType
-        let loginButtonText = this.props.loginButtonText
-        let onButtonPress = this.props.onButtonPress
-
-        let leftMessageType = this.props.leftMessageType
-        let rightMessageType = this.props.rightMessageType
-
-        let leftMessage = this.getMessage(leftMessageType, this.props.actions)
-        let rightMessage = this.getMessage(rightMessageType, this.props.actions)
-
-        let displayPasswordCheckbox = this.props.displayPasswordCheckbox
-        /**
-         * Toggle the display of the Password and PasswordAgain fields
-         */
-        let passwordCheckbox = <Text />
-        if (displayPasswordCheckbox) {
-            passwordCheckbox =
-                <ItemCheckbox
-                    text={I18n.t('IEAEditRestaurant.show_password')}
-                    disabled={this.props.auth.form.isFetching}
-                    onCheck={() => {
-                        this.props.actions.onAuthFormFieldChange('showPassword', true)
-                    }}
-                    onUncheck={() => {
-                        this.props.actions.onAuthFormFieldChange('showPassword', false)
-                    }}
-                />
-        }
+        let formType = LOGIN
+        let loginButtonText = "Save"
+        let onButtonPress = this.onButtonPress.bind(this)
 
         // display the login / register / change password screens
         this.errorAlert.checkError(this.props.auth.form.error)
@@ -243,20 +222,12 @@ class IEAEditRestaurant extends Component {
                         form={this.props.auth.form}
                         value={this.state.value}
                         onChange={self.onChange.bind(self)}/>
-                    {passwordCheckbox}
                 </View>
 
                 <FormButton
                     isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
                     onPress={onButtonPress}
                     buttonText={loginButtonText}/>
-
-                <View >
-                    <View style={styles.forgotContainer}>
-                        {leftMessage}
-                        {rightMessage}
-                    </View>
-                </View>
 
             </View>
         )
@@ -279,4 +250,10 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-module.exports = connect(null, mapDispatchToProps)(IEAEditRestaurant)
+function select(store) {
+    return {
+        auth: store.auth
+    };
+}
+
+module.exports = connect(select, mapDispatchToProps)(IEAEditRestaurant)
