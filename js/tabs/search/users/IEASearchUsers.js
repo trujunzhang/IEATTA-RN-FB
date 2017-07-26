@@ -22,7 +22,7 @@ const SectionHeader = require('SectionHeader')
 
 const UserCell = require('./UserCell')
 
-const {queryNearRestaurant} = require('../../../actions')
+const {queryUsers} = require('../../../actions')
 
 class IEASearchUsers extends Component {
 
@@ -39,7 +39,7 @@ class IEASearchUsers extends Component {
 
         this.state = {
             sections: {
-                RESTAURANTS: []
+                USERS: []
             }
         }
     }
@@ -47,13 +47,13 @@ class IEASearchUsers extends Component {
     componentWillReceiveProps(nextProps: Props) {
         this.setState({
             sections: {
-                RESTAURANTS: nextProps.appModel.restaurants
+                USERS: nextProps.appModel.searchUsers
             }
         })
     }
 
     componentWillMount() {
-        this.props.dispatch(queryNearRestaurant())
+        this.props.dispatch(queryUsers())
     }
 
     renderRow = (item: Object,
@@ -71,7 +71,7 @@ class IEASearchUsers extends Component {
     handleSearch(input) {
         console.log("handle search, ", input);
 
-        this.props.dispatch(queryNearRestaurant({search: input}))
+        this.props.dispatch(queryUsers({search: input}))
     }
 
 

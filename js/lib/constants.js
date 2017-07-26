@@ -13,6 +13,7 @@ export default keyMirror({
     QUERY_PHOTOS_FOR_RECIPE: null,
     QUERY_USERS_FOR_EVENT: null,
     QUERY_RECIPES_FOR_USER: null,
+    QUERY_SEARCH_USERS: null,
 
     // Parse local Images folders
     PARSE_ORIGINAL_IMAGES: null,

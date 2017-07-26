@@ -47,6 +47,7 @@ const {
     QUERY_PHOTOS_FOR_RECIPE,
     QUERY_USERS_FOR_EVENT,
     QUERY_RECIPES_FOR_USER,
+    QUERY_SEARCH_USERS,
     PARSE_ORIGINAL_IMAGES,
     PARSE_THUMBNAIL_IMAGES
 } = require('../lib/constants').default
@@ -245,6 +246,34 @@ function queryRecipesForUser(restaurantId: string, eventId: string, userId: stri
     }
 }
 
+
+async function _queryUsers(term: Object): Promise<Array<Action>> {
+    const results = UserServicef.findByTerm(term)
+
+    const action = {
+        type: QUERY_SEARCH_USERS,
+        payload: results
+    }
+    return Promise.all([
+        Promise.resolve(action)
+    ])
+}
+
+function queryUsers(term: Object = {}): ThunkAction {
+    return (dispatch) => {
+        const action = _queryUsers(term)
+
+        // Loading friends schedules shouldn't block the login process
+        action.then(
+            ([result]) => {
+                dispatch(result)
+            }
+        )
+        return action
+    }
+}
+
+
 export default {
     queryNearRestaurant,
     queryEventsForRestaurant,
@@ -252,4 +281,5 @@ export default {
     queryPhotosForRestaurant,
     queryRecipesForUser,
     queryPhotosForRecipe,
+    queryUsers
 }

@@ -37,10 +37,10 @@ const {
     QUERY_PHOTOS_FOR_RECIPE,
     QUERY_USERS_FOR_EVENT,
     QUERY_RECIPES_FOR_USER,
+    QUERY_SEARCH_USERS,
     PHOTO_BROWSER_OPEN,
     PHOTO_BROWSER_CLOSE,
 } = require('../lib/constants').default
-
 
 const initialState = {
     //isPhotoBrowser: false,
@@ -85,6 +85,12 @@ function appModel(state: State = initialState, action: Action): State {
     if (action.type === QUERY_RECIPES_FOR_USER) {
         const nextState = Object.assign({}, state, {
             orderedRecipes: action.payload
+        })
+        return nextState
+    }
+    if (action.type === QUERY_SEARCH_USERS) {
+        const nextState = Object.assign({}, state, {
+            searchUsers: action.payload
         })
         return nextState
     }

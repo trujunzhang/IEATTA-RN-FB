@@ -189,8 +189,14 @@ const RecipeService = {
 
 
 const UserService = {
-    findAll: function (sortBy) {
-        return repository.objects(PARSE_USERS)
+    findByTerm: function (term) {
+        let objects = repository.objects(PARSE_USERS)
+        if (!!term.search) {
+            objects = objects.filtered('displayName CONTAINS[c] $0', term.search)
+            const length = objects.length;
+            // debugger
+        }
+        return objects;
     },
 
     /**
