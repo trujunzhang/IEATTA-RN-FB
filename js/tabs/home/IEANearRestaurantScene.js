@@ -56,7 +56,7 @@ const {
 } = require('../../lib/constants').default
 
 const RestaurantCell = require('./layout/RestaurantCell')
-const RestaurantHomeListItem = require('./layout/RestaurantHomeListItem')
+const RestaurantMoreCell = require('./layout/RestaurantMoreCell')
 
 const Restaurants = require('../../lib/restaurants').default
 
@@ -101,7 +101,7 @@ class IEANearRestaurantScene extends Component {
                  rowID: number | string) => {
 
         if (sectionID === MENU_SECTIONS_MORE) {
-            return (<RestaurantHomeListItem key={item.tag} item={item} navigator={this.props.navigator}/>)
+            return (<RestaurantMoreCell key={item.tag} item={item} navigator={this.props.navigator}/>)
         }
         return (<RestaurantCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
     }

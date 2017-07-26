@@ -53,7 +53,7 @@ const {
 } = require('../lib/constants').default
 
 const RestaurantCell = require('../tabs/home/layout/RestaurantCell')
-const RestaurantHomeListItem = require('../tabs/home/layout/RestaurantHomeListItem')
+const RestaurantMoreCell = require('../tabs/home/layout/RestaurantMoreCell')
 
 // debugger
 
@@ -136,7 +136,7 @@ class SectionsListViewScene extends Component {
                  highlightRowFunc: (sectionID: ?number | string, rowID: ?number | string) => void) => {
 
         if (sectionID === 'categories') {
-            return (<RestaurantHomeListItem item={item}/>)
+            return (<RestaurantMoreCell item={item}/>)
         }
         // debugger
         return (<RestaurantCell item={item}/>)

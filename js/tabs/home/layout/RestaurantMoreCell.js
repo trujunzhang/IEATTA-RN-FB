@@ -52,10 +52,9 @@ const {
     MENU_ITEM_READ_REVIEWS
 } = require('../../../lib/constants').default
 
-
 const CategoriesRowHeight = 50
 
-class RestaurantHomeListItem extends Component {
+class RestaurantMoreCell extends Component {
 
     constructor(props) {
         super(props);
@@ -89,14 +88,15 @@ class RestaurantHomeListItem extends Component {
     render() {
         const {item} = this.props
         return (
-            <View
-                style={{
-                    backgroundColor: "white",
-                    width: width,
-                    height: CategoriesRowHeight,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                }}>
+            <View key={item.tage}
+                  style={[{
+                      backgroundColor: "white",
+                      width: width,
+                      height: CategoriesRowHeight
+                  }, {
+                      flexDirection: 'row',
+                      alignItems: 'center'
+                  }]}>
                 <View style={{
                     width: width,
                     height: 22,
@@ -118,4 +118,4 @@ class RestaurantHomeListItem extends Component {
 
 }
 
-module.exports = RestaurantHomeListItem;
+module.exports = RestaurantMoreCell;
