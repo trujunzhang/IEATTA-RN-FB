@@ -56,8 +56,17 @@ const CategoriesRowHeight = 50
 
 class RestaurantMoreCell extends Component {
 
-    constructor(props) {
-        super(props);
+    render() {
+        return (
+            <TouchableOpacity
+                accessibilityTraits="button"
+                onPress={this.props.onPress}>
+                {this.renderContent()}
+            </TouchableOpacity>
+        )
+    }
+
+    onPress() {
 
     }
 
@@ -85,7 +94,7 @@ class RestaurantMoreCell extends Component {
         )
     }
 
-    render() {
+    renderContent() {
         const {item} = this.props
         return (
             <View key={item.tage}
