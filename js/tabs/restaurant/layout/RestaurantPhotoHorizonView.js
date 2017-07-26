@@ -95,7 +95,9 @@ class RestaurantPhotoHorizonView extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(queryPhotosForRestaurant(this.props.forRestaurant.objectId))
+        if (!!this.props.forRestaurant) {
+            this.props.dispatch(queryPhotosForRestaurant(this.props.forRestaurant.objectId))
+        }
     }
 
     render() {

@@ -8,7 +8,7 @@
 
 const F8Colors = require('F8Colors')
 const F8Header = require('F8Header')
-
+const F8Button = require('F8Button')
 
 /**
  * The ErrorAlert displays an alert for both ios & android
@@ -51,6 +51,8 @@ const {height, width} = Dimensions.get('window')
 const I18n = require('react-native-i18n')
 import Translations from '../../../lib/Translations'
 I18n.translations = Translations
+
+const {queryPhotosForRestaurant} = require('../../../actions')
 
 const RestaurantPhotoHorizonView = require('../../restaurant/layout/RestaurantPhotoHorizonView')
 
@@ -97,6 +99,7 @@ class IEAEditRestaurant extends Component {
         super(props)
         this.errorAlert = new ErrorAlert()
         this.state = {
+            photos: [],
             value: {
                 username: this.props.auth.form.fields.username,
                 email: this.props.auth.form.fields.email,
@@ -110,15 +113,28 @@ class IEAEditRestaurant extends Component {
      * ### componentWillReceiveProps
      * As the properties are validated they will be set here.
      */
-    componentWillReceiveProps(nextprops) {
+    componentWillReceiveProps(nextProps) {
         this.setState({
             value: {
-                username: nextprops.auth.form.fields.username,
-                email: nextprops.auth.form.fields.email,
-                password: nextprops.auth.form.fields.password,
-                passwordAgain: nextprops.auth.form.fields.passwordAgain
+                username: nextProps.auth.form.fields.username,
+                email: nextProps.auth.form.fields.email,
+                password: nextProps.auth.form.fields.password,
+                passwordAgain: nextProps.auth.form.fields.passwordAgain
             }
         })
+
+        if (nextProps.appModel && nextProps.appModel.restaurantPhoto) {
+            // debugger
+            if (nextProps.appModel.restaurantPhoto.restaurantId && nextProps.appModel.restaurantPhoto.restaurantId === this.props.forRestaurant.objectId) {
+                this.setState({
+                    photos: nextProps.appModel.restaurantPhoto.results || []
+                })
+            }
+        }
+    }
+
+    componentDidMount() {
+        // this.props.dispatch(queryPhotosForRestaurant(this.props.forRestaurant.objectId))
     }
 
     /**
