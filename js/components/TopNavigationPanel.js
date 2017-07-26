@@ -99,4 +99,4 @@ class TopNavigationPanel extends Component {
 
 }
 
-module.exports = TopNavigationPanel
+module.exports = TopNavigationPanel;

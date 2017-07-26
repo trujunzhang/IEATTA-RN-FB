@@ -15,6 +15,7 @@ const {width, height} = Dimensions.get('window')
 
 const F8Colors = require('F8Colors')
 const F8Header = require('F8Header')
+const F8SearchBar = require('F8SearchBar')
 
 const PureListView = require('PureListView')
 const SectionHeader = require('SectionHeader')
@@ -63,6 +64,7 @@ class IEASearchRestaurants extends Component {
     }
 
     componentDidMount() {
+        this.searchBar.show();
         this.props.dispatch(queryNearRestaurant())
     }
 
@@ -89,14 +91,19 @@ class IEASearchRestaurants extends Component {
 
         return (
             <View style={{flex: 1, backgroundColor: F8Colors.controllerViewColor}}>
-                <F8Header
-                    style={{backgroundColor: F8Colors.primaryColor}}
-                    foreground='dark'
-                    leftItem={leftItem}>
-                    <View>
-                        <Text>{'xxx'}</Text>
-                    </View>
-                </F8Header>
+                <F8SearchBar
+                    backgroundColor={F8Colors.primaryColor}
+                    onBack={() => {
+                        this.props.navigator.pop()
+                    }}
+                    iconColor="white"
+                    textColor="white"
+                    backCloseSize={18}
+                    placeholder={"Search Restaurants"}
+                    placeholderTextColor="#ccc"
+                    autoCapitalize={false}
+                    ref={(ref) => this.searchBar = ref}/>
+
                 <PureListView
                     ref={this.storeInnerRef.bind(this)}
                     data={this.state.sections}

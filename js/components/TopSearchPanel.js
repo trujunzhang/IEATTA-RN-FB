@@ -43,7 +43,7 @@ const FormButton = require('./FormButton')
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import SearchBar from './SearchBar'
+import SearchBar from '../common/SearchBar'
 import styles from '../general/SignInStyles'
 
 class TopSearchPanel extends Component {
