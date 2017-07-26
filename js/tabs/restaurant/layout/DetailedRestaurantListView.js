@@ -60,13 +60,8 @@ const {
 
 
 type Props = {
-    events: Array;
     navigator: Navigator;
     renderEmptyList?: (day: number) => ReactElement;
-};
-
-type State = {
-    events: Array;
 };
 
 class DetailedRestaurantListView extends React.Component {
@@ -84,7 +79,6 @@ class DetailedRestaurantListView extends React.Component {
             }
         }
     }
-
 
     componentWillReceiveProps(nextProps: Props) {
         if (nextProps.appModel && nextProps.appModel.events) {
