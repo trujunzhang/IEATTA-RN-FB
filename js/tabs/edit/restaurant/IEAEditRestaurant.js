@@ -22,7 +22,7 @@ const FormButton = require('FormButton')
  *  The RestaurantForm does the heavy lifting of displaying the fields for
  * textinput and displays the error messages
  */
-const RestaurantForm = require('RestaurantForm ')
+const RestaurantForm = require('./RestaurantForm')
 
 /**
  * The itemCheckbox will toggle the display of the password fields
