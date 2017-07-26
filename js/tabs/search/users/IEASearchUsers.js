@@ -20,17 +20,7 @@ const F8SearchBar = require('F8SearchBar')
 const PureListView = require('PureListView')
 const SectionHeader = require('SectionHeader')
 
-const {
-    MENU_ITEM_ADD_A_RESTAURANT,
-    MENU_ITEM_SEARCH_RESTAURANTS,
-    MENU_ITEM_MANAGE_FRIENDS,
-    MENU_ITEM_READ_REVIEWS,
-    MENU_SECTIONS_MORE,
-    MENU_SECTIONS_RESTAURANTS,
-} = require('../../../lib/constants').default
-
-const RestaurantCell = require('../../home/layout/RestaurantCell')
-const Restaurants = require('../../../lib/restaurants').default
+const UserCell = require('../../home/layout/UserCell')
 
 const {queryNearRestaurant} = require('../../../actions')
 
@@ -69,7 +59,7 @@ class IEASearchUsers extends Component {
     renderRow = (item: Object,
                  sectionID: number | string,
                  rowID: number | string) => {
-        return (<RestaurantCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
+        return (<UserCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
     }
 
     renderEmptyList() {

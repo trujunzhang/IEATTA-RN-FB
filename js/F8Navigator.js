@@ -59,7 +59,8 @@ const IEADetailedRecipe = require('./tabs/recipe/IEADetailedRecipe')
 
 const IEAPhotoBrowserView = require('./components/lib/photosbrowser/IEAPhotoBrowserView')
 
-const IEASearchRestaurants = require('./tabs/search/restaurants/IEASearchRestaurants.js')
+const IEASearchRestaurants = require('./tabs/search/restaurants/IEASearchRestaurants')
+const IEASearchUsers = require('./tabs/search/users/IEASearchUsers')
 
 const {
     MENU_ITEM_ADD_A_RESTAURANT,
@@ -144,14 +145,10 @@ let F8Navigator = React.createClass({
                 break;
             }
             case MENU_ITEM_SEARCH_RESTAURANTS: {
-                return (
-                    <IEASearchRestaurants
-                        navigator={navigator}
-                    />
-                );
+                return (<IEASearchRestaurants navigator={navigator}/>)
             }
             case MENU_ITEM_MANAGE_FRIENDS: {
-                break;
+                return (<IEASearchUsers navigator={navigator}/>)
             }
             case MENU_ITEM_READ_REVIEWS: {
                 break;
