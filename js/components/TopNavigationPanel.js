@@ -38,7 +38,7 @@ const {width, height} = Dimensions.get('window')
 /**
  * Project component that will respond to onPress
  */
-const FormButton = require('./FormButton')
+const FormButton = require('FormButton')
 
 import styles from '../general/SignInStyles'
 

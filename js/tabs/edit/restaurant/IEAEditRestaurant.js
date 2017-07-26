@@ -15,10 +15,10 @@ const ErrorAlert = require('ErrorAlert')
  */
 const FormButton = require('FormButton')
 /**
- *  The LoginForm does the heavy lifting of displaying the fields for
+ *  The RestaurantForm does the heavy lifting of displaying the fields for
  * textinput and displays the error messages
  */
-import LoginForm from './LoginForm'
+import RestaurantForm from './RestaurantForm'
 /**
  * The itemCheckbox will toggle the display of the password fields
  */
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     }
 })
 
-class LoginRender extends Component {
+class IEAEditRestaurant extends Component {
     constructor(props) {
         super(props)
         this.errorAlert = new ErrorAlert()
@@ -155,7 +155,7 @@ class LoginRender extends Component {
                     // Actions.ForgotPassword()
                     this.props.toggleEvent(LOGIN_FORM_TYPE_FORGOTPASSWORD)
                 }}>
-                <Text>{I18n.t('LoginRender.forgot_password')}</Text>
+                <Text>{I18n.t('IEAEditRestaurant.forgot_password')}</Text>
             </TouchableHighlight>
 
         let alreadyHaveAccount =
@@ -165,7 +165,7 @@ class LoginRender extends Component {
                     // Actions.Login()
                     this.props.toggleEvent(LOGIN_FORM_TYPE_LOGIN)
                 }}>
-                <Text>{I18n.t('LoginRender.already_have_account')}</Text>
+                <Text>{I18n.t('IEAEditRestaurant.already_have_account')}</Text>
             </TouchableHighlight>
 
         let register =
@@ -175,7 +175,7 @@ class LoginRender extends Component {
                     // Actions.Register()
                     this.props.toggleEvent(LOGIN_FORM_TYPE_REGISTER)
                 }}>
-                <Text>{I18n.t('LoginRender.register')}</Text>
+                <Text>{I18n.t('IEAEditRestaurant.register')}</Text>
             </TouchableHighlight>
 
         switch (messageType) {
@@ -221,7 +221,7 @@ class LoginRender extends Component {
         if (displayPasswordCheckbox) {
             passwordCheckbox =
                 <ItemCheckbox
-                    text={I18n.t('LoginRender.show_password')}
+                    text={I18n.t('IEAEditRestaurant.show_password')}
                     disabled={this.props.auth.form.isFetching}
                     onCheck={() => {
                         this.props.actions.onAuthFormFieldChange('showPassword', true)
@@ -238,7 +238,7 @@ class LoginRender extends Component {
         return (
             <View>
                 <View style={styles.inputs}>
-                    <LoginForm
+                    <RestaurantForm
                         formType={formType}
                         form={this.props.auth.form}
                         value={this.state.value}
@@ -271,7 +271,7 @@ class LoginRender extends Component {
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import * as authActions from '../../../../reducers/auth/authActions'
+import * as authActions from '../../../reducers/auth/authActions'
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -279,4 +279,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-module.exports = connect(null, mapDispatchToProps)(LoginRender)
+module.exports = connect(null, mapDispatchToProps)(IEAEditRestaurant)
