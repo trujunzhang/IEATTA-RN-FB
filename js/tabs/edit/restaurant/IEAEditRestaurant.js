@@ -219,7 +219,7 @@ class IEAEditRestaurant extends Component {
         this.errorAlert.checkError(this.props.auth.form.error)
 
         const leftItem = {
-            icon: require('../../common/img/back_white.png'),
+            icon: require('../../../common/img/back_white.png'),
             onPress: () => {
                 this.props.navigator.pop()
             }

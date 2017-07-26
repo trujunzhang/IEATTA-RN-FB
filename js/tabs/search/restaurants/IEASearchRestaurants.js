@@ -59,7 +59,7 @@ class IEASearchRestaurants extends Component {
     renderRow = (restaurant: Object,
                  sectionID: number | string,
                  rowID: number | string) => {
-        return (<RestaurantCell key={restaurant.objectId} restaurant={item} navigator={this.props.navigator}/>)
+        return (<RestaurantCell key={restaurant.objectId} restaurant={restaurant} navigator={this.props.navigator}/>)
     }
 
     renderEmptyList() {
