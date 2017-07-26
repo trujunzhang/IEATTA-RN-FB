@@ -64,7 +64,6 @@ class IEASearchRestaurants extends Component {
     }
 
     componentDidMount() {
-        this.searchBar.show();
         this.props.dispatch(queryNearRestaurant())
     }
 

@@ -21,6 +21,7 @@
  *
  * @providesModule F8SearchBar
  * @flow
+ * @github https://github.com/localz/react-native-searchbar
  */
 
 'use strict';
@@ -45,6 +46,9 @@ import {debounce} from 'lodash/function';
 
 const INITIAL_TOP = Platform.OS === 'ios' ? -80 : -60;
 
+/**
+ * github: [https://github.com/localz/react-native-searchbar]
+ */
 class F8SearchBar extends Component {
 
     static propTypes = {
@@ -102,7 +106,7 @@ class F8SearchBar extends Component {
         placeholderTextColor: 'lightgray',
         animate: true,
         animationDuration: 200,
-        showOnLoad: false,
+        showOnLoad: true,
         hideBack: false,
         hideX: false,
         iOSPadding: true,
