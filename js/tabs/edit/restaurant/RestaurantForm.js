@@ -65,98 +65,20 @@ const RestaurantForm = React.createClass({
             fields: {}
         }
 
-        let username = {
-            label: I18n.t('RestaurantForm.username'),
-            maxLength: 12,
+        let displayName = {
+            label: I18n.t('editRestaurant.displayName'),
+            maxLength: 20,
             editable: !this.props.form.isFetching,
             hasError: this.props.form.fields.usernameHasError,
             error: this.props.form.fields.usernameErrorMsg
         }
 
-        let email = {
-            label: I18n.t('RestaurantForm.email'),
-            keyboardType: 'email-address',
-            editable: !this.props.form.isFetching,
-            hasError: this.props.form.fields.emailHasError,
-            error: this.props.form.fields.emailErrorMsg
-        }
-
-        let secureTextEntry = !this.props.form.fields.showPassword
-
-        let password = {
-            label: I18n.t('RestaurantForm.password'),
-            maxLength: 12,
-            secureTextEntry: secureTextEntry,
-            editable: !this.props.form.isFetching,
-            hasError: this.props.form.fields.passwordHasError,
-            error: this.props.form.fields.passwordErrorMsg
-        }
-
-        let passwordAgain = {
-            label: I18n.t('RestaurantForm.password_again'),
-            secureTextEntry: secureTextEntry,
-            maxLength: 12,
-            editable: !this.props.form.isFetching,
-            hasError: this.props.form.fields.passwordAgainHasError,
-            error: this.props.form.fields.passwordAgainErrorMsg
-        }
-
-        let RestaurantForm
-        switch (formType) {
-            /**
-             * ### Registration
-             * The registration form has 4 fields
-             */
-            case (REGISTER):
-                RestaurantForm = t.struct({
-                    username: t.String,
-                    email: t.String,
-                    password: t.String,
-                    passwordAgain: t.String
-                })
-                options.fields['username'] = username
-                options.fields['username'].placeholder = I18n.t('RestaurantForm.username')
-                options.fields['username'].autoCapitalize = 'none'
-                options.fields['email'] = email
-                options.fields['email'].placeholder = I18n.t('RestaurantForm.email')
-                options.fields['email'].autoCapitalize = 'none'
-                options.fields['password'] = password
-                options.fields['password'].placeholder = I18n.t('RestaurantForm.password')
-                options.fields['password'].autoCapitalize = 'none'
-                options.fields['passwordAgain'] = passwordAgain
-                options.fields['passwordAgain'].placeholder = I18n.t('RestaurantForm.password_again')
-                options.fields['passwordAgain'].autoCapitalize = 'none'
-                break
-
-            /**
-             * ### Login
-             * The login form has only 2 fields
-             */
-            case (LOGIN):
-                RestaurantForm = t.struct({
-                    username: t.String,
-                    password: t.String
-                })
-                options.fields['username'] = username
-                options.fields['username'].placeholder = I18n.t('RestaurantForm.username')
-                options.fields['username'].autoCapitalize = 'none'
-                options.fields['password'] = password
-                options.fields['password'].placeholder = I18n.t('RestaurantForm.password')
-                break
-
-            /**
-             * ### Reset password
-             * The password reset form has only 1 field
-             */
-            case (FORGOT_PASSWORD):
-                RestaurantForm = t.struct({
-                    email: t.String
-                })
-                options.fields['email'] = email
-                options.fields['email'].autoCapitalize = 'none'
-                options.fields['email'].placeholder = I18n.t('RestaurantForm.email')
-                break
-        } // switch
+        const editRestaurantForm = t.struct({
+            displayName: t.String
+        })
+        options.fields['displayName'] = displayName
+        options.fields['displayName'].placeholder = I18n.t('editRestaurant.displayNamePlaceHolder')
+        options.fields['displayName'].autoCapitalize = 'none'
 
         /**
          * ### Return
@@ -164,14 +86,13 @@ const RestaurantForm = React.createClass({
          */
         return (
             <Form ref='form'
-                  type={RestaurantForm}
+                  type={editRestaurantForm}
                   options={options}
                   value={this.props.value}
                   onChange={this.props.onChange}
             />
-
         )
     }
 })
 
-module.exports = RestaurantForm
+module.exports = RestaurantForm;
