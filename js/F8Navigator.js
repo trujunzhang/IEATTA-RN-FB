@@ -139,7 +139,7 @@ let F8Navigator = React.createClass({
     renderScene: function (route, navigator) {
         switch (route.navigatorType) {
             case MENU_ITEM_ADD_A_RESTAURANT: {
-                debugger
+
                 break;
             }
             case MENU_ITEM_SEARCH_RESTAURANTS: {

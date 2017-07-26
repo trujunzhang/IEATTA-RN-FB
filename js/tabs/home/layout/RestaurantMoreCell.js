@@ -60,7 +60,7 @@ class RestaurantMoreCell extends Component {
         return (
             <TouchableOpacity
                 accessibilityTraits="button"
-                onPress={this.props.onPress}>
+                onPress={this.onPress.bind(this)}>
                 {this.renderContent()}
             </TouchableOpacity>
         )
@@ -69,8 +69,7 @@ class RestaurantMoreCell extends Component {
     onPress() {
         const {item} = this.props,
             {tag, icon} = item;
-
-        this.props.navigator.push({tag: item});
+        this.props.navigator.push({navigatorType: tag, model: item});
     }
 
     renderIcon() {
