@@ -232,6 +232,7 @@ class ListContainer extends React.Component {
             return this.props.parallaxContent;
         }
         if (this.props.renderParallaxHeader) {
+            const scrollOffY = this.state.anim._value;
             return this.props.renderParallaxHeader()
         }
         return (
