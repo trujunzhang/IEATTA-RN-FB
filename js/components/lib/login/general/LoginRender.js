@@ -18,7 +18,8 @@ const FormButton = require('FormButton')
  *  The LoginForm does the heavy lifting of displaying the fields for
  * textinput and displays the error messages
  */
-import LoginForm from './LoginForm'
+const LoginForm = require('./LoginForm')
+
 /**
  * The itemCheckbox will toggle the display of the password fields
  */
@@ -34,11 +35,9 @@ import
     ScrollView,
     Text,
     TouchableHighlight,
-    View
-}
-    from 'react-native'
-
-import Dimensions from 'Dimensions'
+    View,
+    Dimensions
+}from 'react-native'
 const {height, width} = Dimensions.get('window') // Screen dimensions in current orientation
 
 /**

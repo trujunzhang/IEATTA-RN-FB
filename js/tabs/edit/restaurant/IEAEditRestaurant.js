@@ -6,6 +6,10 @@
  */
 'use strict'
 
+const F8Colors = require('F8Colors')
+const F8Header = require('F8Header')
+
+
 /**
  * The ErrorAlert displays an alert for both ios & android
  */
@@ -18,7 +22,8 @@ const FormButton = require('FormButton')
  *  The RestaurantForm does the heavy lifting of displaying the fields for
  * textinput and displays the error messages
  */
-import RestaurantForm from './RestaurantForm'
+const RestaurantForm = require('RestaurantForm ')
+
 /**
  * The itemCheckbox will toggle the display of the password fields
  */
@@ -34,12 +39,11 @@ import
     ScrollView,
     Text,
     TouchableHighlight,
-    View
+    View,
+    Dimensions
 }
     from 'react-native'
-
-import Dimensions from 'Dimensions'
-const {height, width} = Dimensions.get('window') // Screen dimensions in current orientation
+const {height, width} = Dimensions.get('window')
 
 /**
  * ### Translations
@@ -215,20 +219,28 @@ class IEAEditRestaurant extends Component {
         this.errorAlert.checkError(this.props.auth.form.error)
 
         return (
-            <View>
-                <View style={styles.inputs}>
-                    <RestaurantForm
-                        formType={formType}
-                        form={this.props.auth.form}
-                        value={this.state.value}
-                        onChange={self.onChange.bind(self)}/>
+            <View style={{flex: 1, backgroundColor: F8Colors.controllerViewColor}}>
+                <F8Header
+                    style={{backgroundColor: F8Colors.primaryColor}}
+                    foreground='dark'
+                    leftItem={leftItem}
+                    title={"IEATTA"}
+                    subTitle={"Eating Experience Tracker"}/>
+                <View>
+                    <View style={styles.inputs}>
+                        <RestaurantForm
+                            formType={formType}
+                            form={this.props.auth.form}
+                            value={this.state.value}
+                            onChange={self.onChange.bind(self)}/>
+                    </View>
+
+                    <FormButton
+                        isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
+                        onPress={onButtonPress}
+                        buttonText={loginButtonText}/>
+
                 </View>
-
-                <FormButton
-                    isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
-                    onPress={onButtonPress}
-                    buttonText={loginButtonText}/>
-
             </View>
         )
     }
