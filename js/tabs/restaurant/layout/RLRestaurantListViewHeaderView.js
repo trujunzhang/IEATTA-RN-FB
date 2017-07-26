@@ -27,25 +27,22 @@ import Svg, {
 
 class RLRestaurantListViewHeaderView extends Component {
 
-    constructor(props, context) {
-        super(props);
-        this.state = this.initialState = {};
-    }
-
     renderTopReviewAction() {
         const reviewPanelWidth = width * 0.9
         return (
-            <View style={{
+            <View style={[{
                 flexDirection: 'column',
                 alignItems: 'center',
+                // backgroundColor: 'red'
+            }, {
                 width: reviewPanelWidth,
                 height: 90,
                 paddingTop: 15,
-                paddingBottom: 18,
+                paddingBottom: 18
+            }, {
                 borderBottomWidth: 1,
-                borderBottomColor: "#ccc",
-                // backgroundColor: 'red'
-            }}>
+                borderBottomColor: "#ccc"
+            }]}>
                 <IEAStarIcon width={132} height={24}/>
                 <Text style={{
                     fontSize: 14,

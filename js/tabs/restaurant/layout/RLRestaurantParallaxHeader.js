@@ -53,7 +53,7 @@ class RLRestaurantParallaxHeader extends Component {
     }
 
     render() {
-        const {restaurant} = this.props
+        const {restaurant} = this.props;
         return (
             <View style={[{
                 flex: 1,
