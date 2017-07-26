@@ -92,9 +92,11 @@ class IEASearchRestaurants extends Component {
                 <F8Header
                     style={{backgroundColor: F8Colors.primaryColor}}
                     foreground='dark'
-                    leftItem={leftItem}
-                    title={"IEATTA"}
-                    subTitle={"Eating Experience Tracker"}/>
+                    leftItem={leftItem}>
+                    <View>
+                        <Text>{'xxx'}</Text>
+                    </View>
+                </F8Header>
                 <PureListView
                     ref={this.storeInnerRef.bind(this)}
                     data={this.state.sections}
