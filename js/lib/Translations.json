@@ -55,7 +55,7 @@
       "valid_password_again": "密码不匹配"
     },
     "editRestaurant": {
-      "displayName": "displayName",
+      "displayName": "name",
       "displayNamePlaceHolder": "restaurant name"
     }
   },
@@ -115,7 +115,7 @@
       "valid_password_again": "Passwords must match"
     },
     "editRestaurant": {
-      "displayName": "displayName",
+      "displayName": "name",
       "displayNamePlaceHolder": "restaurant name"
     }
   },
@@ -175,7 +175,7 @@
       "valid_password_again": "les mots de passe doivent correspondre"
     },
     "editRestaurant": {
-      "displayName": "displayName",
+      "displayName": "name",
       "displayNamePlaceHolder": "restaurant name"
     }
   },
