@@ -39,7 +39,7 @@ import {
 } from 'react-native'
 const {width, height} = Dimensions.get('window')
 
-const RestaurantRowHeight = 84
+const UserRowHeight = 84
 const RestaurantAvatorWidth = 80
 
 const F8Colors = require('F8Colors')
@@ -53,8 +53,8 @@ class UserCell extends Component {
 
 
     renderLeft() {
-        const {restaurant} = this.props;
-        const localImagePath = getLocalImagePath(restaurant.listPhotoId)
+        const {user} = this.props;
+        const localImagePath = getLocalImagePath(user.listPhotoId || '')
 
         return (
             <View style={{
@@ -75,25 +75,8 @@ class UserCell extends Component {
         )
     }
 
-    renderMiddle() {
-        return (
-            <View style={{
-                height: 28,
-                flexDirection: 'row',
-                alignItems: 'center',
-            }}>
-                <IEAStarIcon/>
-                <Text style={{
-                    marginLeft: 4,
-                    fontSize: 12,
-                    color: "#666"
-                }}>{"30 reviews"}</Text>
-            </View>
-        )
-    }
-
     renderRight() {
-        const {restaurant} = this.props
+        const {user} = this.props
         return (
             <View style={{
                 flex: 1,
@@ -105,29 +88,28 @@ class UserCell extends Component {
                     fontWeight: "700",
                     fontSize: 16,
                     color: "#333"
-                }}>{restaurant.displayName}</Text>
-                {this.renderMiddle()}
+                }}>{user.displayName}</Text>
                 <Text numberOfLines={1}
                       style={{
                           height: 17,
                           fontSize: 14,
                           color: "#333"
-                      }}>{restaurant.address}</Text>
+                      }}>{user.email}</Text>
             </View>
         )
     }
 
     renderCell() {
-        const {restaurant} = this.props;
+        const {user} = this.props;
         return (
             <View
-                key={restaurant.objectId}
+                key={user.objectId}
                 style={{
                     paddingLeft: 10,
                     marginRight: 10,
                     backgroundColor: "white",
                     width: width,
-                    height: RestaurantRowHeight,
+                    height: UserRowHeight,
                 }}>
                 <View style={{// .action-list .action
                     flex: 1,
@@ -144,49 +126,8 @@ class UserCell extends Component {
     }
 
     onPress() {
-        const {restaurant} = this.props;
-        this.props.navigator.push({restaurant});
-
-        const event = {
-            "objectId": "p25iag5OcM",
-            "updatedAt": "2017-07-12T01:16:19.472Z",
-            "displayName": "Outdoor Skating and Holiday Festivities in Downtown Burbank",
-            "start": "2017-06-28T10:30:57.566Z",
-            "end": "2017-06-28T11:30:57.566Z",
-            "want": "Downtown Burbank Announces 2015 Return of Outdoor Skating and Holiday Festivities Downtown Burbank's most festive holiday tradition returns for outdoor ice skating, fundraising events, and special performances at The Rink in Downtown Burbank. The fun begins December 10, 2015 and runs through January 3, 2016.",
-            "restaurantId": "OnNGSfwoou",
-            "restaurantName": "LISA"
-        }
-        // this.props.navigator.push({event: event, forRestaurant: restaurant});
-        const user = {
-            "objectId": "aGkde8iuL6",
-            "updatedAt": "2017-07-11T07:47:06.425Z",
-            "loginType": "email",
-            "displayName": "Jaron Lawrence",
-            "email": ""
-        }
-        // this.props.navigator.push({
-        //     orderedUser: user,
-        //     forRestaurant: restaurant,
-        //     forEvent: event
-        // });
-        const recipe = {
-            "objectId": "GsJxbBcJaE",
-            "updatedAt": "2017-07-11T13:07:00.434Z",
-            "displayName": "House salad with salmon",
-            "price": "40",
-            "restaurantId": "",
-            "eventId": "",
-            "userId": "",
-            "listPhotoId": "HdxKn0YrZZ",
-            "localPhotoStatus": false
-        }
-        // this.props.navigator.push({
-        //     recipe: recipe,
-        //     forRestaurant: restaurant,
-        //     forEvent: event,
-        //     forUser: user
-        // });
+        const {user} = this.props;
+        this.props.navigator.push({user});
     }
 
     componentDidMount() {

@@ -56,10 +56,10 @@ class IEASearchRestaurants extends Component {
         this.props.dispatch(queryNearRestaurant())
     }
 
-    renderRow = (item: Object,
+    renderRow = (restaurant: Object,
                  sectionID: number | string,
                  rowID: number | string) => {
-        return (<RestaurantCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
+        return (<RestaurantCell key={restaurant.objectId} restaurant={item} navigator={this.props.navigator}/>)
     }
 
     renderEmptyList() {

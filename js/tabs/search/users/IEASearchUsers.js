@@ -56,10 +56,10 @@ class IEASearchUsers extends Component {
         this.props.dispatch(queryUsers())
     }
 
-    renderRow = (item: Object,
+    renderRow = (user: Object,
                  sectionID: number | string,
                  rowID: number | string) => {
-        return (<UserCell key={item.objectId} restaurant={item} navigator={this.props.navigator}/>)
+        return (<UserCell key={user.objectId} user={user} navigator={this.props.navigator}/>)
     }
 
     renderEmptyList() {
