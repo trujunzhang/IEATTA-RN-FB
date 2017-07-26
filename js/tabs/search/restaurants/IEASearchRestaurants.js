@@ -97,9 +97,10 @@ class IEASearchRestaurants extends Component {
                     }}
                     iconColor="white"
                     textColor="white"
+                    selectionColor="#ccc"
                     backCloseSize={18}
                     placeholder={"Search Restaurants"}
-                    placeholderTextColor="#ccc"
+                    placeholderTextColor="#aaa"
                     autoCapitalize={false}
                     ref={(ref) => this.searchBar = ref}/>
 
