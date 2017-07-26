@@ -7,7 +7,9 @@
   2. Add new Restaurant
 
 07-24-2017:
-  1. Add events Cell
+  1. (*)Add events Cell
 
+07-26-2017:
+  1. coding the add new restaurant.
 
 RNSVGPathParser
