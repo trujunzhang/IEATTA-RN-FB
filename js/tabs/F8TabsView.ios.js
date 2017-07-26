@@ -48,6 +48,8 @@ const IEANearRestaurantScene = require('./home/IEANearRestaurantScene')
 const IEADetailedRestaurant = require('./restaurant/IEADetailedRestaurant')
 const IEADetailedEvent = require('./event/IEADetailedEvent')
 
+const IEASearchRestaurants = require('./search/restaurants/IEASearchRestaurants.js')
+
 const {switchTab} = require('../actions')
 
 import type {Tab} from '../reducers/navigation'
@@ -85,7 +87,7 @@ class F8TabsView extends React.Component {
                     selected={this.props.tab === 'info'}
                     onPress={this.onTabSelect.bind(this, 'info')}
                     selectedIconName="ios-home">
-                    <IEADetailedEvent
+                    <IEASearchRestaurants
                         navigator={this.props.navigator}
                     />
                 </Icon.TabBarItem>
